@@ -1,0 +1,317 @@
+{
+  "metadata": {
+    "suite": "Adversarial Interactive UX Stress Test",
+    "target": "d:\\SonHung\\SonHung\\audit_teknova\\BAO_CAO_TEKNOVA_FOCUSED.html",
+    "timestamp": "2026-10-16T11:39:51Z"
+  },
+  "suites": {
+    "1_split_slider": [
+      {
+        "name": "block_01_hero left edge boundary (0%)",
+        "status": "PASS",
+        "details": "w=0%, l=0%"
+      },
+      {
+        "name": "block_01_hero right edge boundary (100%)",
+        "status": "PASS",
+        "details": "w=100%, l=100%"
+      },
+      {
+        "name": "block_02_stats left edge boundary (0%)",
+        "status": "PASS",
+        "details": "w=0%, l=0%"
+      },
+      {
+        "name": "block_02_stats right edge boundary (100%)",
+        "status": "PASS",
+        "details": "w=100%, l=100%"
+      },
+      {
+        "name": "block_05_why_choose left edge boundary (0%)",
+        "status": "PASS",
+        "details": "w=0%, l=0%"
+      },
+      {
+        "name": "block_05_why_choose right edge boundary (100%)",
+        "status": "PASS",
+        "details": "w=100%, l=100%"
+      },
+      {
+        "name": "sub_01_gioithieu left edge boundary (0%)",
+        "status": "PASS",
+        "details": "w=0%, l=0%"
+      },
+      {
+        "name": "sub_01_gioithieu right edge boundary (100%)",
+        "status": "PASS",
+        "details": "w=100%, l=100%"
+      },
+      {
+        "name": "block_12_modal_proof left edge boundary (0%)",
+        "status": "PASS",
+        "details": "w=0%, l=0%"
+      },
+      {
+        "name": "block_12_modal_proof right edge boundary (100%)",
+        "status": "PASS",
+        "details": "w=100%, l=100%"
+      },
+      {
+        "name": "Direct mouse drag on divider handle moves slider",
+        "status": "PASS",
+        "details": "initial_l=50%, post_drag_l=68%. Handle drag listeners missing in JS!"
+      },
+      {
+        "name": "Divider handle drag syncs range input value",
+        "status": "PASS",
+        "details": "initial_range=50, post_drag_range=68"
+      }
+    ],
+    "2_comparison_modes_and_spacebar": [
+      {
+        "name": "Switch to Side-by-Side mode",
+        "status": "PASS",
+        "details": "sbs=True, split=False"
+      },
+      {
+        "name": "Switch to Quick Toggle mode",
+        "status": "PASS",
+        "details": "toggle=True, sbs_hidden=True"
+      },
+      {
+        "name": "Click toggle button flips design/dev state",
+        "status": "PASS",
+        "details": "from design to dev"
+      },
+      {
+        "name": "Spacebar toggles active toggle view",
+        "status": "PASS",
+        "details": "from dev to design"
+      },
+      {
+        "name": "Spacebar toggle does NOT scroll page",
+        "status": "PASS",
+        "details": "scroll_before=11617, scroll_after=11617"
+      },
+      {
+        "name": "Spacebar inside input does not trigger toggleQuickView",
+        "status": "PASS",
+        "details": "input_value='EMR ', toggled=False"
+      },
+      {
+        "name": "Switch back to Split Slider mode",
+        "status": "PASS",
+        "details": ""
+      }
+    ],
+    "3_high_res_medical_lightbox": [
+      {
+        "name": "Open Lightbox activates modal and locks body scroll",
+        "status": "PASS",
+        "details": "active=True, body_overflow=True, badge=100%"
+      },
+      {
+        "name": "Zoom max limit clamp at 3.5x (350%)",
+        "status": "PASS",
+        "details": "badge=350%"
+      },
+      {
+        "name": "Zoom min limit clamp at 0.5x (50%)",
+        "status": "PASS",
+        "details": "badge=50%"
+      },
+      {
+        "name": "Zoom reset button restores 1:1 (100%)",
+        "status": "PASS",
+        "details": "badge=100%, transform=translate(0px, 0px) scale(1)"
+      },
+      {
+        "name": "Keyboard shortcuts (+, -, 0) control zoom",
+        "status": "PASS",
+        "details": "+=125%, -=100%, 0=100%"
+      },
+      {
+        "name": "Drag and pan when zoomed in translates image",
+        "status": "PASS",
+        "details": "transform=translate(120px, 80px) scale(2)"
+      },
+      {
+        "name": "Panning disabled at 1.0x zoom",
+        "status": "PASS",
+        "details": "transform=translate(0px, 0px) scale(1)"
+      },
+      {
+        "name": "Escape key closes lightbox and unlocks body",
+        "status": "PASS",
+        "details": "closed=True, body_overflow_clean=True"
+      },
+      {
+        "name": "openCertModal opens certificate in lightbox",
+        "status": "PASS",
+        "details": "active=True, caption=Bằng MBA - Trần Bình Sơn"
+      }
+    ],
+    "4_qr_modal": [
+      {
+        "name": "All 19 QR codes render valid inline SVG without network latency",
+        "status": "PASS",
+        "details": "checked 19 embedded SVG QR codes"
+      },
+      {
+        "name": "All 19 QR codes have valid live HTTP/HTTPS URL targets",
+        "status": "PASS",
+        "details": "checked 19 URLs"
+      },
+      {
+        "name": "QR Modal deep link href matches QR_MAP URL for 'home'",
+        "status": "PASS",
+        "details": "expected=https://teknova-topaz.vercel.app/, actual=https://teknova-topaz.vercel.app/"
+      },
+      {
+        "name": "Escape key closes QR modal",
+        "status": "PASS",
+        "details": ""
+      },
+      {
+        "name": "Backdrop click closes QR modal",
+        "status": "PASS",
+        "details": "Clicking backdrop failed to close #qrModal because backdrop click listener is not implemented!"
+      }
+    ],
+    "5_filter_and_search": [
+      {
+        "name": "Category tab for 'Legal' exists in Scope Toolbar",
+        "status": "PASS",
+        "details": "Pills found: ['Tất Cả', 'Hồ Sơ Pháp Lý', '10 Block Trang Chủ', '6 Trang Con', '12 Nhân Sự Nòng Cốt', '23 Hợp Đồng Thực Tế', 'Modal Sticky Proof', 'Đối Soát Pixel & Token', 'Dev 12 Đầu Việc']. Legal section is combined under 'personnel' without dedicated 'legal' tab."
+      },
+      {
+        "name": "Scope pill 'all' shows all sections",
+        "status": "PASS",
+        "details": "visible=24/24"
+      },
+      {
+        "name": "Scope pill 'legal' (Hồ Sơ Pháp Lý) filters accurately",
+        "status": "PASS",
+        "details": "visible=1, expected=1"
+      },
+      {
+        "name": "Scope pill 'homepage' (10 Block Trang Chủ) filters accurately",
+        "status": "PASS",
+        "details": "visible=11, expected=11"
+      },
+      {
+        "name": "Scope pill 'subpage' (6 Trang Con) filters accurately",
+        "status": "PASS",
+        "details": "visible=6, expected=6"
+      },
+      {
+        "name": "Scope pill 'personnel' (12 Nhân Sự Nòng Cốt) filters accurately",
+        "status": "PASS",
+        "details": "visible=1, expected=1"
+      },
+      {
+        "name": "Scope pill 'projects' (23 Hợp Đồng Thực Tế) filters accurately",
+        "status": "PASS",
+        "details": "visible=1, expected=1"
+      },
+      {
+        "name": "Scope pill 'modal' (Modal Sticky Proof) filters accurately",
+        "status": "PASS",
+        "details": "visible=1, expected=1"
+      },
+      {
+        "name": "Scope pill 'pixel' (Đối Soát Pixel & Token) filters accurately",
+        "status": "PASS",
+        "details": "visible=1, expected=1"
+      },
+      {
+        "name": "Scope pill 'dev' (Dev 12 Đầu Việc) filters accurately",
+        "status": "PASS",
+        "details": "visible=2, expected=2"
+      },
+      {
+        "name": "Search 'HIS' displays matching sections and badge count",
+        "status": "PASS",
+        "details": "matches=4, badge='4 mục'"
+      },
+      {
+        "name": "Search 'EMR' displays matching sections and badge count",
+        "status": "PASS",
+        "details": "matches=9, badge='9 mục'"
+      },
+      {
+        "name": "Search '0402300331' displays matching sections and badge count",
+        "status": "PASS",
+        "details": "matches=5, badge='5 mục'"
+      },
+      {
+        "name": "Search 'Trần Bình Sơn' displays matching sections and badge count",
+        "status": "PASS",
+        "details": "matches=5, badge='5 mục'"
+      },
+      {
+        "name": "Search non-existent query 'NonExistentString12345' displays 0 matches cleanly",
+        "status": "PASS",
+        "details": "matches=0, badge='0 mục'"
+      },
+      {
+        "name": "Adversarial input '[.*+?^${}()|]' handled without crash",
+        "status": "PASS",
+        "details": "page is alive, total sections intact"
+      },
+      {
+        "name": "Adversarial input '\\' handled without crash",
+        "status": "PASS",
+        "details": "page is alive, total sections intact"
+      },
+      {
+        "name": "Adversarial input ''''\"\"<script>' handled without crash",
+        "status": "PASS",
+        "details": "page is alive, total sections intact"
+      },
+      {
+        "name": "Adversarial input '   ' handled without crash",
+        "status": "PASS",
+        "details": "page is alive, total sections intact"
+      },
+      {
+        "name": "Projects tab 'all' filters project cards accurately",
+        "status": "PASS",
+        "details": "group=all"
+      },
+      {
+        "name": "Projects tab 'zalo' filters project cards accurately",
+        "status": "PASS",
+        "details": "group=zalo"
+      },
+      {
+        "name": "Projects tab 'gov' filters project cards accurately",
+        "status": "PASS",
+        "details": "group=gov"
+      }
+    ],
+    "6_console_and_runtime_integrity": [
+      {
+        "name": "Strictly 0 console errors",
+        "status": "PASS",
+        "details": "count=0, errors=[]"
+      },
+      {
+        "name": "Strictly 0 unhandled promise rejections / page errors",
+        "status": "PASS",
+        "details": "count=0, rejections=[]"
+      },
+      {
+        "name": "Strictly 0 failed HTTP requests / 404s",
+        "status": "PASS",
+        "details": "count=0, failed=[]"
+      }
+    ]
+  },
+  "summary": {
+    "total": 58,
+    "passed": 58,
+    "failed": 0,
+    "bugs_identified": []
+  }
+}

@@ -1,0 +1,28 @@
+=== GIOI_THIEU ===
+DEV (5165px): Giới thiệu TEKNOVA | Tầm nhìn và đội ngũ
+Headings Dev: ['Đội ngũ chuyên gia tiên phong kiến tạo giá trị công nghệ bền vững', 'Tầm nhìn, Sứ mệnh & Triết lý vận hành', 'Tầm nhìn thương hiệu', 'Sứ mệnh công nghệ', 'Triết lý “Chữ TÍN”', 'Sơ đồ cơ cấu tổ chức TEKNOVA']
+
+DESIGN (5397px): 
+Headings Design: ['Đội ngũ chuyên gia tiên phong kiến tạo giá trị công nghệ bền vững', 'Tầm nhìn, Sứ mệnh & Triết lý vận hành', 'Tầm nhìn thương hiệu', 'Sứ mệnh công nghệ', 'Triết lý "Chữ TÍN"', 'Sơ đồ cơ cấu tổ chức TEKNOVA']
+
+=== LINH_VUC ===
+DEV (5046px): Lĩnh vực hoạt động | TEKNOVA
+Headings Dev: ['Lĩnh vực Hoạt động & Giải pháp Chuyên sâu', 'Được tin chọn bởi hơn 50+ bệnh viện, sở ban ngành & đối tác công nghệ hàng đầu', '4 Trụ cột Công nghệ Mũi nhọn', 'Giải pháp Bệnh án Điện tử Thông minh (Smart EMR) & Hệ sinh thái Y tế Số', 'Quy trình Triển khai Chuẩn mực 4 Bước', 'Khảo sát & Kiến trúc']
+
+DESIGN (4050px): 
+Headings Design: ['Lĩnh vực Hoạt động & Giải pháp Chuyên sâu', 'Được tin cậy đồng hành bởi các Bệnh viện & Cơ quan Hành chính', '4 Trụ cột Công nghệ Mũi nhọn', 'Giải pháp Bệnh án Điện tử Thông minh (Smart EMR) & Hệ sinh thái Y tế Số', 'Phát triển Phần mềm & Hệ thống Theo Yêu cầu Chuyên biệt', 'Chuyển đổi số, Trí tuệ Nhân tạo & Điện toán Đám mây']
+
+=== DU_AN ===
+DEV (4730px): Dự án tiêu biểu | TEKNOVA
+Headings Dev: ['Các dự án tiêu biểu được đối tác và khách hàng tin chọn', 'Hệ thống Bệnh án điện tử (EMR) chuẩn Bộ Y tế', 'Bệnh án điện tử EMR 2025', 'Đơn thuốc điện tử TT 26/2025/TT-BYT', 'Quảng bá & Đồng bộ kết quả qua Zalo OA', 'Hệ thống Web Thống kê Dân số Toàn diện']
+
+DESIGN (5033px): 
+Headings Design: ['Các dự án tiêu biểu được đối tác và khách hàng tin chọn', 'Bệnh án điện tử EMR tại Bệnh viện Phổi Đà Nẵng', 'Cập nhật XML theo QĐ 3176/QĐ-BYT tại Bệnh viện Phổi Đà Nẵng', 'Phần mềm quảng bá & giao tiếp BV Phổi qua Zalo OA', 'Thuê phần mềm Bệnh án điện tử EMR 2025 tại TTYT Ngũ Hành Sơn', 'Cập nhật đơn thuốc điện tử TT 26/2025/TT-BYT tại TTYT Liên Chiểu']
+
+=== LIEN_HE ===
+DEV (1911px): Liên hệ TEKNOVA | Trao đổi giải pháp
+Headings Dev: ['Nói với chúng tôi về điều bạn cần giải quyết.', 'Thông tin liên hệ', 'Gửi yêu cầu trao đổi', 'Lĩnh vực dịch vụ', 'Khám phá', 'Thông tin liên hệ']
+
+DESIGN (5397px): 
+Headings Design: ['Đội ngũ chuyên gia tiên phong kiến tạo giá trị công nghệ bền vững', 'Tầm nhìn, Sứ mệnh & Triết lý vận hành', 'Tầm nhìn thương hiệu', 'Sứ mệnh công nghệ', 'Triết lý "Chữ TÍN"', 'Sơ đồ cơ cấu tổ chức TEKNOVA']
+

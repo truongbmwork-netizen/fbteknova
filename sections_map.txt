@@ -1,0 +1,24 @@
+=== DEV SITE ===
+[0] HEADER | Y: 0 - 73px (H: 73px) | Heading: 
+[1] SECTION | Y: 73 - 1075px (H: 1002px) | Heading: Kiến tạo Giải pháp Công nghệ & Chuyển đổi số Toàn diện
+[2] SECTION | Y: 1075 - 1249px (H: 174px) | Heading: Năm Kinh Nghiệm
+[3] SECTION | Y: 1249 - 1921px (H: 672px) | Heading: Được tin chọn bởi hơn 50+ bệnh viện, sở ban ngành & đối tác công nghệ hàng đầu
+[4] SECTION | Y: 1921 - 2003px (H: 82px) | Heading: 
+[5] SECTION | Y: 2003 - 3086px (H: 1083px) | Heading: 6 lĩnh vực hoạt động cốt lõi
+[6] SECTION | Y: 3086 - 4111px (H: 1025px) | Heading: Các bài toán TEKNOVA tập trung
+[7] SECTION | Y: 4111 - 5076px (H: 965px) | Heading: Dự Án Tiêu Biểu Triển Khai
+[8] SECTION | Y: 5077 - 6117px (H: 1040px) | Heading: Lấy chữ TÍN làm nền tảng.
+[9] FOOTER | Y: 5965 - 5981px (H: 16px) | Heading: 
+[10] SECTION | Y: 6117 - 6467px (H: 350px) | Heading: Sẵn Sàng Nâng Tầm Năng Lực Vận Hành Cùng TEKNOVA?
+[11] FOOTER | Y: 6467 - 6900px (H: 433px) | Heading: Lĩnh vực dịch vụ
+
+=== DESIGN SITE ===
+[0] HEADER | Y: 0 - 81px (H: 81px) | Heading: 
+[1] SECTION | Y: 80 - 1100px (H: 1020px) | Heading: Kiến tạo Giải pháp Công nghệ & Chuyển đổi số Toàn diện
+[2] SECTION | Y: 1100 - 1262px (H: 162px) | Heading: 
+[3] SECTION | Y: 1262 - 1520px (H: 258px) | Heading: Được tin cậy đồng hành bởi các Bệnh viện & Cơ quan Hành chính
+[4] SECTION | Y: 1520 - 2477px (H: 957px) | Heading: Lĩnh Vực Hoạt Động Cốt Lõi
+[5] SECTION | Y: 2477 - 3569px (H: 1092px) | Heading: Dự Án Tiêu Biểu Triển Khai
+[6] SECTION | Y: 3569 - 5006px (H: 1437px) | Heading: Lấy Chữ TÍN Làm Nền Tảng: Thực Người • Thực Việc • Thực Giá Trị
+[7] SECTION | Y: 5006 - 5528px (H: 522px) | Heading: Sẵn Sàng Nâng Tầm Năng Lực Vận Hành Cùng TEKNOVA?
+[8] FOOTER | Y: 5528 - 5908px (H: 380px) | Heading: 

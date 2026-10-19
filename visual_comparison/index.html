@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Báo Cáo Đối Soát Thị Giác & Bổ Trợ Giao Diện (Visual Synthesis & Harmony Report)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    .img-zoom { transition: transform 0.25s ease; }
+    .img-zoom:hover { transform: scale(1.015); }
+  </style>
+</head>
+<body class="bg-slate-100 text-slate-800 antialiased p-4 md:p-8">
+
+  <!-- Header -->
+  <div class="max-w-7xl mx-auto bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-200 mb-8">
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-100 pb-6 mb-6">
+      <div>
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-blue-50 text-blue-700 border border-blue-200 mb-2">
+          Marketing & Dev Harmony • Ghi chú phối hợp hoàn thiện sản phẩm
+        </span>
+        <h1 class="text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight">
+          Báo Cáo Đối Soát & Bổ Trợ Giao Diện Hoàn Chỉnh
+        </h1>
+        <p class="text-slate-600 text-sm mt-1.5 max-w-4xl leading-relaxed">
+          Bản ghi chú tổng hợp từ góc nhìn Marketing gửi anh em Dev: <strong>Không bên nào là bản chuẩn tuyệt đối</strong>. Mục tiêu là chắt lọc những ưu điểm hay nhất của cả hai bản (<a href="https://teknova-demo.netlify.app/" target="_blank" class="text-blue-600 underline font-medium">Bản Demo hiện tại</a> và <a href="https://teknova-topaz.vercel.app/" target="_blank" class="text-blue-600 underline font-medium">Bản Thiết kế gợi ý</a>), phần nào bên này làm tốt thì phát huy, phần nào còn thiếu thì bổ trợ sang nhau để xây dựng một website chỉn chu, thực tế và sẵn sàng đi showcase trước khách hàng.
+        </p>
+      </div>
+      <div class="flex items-center gap-3 shrink-0">
+        <a href="../TEKNOVA_AUDIT_AND_DEV_PRD.md" class="px-4 py-2.5 bg-slate-900 text-white rounded-xl text-xs font-bold hover:bg-slate-800 transition shadow-sm">
+          Xem File PRD Chi Tiết (.md)
+        </a>
+      </div>
+    </div>
+
+    <!-- Guiding Principles -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="p-4 rounded-xl bg-blue-50/50 border border-blue-100">
+        <p class="text-xs text-blue-700 font-bold uppercase tracking-wider">1. Tinh thần cộng tác</p>
+        <p class="text-sm font-semibold text-slate-900 mt-1">Học hỏi ưu điểm từ cả hai bên</p>
+        <p class="text-xs text-slate-500 mt-1">Bản Demo chạy hạ tầng ổn định, logic tốt. Bản Design gợi ý layout thoáng và tư liệu ảnh phong phú.</p>
+      </div>
+      <div class="p-4 rounded-xl bg-emerald-50/50 border border-emerald-100">
+        <p class="text-xs text-emerald-700 font-bold uppercase tracking-wider">2. Khớp đúng tọa độ DOM</p>
+        <p class="text-sm font-semibold text-slate-900 mt-1">Ảnh chụp đối soát chuẩn 1-1</p>
+        <p class="text-xs text-slate-500 mt-1">Đã đo đạc lại chính xác 100% tọa độ từng section từ Header, Hero, Đối tác đến Dự án và Footer.</p>
+      </div>
+      <div class="p-4 rounded-xl bg-purple-50/50 border border-purple-100">
+        <p class="text-xs text-purple-700 font-bold uppercase tracking-wider">3. Mục tiêu thực tế</p>
+        <p class="text-sm font-semibold text-slate-900 mt-1">Showcase được & Đầy đủ pháp lý</p>
+        <p class="text-xs text-slate-500 mt-1">Tập trung vào cảm nhận của khách hàng khi mở web: Minh bạch nhân sự, dự án thật và trải nghiệm mượt mà.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section Comparisons -->
+  <div class="max-w-7xl mx-auto space-y-10">
+
+    <!-- 1. HERO SECTION -->
+    <div class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-200">
+      <div class="flex items-center justify-between mb-4 pb-3 border-b border-slate-100">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-blue-600">Phần 01</span>
+          <h2 class="text-xl font-bold text-slate-900 mt-0.5">Hero Section & Bảng Điều Phối Y Tế</h2>
+        </div>
+        <span class="px-3 py-1 rounded-full text-xs font-semibold bg-blue-50 text-blue-700 border border-blue-200">
+          Gợi ý: Kết hợp ưu điểm cả hai
+        </span>
+      </div>
+
+      <div class="text-xs text-slate-600 mb-6 bg-slate-50 p-4 rounded-xl border border-slate-200/60 leading-relaxed">
+        <strong>Nhận xét từ Marketing gửi Dev:</strong> 
+        Bản Demo hiện tại làm rất gọn gàng và tải trang rất nhanh. Tuy nhiên khi mang đi thuyết trình trên màn hình lớn, phần Dashboard nếu để lệch 1 bên như bản Demo thì chữ trong bảng số liệu hơi nhỏ. Bản Thiết kế gợi ý cách dàn trang căn giữa (Centered Layout) giúp bảng điều phối EMR mở rộng ra 1200px nhìn rất bề thế. 
+        <br><span class="text-blue-700 font-medium">👉 Đề xuất kết hợp:</span> Giữ nguyên tốc độ tải trang nhanh của bản Demo, đồng thời tham khảo cách bố trí căn giữa và bổ sung thêm nút phụ <em>"Tải Profile PDF"</em> cạnh nút <em>"Khám phá dự án"</em> để tiện cho khách tải tài liệu.
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <!-- Dev Demo -->
+        <div class="rounded-xl border border-slate-200 overflow-hidden bg-white shadow-xs">
+          <div class="bg-slate-100 px-4 py-2.5 border-b border-slate-200 flex items-center justify-between">
+            <span class="text-xs font-bold text-slate-700 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-blue-500"></span> BẢN DEMO HIỆN TẠI (TEKNOVA-DEMO)
+            </span>
+            <span class="text-[11px] text-slate-500">Bố cục 2 cột gọn gàng, tải nhanh</span>
+          </div>
+          <div class="p-3 bg-slate-900 flex justify-center">
+            <img src="./01_hero_dev.png" alt="Dev Hero" class="rounded-lg w-full h-auto object-cover img-zoom shadow border border-slate-800">
+          </div>
+        </div>
+
+        <!-- Design Target -->
+        <div class="rounded-xl border border-slate-200 overflow-hidden bg-white shadow-xs">
+          <div class="bg-slate-100 px-4 py-2.5 border-b border-slate-200 flex items-center justify-between">
+            <span class="text-xs font-bold text-slate-700 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-indigo-500"></span> BẢN THIẾT KẾ THAM KHẢO (TOPAZ)
+            </span>
+            <span class="text-[11px] text-slate-500">Căn giữa 1200px, Dashboard thoáng</span>
+          </div>
+          <div class="p-3 bg-slate-900 flex justify-center">
+            <img src="./01_hero_design.png" alt="Design Hero" class="rounded-lg w-full h-auto object-cover img-zoom shadow border border-slate-800">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. STATS & METRICS -->
+    <div class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-200">
+      <div class="flex items-center justify-between mb-4 pb-3 border-b border-slate-100">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-blue-600">Phần 02</span>
+          <h2 class="text-xl font-bold text-slate-900 mt-0.5">Dải Số Liệu Thành Tựu & Năng Lực</h2>
+        </div>
+        <span class="px-3 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
+          Gợi ý: Đồng bộ số liệu thực tế
+        </span>
+      </div>
+
+      <div class="text-xs text-slate-600 mb-6 bg-slate-50 p-4 rounded-xl border border-slate-200/60 leading-relaxed">
+        <strong>Nhận xét từ Marketing gửi Dev:</strong> 
+        Phần này cả hai bên đều có điểm cần hoàn thiện: Bản Demo đang để con số mẫu chung chung (50+ dự án), còn bản Thiết kế gợi ý font số to màu xanh rất đẹp nhưng lại bị lỗi hiển thị biến số thành `00+ Năm, 00+ Dự án`. 
+        <br><span class="text-emerald-700 font-medium">👉 Đề xuất kết hợp:</span> Áp dụng font số màu xanh to rõ từ bản Thiết kế, nhưng cập nhật đúng con số có thực tế hồ sơ: <strong>`>20 Năm Kinh Nghiệm`</strong>, <strong>`22+ Dự Án Nghiệm Thu`</strong>, <strong>`12 Chuyên Gia Nòng Cốt`</strong>, <strong>`100% Đồng Hành Cam Kết`</strong>.
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div class="rounded-xl border border-slate-200 overflow-hidden bg-white shadow-xs">
+          <div class="bg-slate-100 px-4 py-2.5 border-b border-slate-200 flex items-center justify-between">
+            <span class="text-xs font-bold text-slate-700">BẢN DEMO HIỆN TẠI</span>
+            <span class="text-[11px] text-slate-500">Số liệu tĩnh font thường</span>
+          </div>
+          <div class="p-3 bg-slate-900 flex justify-center">
+            <img src="./02_stats_dev.png" alt="Dev Stats" class="rounded-lg w-full h-auto object-cover img-zoom shadow border border-slate-800">
+          </div>
+        </div>
+        <div class="rounded-xl border border-slate-200 overflow-hidden bg-white shadow-xs">
+          <div class="bg-slate-100 px-4 py-2.5 border-b border-slate-200 flex items-center justify-between">
+            <span class="text-xs font-bold text-slate-700">BẢN THIẾT KẾ THAM KHẢO</span>
+            <span class="text-[11px] text-slate-500">Kiểu chữ đẹp, cần sửa lỗi hiển thị 00+</span>
+          </div>
+          <div class="p-3 bg-slate-900 flex justify-center">
+            <img src="./02_stats_design.png" alt="Design Stats" class="rounded-lg w-full h-auto object-cover img-zoom shadow border border-slate-800">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. PARTNERS -->
+    <div class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-200">
+      <div class="flex items-center justify-between mb-4 pb-3 border-b border-slate-100">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-blue-600">Phần 03</span>
+          <h2 class="text-xl font-bold text-slate-900 mt-0.5">Dải Logo Đối Tác & Khách Hàng Cơ Quan</h2>
+        </div>
+        <span class="px-3 py-1 rounded-full text-xs font-semibold bg-blue-50 text-blue-700 border border-blue-200">
+          Gợi ý: Cập nhật danh sách đối tác thật
+        </span>
+      </div>
+
+      <div class="text-xs text-slate-600 mb-6 bg-slate-50 p-4 rounded-xl border border-slate-200/60 leading-relaxed">
+        <strong>Nhận xét từ Marketing gửi Dev:</strong> 
+        Bản Demo hiện tại xếp 2 hàng ngang nhìn rất ngay ngắn. Nhưng để tạo độ sinh động khi trình chiếu, bản Thiết kế làm dạng thanh trượt nhẹ (Marquee) có tính năng rất hay: <em>khi rê chuột vào thì thanh trượt tự dừng lại</em> để người thuyết trình kịp chỉ vào từng đối tác. Về mặt dữ liệu, Marketing đã tải sẵn 11 logo chính thức của các Bệnh viện & Cơ quan đã ký hợp đồng thật (BV Phổi, TTYT Liên Chiểu, Ngũ Hành Sơn, Cẩm Lệ, Chi cục Dân số Đà Nẵng...) trong thư mục `assets/partners/`.
+        <br><span class="text-blue-700 font-medium">👉 Đề xuất kết hợp:</span> Thay thế các logo mẫu bằng 11 logo thật đã chuẩn bị sẵn, kết hợp hiệu ứng dừng khi rê chuột (pause on hover) của bản Thiết kế.
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div class="rounded-xl border border-slate-200 overflow-hidden bg-white shadow-xs">
+          <div class="bg-slate-100 px-4 py-2.5 border-b border-slate-200 flex items-center justify-between">
+            <span class="text-xs font-bold text-slate-700">BẢN DEMO HIỆN TẠI</span>
+            <span class="text-[11px] text-slate-500">2 hàng logo tĩnh</span>
+          </div>
+          <div class="p-3 bg-slate-900 flex justify-center">
+            <img src="./03_partners_dev.png" alt="Dev Partners" class="rounded-lg w-full h-auto object-cover img-zoom shadow border border-slate-800">
+          </div>
+        </div>
+        <div class="rounded-xl border border-slate-200 overflow-hidden bg-white shadow-xs">
+          <div class="bg-slate-100 px-4 py-2.5 border-b border-slate-200 flex items-center justify-between">
+            <span class="text-xs font-bold text-slate-700">BẢN THIẾT KẾ THAM KHẢO</span>
+            <span class="text-[11px] text-slate-500">Dải trượt tự động (Marquee), hover tự dừng</span>
+          </div>
+          <div class="p-3 bg-slate-900 flex justify-center">
+            <img src="./03_partners_design.png" alt="Design Partners" class="rounded-lg w-full h-auto object-cover img-zoom shadow border border-slate-800">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. 6 CORE DOMAINS -->
+    <div class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-200">
+      <div class="flex items-center justify-between mb-4 pb-3 border-b border-slate-100">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-blue-600">Phần 04</span>
+          <h2 class="text-xl font-bold text-slate-900 mt-0.5">Khối 6 Lĩnh Vực Hoạt Động Cốt Lõi</h2>
+        </div>
+        <span class="px-3 py-1 rounded-full text-xs font-semibold bg-indigo-50 text-indigo-700 border border-indigo-200">
+          Gợi ý: Tối ưu điểm nhấn thị giác
+        </span>
+      </div>
+
+      <div class="text-xs text-slate-600 mb-6 bg-slate-50 p-4 rounded-xl border border-slate-200/60 leading-relaxed">
+        <strong>Nhận xét từ Marketing gửi Dev:</strong> 
+        Phần nội dung 6 lĩnh vực trên bản Demo viết rất chi tiết và chuẩn mực. Tuy nhiên ở bản Demo, ngay phía dưới lại có thêm một khối "Các bài toán TEKNOVA tập trung" với nội dung hơi tương đồng. Trong khi đó, bản Thiết kế gom gọn lại trong 6 thẻ Bento và tạo điểm nhấn mắt nhìn bằng cách phủ màu xanh Cobalt cho Card 4 "Chuyển đổi số - AI - Cloud".
+        <br><span class="text-indigo-700 font-medium">👉 Đề xuất kết hợp:</span> Giữ nguyên văn phong chuẩn của bản Demo, lược bớt khối trùng lặp phía dưới và áp dụng màu xanh điểm nhấn của Card 4 để trang web trông năng động, hiện đại hơn.
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div class="rounded-xl border border-slate-200 overflow-hidden bg-white shadow-xs">
+          <div class="bg-slate-100 px-4 py-2.5 border-b border-slate-200 flex items-center justify-between">
+            <span class="text-xs font-bold text-slate-700">BẢN DEMO HIỆN TẠI</span>
+            <span class="text-[11px] text-slate-500">6 thẻ nền trắng đều màu</span>
+          </div>
+          <div class="p-3 bg-slate-900 flex justify-center">
+            <img src="./04_domains_dev.png" alt="Dev Domains" class="rounded-lg w-full h-auto object-cover img-zoom shadow border border-slate-800">
+          </div>
+        </div>
+        <div class="rounded-xl border border-slate-200 overflow-hidden bg-white shadow-xs">
+          <div class="bg-slate-100 px-4 py-2.5 border-b border-slate-200 flex items-center justify-between">
+            <span class="text-xs font-bold text-slate-700">BẢN THIẾT KẾ THAM KHẢO</span>
+            <span class="text-[11px] text-slate-500">Card 4 màu xanh Cobalt tạo điểm nhấn</span>
+          </div>
+          <div class="p-3 bg-slate-900 flex justify-center">
+            <img src="./04_domains_design.png" alt="Design Domains" class="rounded-lg w-full h-auto object-cover img-zoom shadow border border-slate-800">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. CASE STUDIES (ACCURATE CROPS) -->
+    <div class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-200">
+      <div class="flex items-center justify-between mb-4 pb-3 border-b border-slate-100">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-blue-600">Phần 05 • TRỌNG TÂM SHOWCASE</span>
+          <h2 class="text-xl font-bold text-slate-900 mt-0.5">Dự Án Tiêu Biểu Triển Khai (Bổ Sung Tư Liệu Hình Ảnh)</h2>
+        </div>
+        <span class="px-3 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
+          Gợi ý: Bổ sung ảnh chụp thực tế
+        </span>
+      </div>
+
+      <div class="text-xs text-slate-600 mb-6 bg-slate-50 p-4 rounded-xl border border-slate-200/60 leading-relaxed">
+        <strong>Nhận xét từ Marketing gửi Dev:</strong> 
+        Phần thẻ dự án của bản Demo hiện tại làm bố cục các dòng chữ (Tên dự án, Đơn vị, Tỷ lệ hoàn thành) rất ngay ngắn và logic. Tuy nhiên, khách hàng và hội đồng thẩm định khi nhìn vào thường muốn thấy <em>hình ảnh thực tế triển khai tại hiện trường</em> (bác sĩ đang thao tác phần mềm, màn hình Kiosk đón tiếp, giao diện Zalo OA...). Bản Thiết kế đã chuẩn bị sẵn bộ ảnh minh họa 16:9 rất sinh động.
+        <br><span class="text-emerald-700 font-medium">👉 Đề xuất kết hợp:</span> Giữ nguyên khung nội dung và cấu trúc thẻ của bản Demo, bổ sung thêm phần ảnh thumbnail 16:9 phía trên đầu mỗi thẻ (sử dụng gói ảnh WebP cục bộ đã tối ưu trong assets) để nâng cao độ tin cậy và tính thuyết phục khi đi demo.
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div class="rounded-xl border border-slate-200 overflow-hidden bg-white shadow-xs">
+          <div class="bg-slate-100 px-4 py-2.5 border-b border-slate-200 flex items-center justify-between">
+            <span class="text-xs font-bold text-slate-700">BẢN DEMO HIỆN TẠI (Y: 4111 - 5076px)</span>
+            <span class="text-[11px] text-slate-500">Bố cục text chuẩn, chưa có ảnh thumbnail</span>
+          </div>
+          <div class="p-3 bg-slate-900 flex justify-center">
+            <img src="./05_projects_dev.png" alt="Dev Projects" class="rounded-lg w-full h-auto object-cover img-zoom shadow border border-slate-800">
+          </div>
+        </div>
+        <div class="rounded-xl border border-slate-200 overflow-hidden bg-white shadow-xs">
+          <div class="bg-slate-100 px-4 py-2.5 border-b border-slate-200 flex items-center justify-between">
+            <span class="text-xs font-bold text-slate-700">BẢN THIẾT KẾ THAM KHẢO (Y: 2477 - 3569px)</span>
+            <span class="text-[11px] text-slate-500">Đầy đủ ảnh chụp hiện trường sinh động</span>
+          </div>
+          <div class="p-3 bg-slate-900 flex justify-center">
+            <img src="./05_projects_design.png" alt="Design Projects" class="rounded-lg w-full h-auto object-cover img-zoom shadow border border-slate-800">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. LEADERSHIP -->
+    <div class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-200">
+      <div class="flex items-center justify-between mb-4 pb-3 border-b border-slate-100">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-blue-600">Phần 06 • NIỀM TIN DOANH NGHIỆP</span>
+          <h2 class="text-xl font-bold text-slate-900 mt-0.5">Triết Lý Vận Hành & Khối Ban Lãnh Đạo</h2>
+        </div>
+        <span class="px-3 py-1 rounded-full text-xs font-semibold bg-purple-50 text-purple-700 border border-purple-200">
+          Gợi ý: Đưa ảnh chân dung & chuẩn hóa tên
+        </span>
+      </div>
+
+      <div class="text-xs text-slate-600 mb-6 bg-slate-50 p-4 rounded-xl border border-slate-200/60 leading-relaxed">
+        <strong>Nhận xét từ Marketing gửi Dev:</strong> 
+        Bản Demo hiện tại thể hiện triết lý <em>"Lấy chữ TÍN làm nền tảng - Thực người, thực việc, thực giá trị"</em> cùng hệ giá trị vận hành 10-20 năm kinh nghiệm và hỗ trợ 24/7 rất đanh thép. Điểm bản Thiết kế làm rất hay là đã bổ sung thêm hình ảnh chân dung cắt nền của lãnh đạo giúp khối này có "gương mặt đại diện", tạo cảm giác người thật việc thật. 
+        <br><span class="text-purple-700 font-medium">👉 Đề xuất kết hợp:</span> Ghép phần ảnh chân dung đã tách nền ([ceo-cutout.png](file:///d:/SonHung/SonHung/teknova-portal/public/ceo-cutout.png)) vào cạnh khối cam kết của bản Demo. Đồng thời lưu ý chuẩn hóa đúng tên lãnh đạo đại diện pháp luật là <strong>Trần Bình Sơn (MBA, Kỹ sư Điện tử)</strong> theo hồ sơ năng lực và giấy phép ĐKKD.
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div class="rounded-xl border border-slate-200 overflow-hidden bg-white shadow-xs">
+          <div class="bg-slate-100 px-4 py-2.5 border-b border-slate-200 flex items-center justify-between">
+            <span class="text-xs font-bold text-slate-700">BẢN DEMO HIỆN TẠI (Y: 5077 - 6117px)</span>
+            <span class="text-[11px] text-slate-500">Thông điệp chữ Tín & Cam kết 24/7</span>
+          </div>
+          <div class="p-3 bg-slate-900 flex justify-center">
+            <img src="./06_leadership_dev.png" alt="Dev Leadership" class="rounded-lg w-full h-auto object-cover img-zoom shadow border border-slate-800">
+          </div>
+        </div>
+        <div class="rounded-xl border border-slate-200 overflow-hidden bg-white shadow-xs">
+          <div class="bg-slate-100 px-4 py-2.5 border-b border-slate-200 flex items-center justify-between">
+            <span class="text-xs font-bold text-slate-700">BẢN THIẾT KẾ THAM KHẢO (Y: 3569 - 5006px)</span>
+            <span class="text-[11px] text-slate-500">Có hình ảnh chân dung cắt nền uy tín</span>
+          </div>
+          <div class="p-3 bg-slate-900 flex justify-center">
+            <img src="./06_leadership_design.png" alt="Design Leadership" class="rounded-lg w-full h-auto object-cover img-zoom shadow border border-slate-800">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7. CTA & FOOTER -->
+    <div class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-200">
+      <div class="flex items-center justify-between mb-4 pb-3 border-b border-slate-100">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-blue-600">Phần 07</span>
+          <h2 class="text-xl font-bold text-slate-900 mt-0.5">Khối Kêu Gọi Hành Động (CTA Banner) & Chân Trang (Footer)</h2>
+        </div>
+        <span class="px-3 py-1 rounded-full text-xs font-semibold bg-blue-50 text-blue-700 border border-blue-200">
+          Gợi ý: Cập nhật địa chỉ & mã số thuế
+        </span>
+      </div>
+
+      <div class="text-xs text-slate-600 mb-6 bg-slate-50 p-4 rounded-xl border border-slate-200/60 leading-relaxed">
+        <strong>Nhận xét từ Marketing gửi Dev:</strong> 
+        Phần Footer của bản Demo trình bày cột liên kết rất ngăn nắp. Ở bản Thiết kế, dải CTA banner đổi sang nền gradient xanh sáng nhìn rất năng động. Về thông tin liên hệ, bản Thiết kế đã bổ sung đầy đủ cả 2 địa chỉ: <strong>Văn phòng làm việc chính thức tại Tầng 3, 456 Nguyễn Hữu Thọ</strong> (nơi tiếp đối tác) và địa chỉ ĐKKD kèm <strong>Mã số thuế 0402300331</strong>.
+        <br><span class="text-blue-700 font-medium">👉 Đề xuất kết hợp:</span> Bổ sung thông tin văn phòng 456 Nguyễn Hữu Thọ và MST vào Footer của bản Demo, có thể cân nhắc đổi màu banner CTA sang tông xanh cobalt sáng như bản Thiết kế nếu thấy phù hợp với tổng thể.
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div class="rounded-xl border border-slate-200 overflow-hidden bg-white shadow-xs">
+          <div class="bg-slate-100 px-4 py-2.5 border-b border-slate-200 flex items-center justify-between">
+            <span class="text-xs font-bold text-slate-700">BẢN DEMO HIỆN TẠI (Y: 6117 - 6900px)</span>
+            <span class="text-[11px] text-slate-500">Footer ngăn nắp, cần thêm trụ sở chính</span>
+          </div>
+          <div class="p-3 bg-slate-900 flex justify-center">
+            <img src="./07_footer_dev.png" alt="Dev Footer" class="rounded-lg w-full h-auto object-cover img-zoom shadow border border-slate-800">
+          </div>
+        </div>
+        <div class="rounded-xl border border-slate-200 overflow-hidden bg-white shadow-xs">
+          <div class="bg-slate-100 px-4 py-2.5 border-b border-slate-200 flex items-center justify-between">
+            <span class="text-xs font-bold text-slate-700">BẢN THIẾT KẾ THAM KHẢO (Y: 5006 - 5908px)</span>
+            <span class="text-[11px] text-slate-500">Banner xanh sáng, đầy đủ 2 địa chỉ & MST</span>
+          </div>
+          <div class="p-3 bg-slate-900 flex justify-center">
+            <img src="./07_footer_design.png" alt="Design Footer" class="rounded-lg w-full h-auto object-cover img-zoom shadow border border-slate-800">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- PHẦN MỞ RỘNG: ĐỐI SOÁT TOÀN BỘ CÁC TRANG CON -->
+    <!-- ========================================== -->
+    <div class="pt-8 border-t-2 border-slate-200">
+      <div class="mb-6">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-indigo-50 text-indigo-700 border border-indigo-200 mb-2">
+          Phân Tích Chi Tiết 4 Trang Con (Subpages Audit)
+        </span>
+        <h2 class="text-2xl font-black text-slate-900 tracking-tight">
+          Đối Soát Giao Diện & Nội Dung Các Trang Con
+        </h2>
+        <p class="text-slate-500 text-xs mt-1">
+          Đánh giá chuyên sâu 4 trang nội bộ: <strong>Giới Thiệu</strong>, <strong>Lĩnh Vực Hoạt Động</strong>, <strong>Dự Án Tiêu Biểu</strong>, và <strong>Liên Hệ / Đăng Ký Tư Vấn</strong>.
+        </p>
+      </div>
+
+      <!-- SUBPAGE 1: GIỚI THIỆU -->
+      <div class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-200 mb-10">
+        <div class="flex items-center justify-between mb-4 pb-3 border-b border-slate-100">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-indigo-600">Trang Con 01</span>
+            <h3 class="text-lg font-bold text-slate-900 mt-0.5">Trang Giới Thiệu (Tầm Nhìn, Sứ Mệnh & Đội Ngũ)</h3>
+          </div>
+          <span class="text-xs text-slate-400 font-mono">/gioi-thieu vs ./gioithieu.html</span>
+        </div>
+
+        <div class="text-xs text-slate-600 mb-6 bg-slate-50 p-4 rounded-xl border border-slate-200/60 leading-relaxed">
+          <strong>Nhận xét từ Marketing gửi Dev:</strong> 
+          Trang Giới thiệu của cả hai bên đều làm rất chỉnh chu về mặt thông điệp (Tầm nhìn, Sứ mệnh, Triết lý chữ TÍN). 
+          <br>• <em>Ưu điểm ở Demo:</em> Có danh sách đội ngũ kỹ sư và sơ đồ cơ cấu tổ chức phân tầng rõ ràng, logic điều hướng tốt.
+          <br>• <em>Điểm sáng ở Design:</em> Bố trí các khối card sứ mệnh mềm mại, màu sắc hài hòa và có form liên hệ trực tiếp ở chân trang.
+          <br><span class="text-indigo-700 font-medium">👉 Đề xuất kết hợp:</span> Giữ nguyên khung nội dung đầy đủ của Demo, bổ sung thêm ảnh scan bằng cấp của 12 chuyên gia (đã bóc tách từ HSNL Phần B) vào modal xem chi tiết để tăng sức nặng khi cơ quan nhà nước kiểm tra năng lực nhân sự.
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div class="rounded-xl border border-slate-200 overflow-hidden bg-white shadow-xs">
+            <div class="bg-slate-100 px-4 py-2 border-b border-slate-200 text-xs font-bold text-slate-700">BẢN DEMO (/gioi-thieu)</div>
+            <div class="p-3 bg-slate-900 flex justify-center">
+              <img src="./gioi_thieu_dev_header.png" alt="Dev Giới Thiệu" class="rounded-lg w-full h-auto object-cover img-zoom shadow border border-slate-800">
+            </div>
+          </div>
+          <div class="rounded-xl border border-slate-200 overflow-hidden bg-white shadow-xs">
+            <div class="bg-slate-100 px-4 py-2 border-b border-slate-200 text-xs font-bold text-slate-700">BẢN THIẾT KẾ (gioithieu.html)</div>
+            <div class="p-3 bg-slate-900 flex justify-center">
+              <img src="./gioi_thieu_design_header.png" alt="Design Giới Thiệu" class="rounded-lg w-full h-auto object-cover img-zoom shadow border border-slate-800">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SUBPAGE 2: LĨNH VỰC HOẠT ĐỘNG -->
+      <div class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-200 mb-10">
+        <div class="flex items-center justify-between mb-4 pb-3 border-b border-slate-100">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-indigo-600">Trang Con 02</span>
+            <h3 class="text-lg font-bold text-slate-900 mt-0.5">Trang Lĩnh Vực Hoạt Động & Giải Pháp Chuyên Sâu</h3>
+          </div>
+          <span class="text-xs text-slate-400 font-mono">/linh-vuc-hoat-dong vs ./lichvuc.html</span>
+        </div>
+
+        <div class="text-xs text-slate-600 mb-6 bg-slate-50 p-4 rounded-xl border border-slate-200/60 leading-relaxed">
+          <strong>Nhận xét từ Marketing gửi Dev:</strong> 
+          Trang Lĩnh vực là nơi thể hiện năng lực công nghệ lõi:
+          <br>• <em>Ưu điểm ở Demo:</em> Có khối "Quy trình triển khai 4 bước chuẩn mực" (Khảo sát -> Kiến trúc -> Lập trình -> Bàn giao vận hành) rất thực tế, giúp đối tác hình dung cách Teknova làm việc.
+          <br>• <em>Điểm sáng ở Design:</em> 4 trụ cột công nghệ (Smart EMR, Phát triển phần mềm theo yêu cầu, AI & Big Data Cloud, Phân phối thiết bị) được phân tách thành các khối lớn riêng biệt với badge công nghệ và thông số cam kết rất rõ ràng.
+          <br><span class="text-indigo-700 font-medium">👉 Đề xuất kết hợp:</span> Sử dụng bố cục phân tách 4 trụ cột của bản Design, giữ lại khối quy trình 4 bước của bản Demo, bổ sung thêm các cam kết chuẩn Bộ Y tế (Thông tư 46, QĐ 3176, Cấp độ 3 ATTT).
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div class="rounded-xl border border-slate-200 overflow-hidden bg-white shadow-xs">
+            <div class="bg-slate-100 px-4 py-2 border-b border-slate-200 text-xs font-bold text-slate-700">BẢN DEMO (/linh-vuc-hoat-dong)</div>
+            <div class="p-3 bg-slate-900 flex justify-center">
+              <img src="./linh_vuc_dev_header.png" alt="Dev Lĩnh Vực" class="rounded-lg w-full h-auto object-cover img-zoom shadow border border-slate-800">
+            </div>
+          </div>
+          <div class="rounded-xl border border-slate-200 overflow-hidden bg-white shadow-xs">
+            <div class="bg-slate-100 px-4 py-2 border-b border-slate-200 text-xs font-bold text-slate-700">BẢN THIẾT KẾ (lichvuc.html)</div>
+            <div class="p-3 bg-slate-900 flex justify-center">
+              <img src="./linh_vuc_design_header.png" alt="Design Lĩnh Vực" class="rounded-lg w-full h-auto object-cover img-zoom shadow border border-slate-800">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SUBPAGE 3: DỰ ÁN TIÊU BIỂU (RẤT QUAN TRỌNG) -->
+      <div class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-200 mb-10">
+        <div class="flex items-center justify-between mb-4 pb-3 border-b border-slate-100">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-indigo-600">Trang Con 03 • ĐIỂM SÁNG SHOWCASE</span>
+            <h3 class="text-lg font-bold text-slate-900 mt-0.5">Trang Dự Án Tiêu Biểu (Danh Mục 22 Hợp Đồng Nghiệm Thu)</h3>
+          </div>
+          <span class="text-xs text-slate-400 font-mono">/du-an vs ./duan.html</span>
+        </div>
+
+        <div class="text-xs text-slate-600 mb-6 bg-slate-50 p-4 rounded-xl border border-slate-200/60 leading-relaxed">
+          <strong>Nhận xét từ Marketing gửi Dev:</strong> 
+          Đây là trang quan trọng nhất khi đi đấu thầu và chào giải pháp:
+          <br>• <em>Ưu điểm ở Demo:</em> Có bộ lọc tab (Filter: Tất cả, Y tế, Dân số, Zalo OA...) và hiển thị các chỉ số đo lường như <em>"100% không dùng bệnh án giấy", "Giảm 65% thời gian xử lý"</em> rất chuyên nghiệp.
+          <br>• <em>Điểm sáng ở Design:</em> Nạp đầy đủ tên chính xác của các đơn vị thực tế (BV Phổi, TTYT Ngũ Hành Sơn, TTYT Liên Chiểu, TTYT Cẩm Lệ, BV Phụ sản - Nhi, Cloud ACE, PVcomBank, MobiFone) và ghi rõ năm triển khai (2024 - 2025).
+          <br><span class="text-indigo-700 font-medium">👉 Đề xuất kết hợp:</span> Giữ nguyên bộ lọc tab thông minh của Demo, nạp danh sách 22 hợp đồng thực tế từ bản Design (đã khớp 1-1 với HSNL 2026), và hỗ trợ tính năng click mở Drawer xem chi tiết bài toán - giải pháp - kết quả nghiệm thu.
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div class="rounded-xl border border-slate-200 overflow-hidden bg-white shadow-xs">
+            <div class="bg-slate-100 px-4 py-2 border-b border-slate-200 text-xs font-bold text-slate-700">BẢN DEMO (/du-an) - Có bộ lọc Tab</div>
+            <div class="p-3 bg-slate-900 flex justify-center">
+              <img src="./du_an_dev_header.png" alt="Dev Dự Án" class="rounded-lg w-full h-auto object-cover img-zoom shadow border border-slate-800">
+            </div>
+            <div class="p-3 bg-slate-900 flex justify-center border-t border-slate-800">
+              <img src="./du_an_dev_content.png" alt="Dev Dự Án Content" class="rounded-lg w-full h-auto object-cover img-zoom shadow border border-slate-800">
+            </div>
+          </div>
+          <div class="rounded-xl border border-slate-200 overflow-hidden bg-white shadow-xs">
+            <div class="bg-slate-100 px-4 py-2 border-b border-slate-200 text-xs font-bold text-slate-700">BẢN THIẾT KẾ (duan.html) - Đầy đủ đối tác thật</div>
+            <div class="p-3 bg-slate-900 flex justify-center">
+              <img src="./du_an_design_header.png" alt="Design Dự Án" class="rounded-lg w-full h-auto object-cover img-zoom shadow border border-slate-800">
+            </div>
+            <div class="p-3 bg-slate-900 flex justify-center border-t border-slate-800">
+              <img src="./du_an_design_content.png" alt="Design Dự Án Content" class="rounded-lg w-full h-auto object-cover img-zoom shadow border border-slate-800">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SUBPAGE 4: LIÊN HỆ -->
+      <div class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-200 mb-10">
+        <div class="flex items-center justify-between mb-4 pb-3 border-b border-slate-100">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-indigo-600">Trang Con 04</span>
+            <h3 class="text-lg font-bold text-slate-900 mt-0.5">Trang Liên Hệ & Tiếp Nhận Y Cầu Khảo Sát</h3>
+          </div>
+          <span class="text-xs text-slate-400 font-mono">/lien-he vs ./gioithieu.html#lien-he</span>
+        </div>
+
+        <div class="text-xs text-slate-600 mb-6 bg-slate-50 p-4 rounded-xl border border-slate-200/60 leading-relaxed">
+          <strong>Nhận xét từ Marketing gửi Dev:</strong> 
+          <br>• <em>Ưu điểm ở Demo:</em> Có hẳn một trang `/lien-he` riêng biệt với Form gửi yêu cầu đầy đủ các trường (Họ tên, SĐT, Email, Cơ quan/Đơn vị, Lĩnh vực quan tâm, Nội dung) và có hotline `0935 722 579`.
+          <br>• <em>Điểm sáng ở Design:</em> Form ở Design tích hợp sẵn cam kết phản hồi trong 24 giờ và phân loại rõ cơ sở y tế (Bệnh viện Hạng I, Hạng II, TTYT, Trạm y tế).
+          <br><span class="text-indigo-700 font-medium">👉 Đề xuất kết hợp:</span> Giữ nguyên trang `/lien-he` độc lập rất tiện lợi của Demo, bổ sung thêm địa chỉ văn phòng làm việc <strong>Tầng 3, 456 Nguyễn Hữu Thọ</strong> và thêm trường chọn phân hạng cơ sở y tế để tiện phân loại khách hàng B2G.
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div class="rounded-xl border border-slate-200 overflow-hidden bg-white shadow-xs">
+            <div class="bg-slate-100 px-4 py-2 border-b border-slate-200 text-xs font-bold text-slate-700">BẢN DEMO (/lien-he) - Form riêng biệt hoàn chỉnh</div>
+            <div class="p-3 bg-slate-900 flex justify-center">
+              <img src="./lien_he_dev_full.png" alt="Dev Liên Hệ" class="rounded-lg w-full h-auto object-cover img-zoom shadow border border-slate-800">
+            </div>
+          </div>
+          <div class="rounded-xl border border-slate-200 overflow-hidden bg-white shadow-xs">
+            <div class="bg-slate-100 px-4 py-2 border-b border-slate-200 text-xs font-bold text-slate-700">BẢN THIẾT KẾ (gioithieu.html#lien-he)</div>
+            <div class="p-3 bg-slate-900 flex justify-center">
+              <img src="./gioi_thieu_design_full.png" alt="Design Liên Hệ" class="rounded-lg w-full h-auto object-cover img-zoom shadow border border-slate-800">
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Footer Notice -->
+  <div class="max-w-7xl mx-auto mt-12 text-center text-xs text-slate-400 pb-12">
+    Báo cáo đối soát & đề xuất hoàn thiện giao diện • Bộ phận Marketing phối hợp cùng Ban Kỹ thuật TEKNOVA 2026
+  </div>
+
+</body>
+</html>

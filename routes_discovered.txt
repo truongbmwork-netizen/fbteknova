@@ -1,0 +1,74 @@
+=== DEV ROUTES ===
+Chuyển đến nội dung chính | href: #main-content | full: https://teknova-demo.netlify.app/#main-content
+TEKNOVA | href: / | full: https://teknova-demo.netlify.app/
+Trang chủ | href: / | full: https://teknova-demo.netlify.app/
+Giới thiệu | href: /gioi-thieu | full: https://teknova-demo.netlify.app/gioi-thieu
+Lĩnh vực hoạt động | href: /linh-vuc-hoat-dong | full: https://teknova-demo.netlify.app/linh-vuc-hoat-dong
+Dự án tiêu biểu | href: /du-an | full: https://teknova-demo.netlify.app/du-an
+Đội ngũ | href: /gioi-thieu#doi-ngu | full: https://teknova-demo.netlify.app/gioi-thieu#doi-ngu
+0935 722 579 | href: tel:0935722579 | full: tel:0935722579
+Trao đổi dự án | href: /lien-he | full: https://teknova-demo.netlify.app/lien-he
+Khám phá dự án | href: /du-an | full: https://teknova-demo.netlify.app/du-an
+Tải Profile PDF | href: /teknova-profile.pdf | full: https://teknova-demo.netlify.app/teknova-profile.pdf
+Xem toàn bộ lĩnh vực | href: /linh-vuc-hoat-dong | full: https://teknova-demo.netlify.app/linh-vuc-hoat-dong
+Tìm hiểu lĩnh vực | href: /linh-vuc-hoat-dong | full: https://teknova-demo.netlify.app/linh-vuc-hoat-dong
+Tìm hiểu lĩnh vực | href: /linh-vuc-hoat-dong | full: https://teknova-demo.netlify.app/linh-vuc-hoat-dong
+Tìm hiểu lĩnh vực | href: /linh-vuc-hoat-dong | full: https://teknova-demo.netlify.app/linh-vuc-hoat-dong
+Tìm hiểu lĩnh vực | href: /linh-vuc-hoat-dong | full: https://teknova-demo.netlify.app/linh-vuc-hoat-dong
+Tìm hiểu lĩnh vực | href: /linh-vuc-hoat-dong | full: https://teknova-demo.netlify.app/linh-vuc-hoat-dong
+Tìm hiểu lĩnh vực | href: /linh-vuc-hoat-dong | full: https://teknova-demo.netlify.app/linh-vuc-hoat-dong
+Xem lĩnh vực liên quan | href: /linh-vuc-hoat-dong | full: https://teknova-demo.netlify.app/linh-vuc-hoat-dong
+Xem lĩnh vực liên quan | href: /linh-vuc-hoat-dong | full: https://teknova-demo.netlify.app/linh-vuc-hoat-dong
+Xem lĩnh vực liên quan | href: /linh-vuc-hoat-dong | full: https://teknova-demo.netlify.app/linh-vuc-hoat-dong
+Xem lĩnh vực liên quan | href: /linh-vuc-hoat-dong | full: https://teknova-demo.netlify.app/linh-vuc-hoat-dong
+Xem lĩnh vực liên quan | href: /linh-vuc-hoat-dong | full: https://teknova-demo.netlify.app/linh-vuc-hoat-dong
+Xem tất cả dự án | href: /du-an | full: https://teknova-demo.netlify.app/du-an
+Đặt lịch tư vấn chuyên gia | href: /lien-he | full: https://teknova-demo.netlify.app/lien-he
+Tìm hiểu về TEKNOVA | href: /gioi-thieu | full: https://teknova-demo.netlify.app/gioi-thieu
+Xem năng lực đội ngũ | href: /gioi-thieu#doi-ngu | full: https://teknova-demo.netlify.app/gioi-thieu#doi-ngu
+Đăng Ký Tư Vấn Ngay | href: /lien-he | full: https://teknova-demo.netlify.app/lien-he
+0935 722 579 | href: tel:0935722579 | full: tel:0935722579
+Phần mềm theo yêu cầu | href: /linh-vuc-hoat-dong | full: https://teknova-demo.netlify.app/linh-vuc-hoat-dong
+Chuyển đổi số & Cloud | href: /linh-vuc-hoat-dong | full: https://teknova-demo.netlify.app/linh-vuc-hoat-dong
+Giải pháp Y tế Bệnh viện EMR | href: /linh-vuc-hoat-dong | full: https://teknova-demo.netlify.app/linh-vuc-hoat-dong
+Phân phối thiết bị CNTT | href: /linh-vuc-hoat-dong | full: https://teknova-demo.netlify.app/linh-vuc-hoat-dong
+Trang chủ | href: / | full: https://teknova-demo.netlify.app/
+Giới thiệu | href: /gioi-thieu | full: https://teknova-demo.netlify.app/gioi-thieu
+Lĩnh vực hoạt động | href: /linh-vuc-hoat-dong | full: https://teknova-demo.netlify.app/linh-vuc-hoat-dong
+Dự án tiêu biểu | href: /du-an | full: https://teknova-demo.netlify.app/du-an
+Sơ đồ tổ chức | href: /gioi-thieu#so-do-to-chuc | full: https://teknova-demo.netlify.app/gioi-thieu#so-do-to-chuc
+Đội ngũ chuyên gia | href: /gioi-thieu#doi-ngu | full: https://teknova-demo.netlify.app/gioi-thieu#doi-ngu
+Liên hệ | href: /lien-he | full: https://teknova-demo.netlify.app/lien-he
+0935 722 579 | href: tel:0935722579 | full: tel:0935722579
+Teknova0925@gmail.com | href: mailto:Teknova0925@gmail.com | full: mailto:Teknova0925@gmail.com
+
+=== DESIGN ROUTES ===
+ | href: index.html | full: https://teknova-topaz.vercel.app/index.html
+Trang chủ | href: # | full: https://teknova-topaz.vercel.app/#
+Giới thiệu | href: ./gioithieu.html | full: https://teknova-topaz.vercel.app/gioithieu.html
+Lĩnh vực hoạt động | href: ./lichvuc.html | full: https://teknova-topaz.vercel.app/lichvuc.html
+Dự án tiêu biểu | href: ./duan.html | full: https://teknova-topaz.vercel.app/duan.html
+Liên hệ | href: ./gioithieu.html#lien-he | full: https://teknova-topaz.vercel.app/gioithieu.html#lien-he
+download Tải Profile PDF | href: ./Teknova_Profile_2026.pdf | full: https://teknova-topaz.vercel.app/Teknova_Profile_2026.pdf
+Tư vấn dự án arrow_forward | href: ./gioithieu.html#lien-he | full: https://teknova-topaz.vercel.app/gioithieu.html#lien-he
+Trang chủ | href: # | full: https://teknova-topaz.vercel.app/#
+Giới thiệu | href: ./gioithieu.html | full: https://teknova-topaz.vercel.app/gioithieu.html
+Lĩnh vực hoạt động | href: ./lichvuc.html | full: https://teknova-topaz.vercel.app/lichvuc.html
+Dự án tiêu biểu | href: ./duan.html | full: https://teknova-topaz.vercel.app/duan.html
+Liên hệ khảo sát | href: ./gioithieu.html#lien-he | full: https://teknova-topaz.vercel.app/gioithieu.html#lien-he
+Khám phá dự án arrow_forward | href: ./duan.html | full: https://teknova-topaz.vercel.app/duan.html
+description Tải Profile PDF | href: # | full: https://teknova-topaz.vercel.app/#
+Xem tất cả dự án chevron_right | href: ./duan.html | full: https://teknova-topaz.vercel.app/duan.html
+Đặt lịch tư vấn chuyên gia arrow_forward | href: ./gioithieu.html#lien-he | full: https://teknova-topaz.vercel.app/gioithieu.html#lien-he
+Đăng Ký Tư Vấn Ngay arrow_forward | href: ./gioithieu.html#lien-he | full: https://teknova-topaz.vercel.app/gioithieu.html#lien-he
+call Hotline: 0935 722 579 | href: tel:0935722579 | full: tel:0935722579
+Phần mềm theo yêu cầu | href: ./lichvuc.html | full: https://teknova-topaz.vercel.app/lichvuc.html
+Chuyển đổi số & Cloud | href: ./lichvuc.html | full: https://teknova-topaz.vercel.app/lichvuc.html
+Giải pháp Y tế Bệnh viện EMR | href: ./lichvuc.html | full: https://teknova-topaz.vercel.app/lichvuc.html
+Phân phối thiết bị CNTT | href: ./lichvuc.html | full: https://teknova-topaz.vercel.app/lichvuc.html
+Về TEKNOVA | href: ./gioithieu.html | full: https://teknova-topaz.vercel.app/gioithieu.html
+Dự án tiêu biểu | href: ./duan.html | full: https://teknova-topaz.vercel.app/duan.html
+Đội ngũ chuyên gia | href: ./gioithieu.html#doi-ngu | full: https://teknova-topaz.vercel.app/gioithieu.html#doi-ngu
+Sơ đồ tổ chức | href: ./gioithieu.html | full: https://teknova-topaz.vercel.app/gioithieu.html
+Điều khoản sử dụng | href: # | full: https://teknova-topaz.vercel.app/#
+Chính sách bảo mật | href: # | full: https://teknova-topaz.vercel.app/#

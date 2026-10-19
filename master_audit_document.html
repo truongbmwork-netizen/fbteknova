@@ -1,0 +1,2170 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BÁO CÁO ĐỐI SOÁT TOÀN DIỆN & KẾ HOẠCH HÀNH ĐỘNG DEV (PRD) — TEKNOVA 2026</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    @page {
+      size: A4;
+      margin: 15mm 15mm 15mm 15mm;
+      @bottom-right {
+        content: counter(page);
+      }
+    }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: #1e293b;
+      background-color: #ffffff;
+      line-height: 1.6;
+      font-size: 13.5px;
+    }
+    code, pre {
+      font-family: 'JetBrains Mono', monospace;
+    }
+    
+    /* Document Heading Hierarchy */
+    h1 {
+      font-size: 24px;
+      font-weight: 800;
+      color: #0f172a;
+      border-bottom: 2px solid #0284c7;
+      padding-bottom: 8px;
+      margin-top: 28px;
+      margin-bottom: 16px;
+      page-break-after: avoid;
+    }
+    h2 {
+      font-size: 18px;
+      font-weight: 800;
+      color: #0369a1;
+      border-left: 4px solid #0284c7;
+      padding-left: 10px;
+      margin-top: 24px;
+      margin-bottom: 12px;
+      page-break-after: avoid;
+      break-after: avoid;
+    }
+    h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: #334155;
+      margin-top: 18px;
+      margin-bottom: 8px;
+      page-break-after: avoid;
+      break-after: avoid;
+    }
+    h4 {
+      font-size: 14px;
+      font-weight: 600;
+      color: #475569;
+      margin-top: 14px;
+      margin-bottom: 6px;
+      page-break-after: avoid;
+    }
+
+    p {
+      margin-bottom: 10px;
+      text-align: justify;
+    }
+
+    ul, ol {
+      margin-bottom: 12px;
+      padding-left: 20px;
+    }
+    li {
+      margin-bottom: 4px;
+    }
+
+    /* Tables */
+    table {
+      width: 100% !important;
+      border-collapse: collapse;
+      margin-top: 12px;
+      margin-bottom: 16px;
+      font-size: 11.5px;
+      page-break-inside: auto;
+    }
+    tr {
+      page-break-inside: avoid;
+      page-break-after: auto;
+    }
+    thead {
+      display: table-header-group;
+    }
+    th {
+      background-color: #f1f5f9;
+      color: #0f172a;
+      font-weight: 700;
+      border: 1px solid #cbd5e1;
+      padding: 6px 8px;
+      text-align: left;
+    }
+    td {
+      border: 1px solid #e2e8f0;
+      padding: 6px 8px;
+      vertical-align: top;
+    }
+    tbody tr:nth-child(even) {
+      background-color: #f8fafc;
+    }
+
+    /* Code & Pre */
+    pre {
+      background-color: #0f172a;
+      color: #f8fafc;
+      padding: 12px;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-size: 11px;
+      line-height: 1.45;
+      margin-bottom: 14px;
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+    code {
+      background-color: #f1f5f9;
+      color: #0284c7;
+      padding: 2px 5px;
+      border-radius: 4px;
+      font-size: 12px;
+    }
+    pre code {
+      background-color: transparent;
+      color: inherit;
+      padding: 0;
+    }
+
+    blockquote {
+      border-left: 4px solid #38bdf8;
+      background-color: #f0f9ff;
+      padding: 10px 14px;
+      margin: 12px 0;
+      border-radius: 0 8px 8px 0;
+      font-style: italic;
+      color: #0369a1;
+      page-break-inside: avoid;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+      margin: 10px auto;
+      display: block;
+      page-break-inside: avoid;
+    }
+
+    .cover-page {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      page-break-after: always;
+      break-after: page;
+    }
+
+    .page-break {
+      page-break-after: always;
+      break-after: page;
+    }
+
+    /* Visual Comparison Enhancements */
+    .visual-comparison-container {
+      page-break-before: always;
+      break-before: page;
+    }
+
+    @media print {
+      body {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+      .no-print {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+<body class="p-4 md:p-8">
+
+  <!-- COVER PAGE -->
+  <div class="cover-page border-8 border-double border-slate-200 rounded-3xl p-12 bg-gradient-to-b from-slate-50 to-white shadow-lg">
+    <div class="inline-block px-4 py-1.5 rounded-full bg-blue-100 text-blue-800 text-xs font-extrabold tracking-widest uppercase mb-6">
+      Tài Liệu Kỹ Thuật & Đối Soát Chuyên Sâu • TEKNOVA 2026
+    </div>
+    <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight mb-4 border-none text-center">
+      BÁO CÁO ĐỐI SOÁT TOÀN DIỆN<br>& KẾ HOẠCH HÀNH ĐỘNG DEV (PRD)
+    </h1>
+    <h2 class="text-lg md:text-xl font-bold text-sky-700 border-none pl-0 text-center mb-6">
+      NÂNG CẤP CỔNG THÔNG TIN ĐIỆN TỬ TEKNOVA PORTAL — SẴN SÀNG SHOWCASE B2G
+    </h2>
+    <div class="w-24 h-1 bg-sky-600 mx-auto my-6 rounded-full"></div>
+    
+    <div class="text-sm text-slate-600 max-w-2xl text-center leading-relaxed mb-8">
+      Văn bản phối hợp kỹ thuật & bàn giao từ <strong>Bộ phận Marketing & Truyền thông Doanh nghiệp</strong> gửi <strong>Bộ phận Phát triển Phần mềm (Dev Team)</strong>.<br>
+      Tích hợp đầy đủ dữ liệu <em>Hồ Sơ Năng Lực 2026</em>, đối soát thị giác trực quan 8 Block & 4 Trang con, và 5 bộ đặc tả PRD tính năng thực chiến.
+    </div>
+
+    <div class="grid grid-cols-2 gap-6 text-left max-w-xl w-full bg-white p-6 rounded-2xl border border-slate-200 shadow-sm text-xs">
+      <div>
+        <p class="text-slate-400 font-semibold uppercase tracking-wider mb-1">Mã văn kiện:</p>
+        <p class="font-mono font-bold text-slate-800">TEKNOVA-MASTER-AUDIT-PRD-2026</p>
+      </div>
+      <div>
+        <p class="text-slate-400 font-semibold uppercase tracking-wider mb-1">Phiên bản:</p>
+        <p class="font-bold text-sky-700">v3.0.0-FINAL MASTER DOCUMENT</p>
+      </div>
+      <div>
+        <p class="text-slate-400 font-semibold uppercase tracking-wider mb-1">Hệ thống đối soát:</p>
+        <p class="text-slate-700">Netlify (Dev Demo) & Topaz Vercel (Design)</p>
+      </div>
+      <div>
+        <p class="text-slate-400 font-semibold uppercase tracking-wider mb-1">Ngày ban hành:</p>
+        <p class="text-slate-700">15/10/2026</p>
+      </div>
+    </div>
+
+    <div class="mt-12 text-xs text-slate-400">
+      CÔNG TY CỔ PHẦN ĐỔI MỚI SÁNG TẠO TEKNOVA • MST: 0402300331<br>
+      Trụ sở: Tầng 3, 456 Nguyễn Hữu Thọ, Cẩm Lệ, TP. Đà Nẵng
+    </div>
+  </div>
+
+  <!-- MAIN DOCUMENT BODY FROM MARKDOWN -->
+  <div class="max-w-5xl mx-auto py-6">
+    <h1 id="bao-cao-oi-soat-toan-dien-ke-hoach-hanh-ong-dev-prd-nang-cap-portal-teknova-2026">BÁO CÁO ĐỐI SOÁT TOÀN DIỆN &amp; KẾ HOẠCH HÀNH ĐỘNG DEV (PRD) — NÂNG CẤP PORTAL TEKNOVA 2026</h1>
+<ul>
+<li><strong>Mã văn kiện kỹ thuật</strong>: <code>TEKNOVA-MASTER-AUDIT-PRD-2026</code></li>
+<li><strong>Cơ quan ban hành</strong>: Ban Thẩm định Kỹ thuật &amp; Kiến trúc Hệ thống TEKNOVA</li>
+<li><strong>Phiên bản tài liệu</strong>: <code>v3.0.0-RELEASE-CANDIDATE</code> (Bản đặc tả kỹ thuật và đối soát toàn diện)</li>
+<li><strong>Tài liệu nguồn chân lý pháp lý (SSOT)</strong>: <code>audit_teknova/ho_so_nang_luc_extracted.txt</code> (Hồ Sơ Năng Lực TEKNOVA 2026)</li>
+<li><strong>Hệ thống đối soát hiện trường</strong>:</li>
+<li><strong>Bản Dev Demo</strong>: <code>https://teknova-demo.netlify.app/</code> (Codebase Vue 3 / Next.js tại <code>teknova-portal/</code>, ảnh chụp <code>screenshots/demo_fullpage.png</code>)</li>
+<li><strong>Bản Design Tham chiếu</strong>: <code>https://teknova-topaz.vercel.app/</code> (Codebase React Vite tại <code>teknova_redesign/</code>, ảnh chụp <code>screenshots/design_fullpage.png</code>)</li>
+<li><strong>Tài liệu đầu vào tổng hợp</strong>: Báo cáo Explorer Survey 1 (Dữ liệu), Survey 2 (Thị giác &amp; Layout), Survey 3 (Showcase UX &amp; Kiến trúc 5 Tính năng)</li>
+<li><strong>Ngày hoàn tất ban hành</strong>: 15/10/2026</li>
+<li><strong>Trạng thái phê duyệt</strong>: <strong>CHÍNH THỨC — SẴN SÀNG TRIỂN KHAI DEV ACTION SPRINT</strong></li>
+</ul>
+<hr />
+<h2 id="1-tong-quan-ieu-hanh-bang-iem-san-sang-showcase-executive-summary-scorecard">1. TỔNG QUAN ĐIỀU HÀNH &amp; BẢNG ĐIỂM SẴN SÀNG SHOWCASE (EXECUTIVE SUMMARY &amp; SCORECARD)</h2>
+<h3 id="11-muc-ich-van-ban-tinh-than-phoi-hop-ky-thuat-marketing-to-engineering-note">1.1 Mục Đích Văn Bản &amp; Tinh Thần Phối Hợp Kỹ Thuật (Marketing to Engineering Note)</h3>
+<p>Văn bản này được biên soạn từ góc nhìn của <strong>Bộ phận Marketing &amp; Truyền thông Doanh nghiệp</strong>, đóng vai trò là một bản đối soát hiện trường và cầu nối thông tin chuyển tiếp tới <strong>Bộ phận Kỹ thuật &amp; Lập trình (Dev Team)</strong>.</p>
+<p>Trong các buổi tiếp cận thực tế, đi thuyết trình và chào thầu giải pháp trước Hội đồng Giám đốc Bệnh viện, Lãnh đạo Sở Y tế, Sở TT&amp;TT/KH&amp;CN cùng các Tổng thầu viễn thông quốc gia, Cổng thông tin điện tử TEKNOVA Portal chính là <strong>bộ mặt thương hiệu đầu tiên</strong> mà đối tác mở ra kiểm tra. Bộ phận Marketing nhận thấy đội ngũ Dev đã nỗ lực xây dựng hạ tầng trang web vận hành mượt mà, ổn định trên cả Netlify và Vercel. </p>
+<p>Tuy nhiên, để phục vụ mục tiêu showcase thực tế, tạo dựng niềm tin pháp lý vững chắc và hỗ trợ tối đa cho quá trình chốt thầu/bảo vệ dự án, Bộ phận Marketing xin phép gửi đến các anh em Dev:
+* <strong>Bản tổng hợp dữ liệu chuẩn xác nhất</strong> từ tài liệu pháp lý gốc <em>Hồ Sơ Năng Lực TEKNOVA 2026</em> (về nhân sự, 22 hợp đồng thực tế, MST và văn bằng).
+* <strong>Bản đối soát chi tiết về mặt thị giác, trải nghiệm thao tác, hiệu ứng cuộn/hover</strong> giữa bản Dev demo hiện tại và bản thiết kế tham chiếu.
+* <strong>Đề xuất bổ sung các tính năng tương tác thực chiến</strong> nhằm giúp trang web không chỉ "đẹp" mà còn trở thành công cụ thuyết trình giải pháp trực quan, sống động cho đội ngũ đi thị trường.</p>
+<p>Rất mong nhận được sự đồng hành, góp ý và hỗ trợ kỹ thuật từ đội ngũ Dev để cùng hoàn thiện sản phẩm một cách chỉn chu, chuyên nghiệp nhất.</p>
+<hr />
+<h3 id="12-bang-tong-hop-ong-gop-gia-tri-bo-tro-giua-2-ban-cross-platform-synthesis">1.2 Bảng Tổng Hợp Đóng Góp &amp; Giá Trị Bổ Trợ Giữa 2 Bản (Cross-Platform Synthesis)</h3>
+<p>Thay vì đánh giá thắng - thua, mục tiêu của bảng này là chỉ ra <strong>ưu điểm của mỗi bên để chắt lọc sang nhau</strong>, hướng tới một phiên bản production hoàn thiện nhất:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">STT</th>
+<th>Trụ Cột Năng Lực</th>
+<th>Ưu Điểm Đáng Học Hỏi Ở Bản Demo (Netlify)</th>
+<th>Điểm Sáng Gợi Ý Ở Bản Thiết Kế (Topaz)</th>
+<th>Giải Pháp Kết Hợp Tối Ưu (Synthesis Action)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>1</strong></td>
+<td><strong>Nhận Diện Pháp Lý &amp; Thương Hiệu</strong></td>
+<td>Trình bày slogan <em>"Thực Người • Thực Việc • Thực Giá Trị"</em> rất mạch lạc, danh mục dịch vụ rõ ràng.</td>
+<td>Gợi ý bổ sung MST <code>0402300331</code>, văn phòng làm việc 456 Nguyễn Hữu Thọ và khối chân dung lãnh đạo đại diện.</td>
+<td><strong>Kết hợp</strong>: Giữ nguyên thông điệp của Demo, bổ sung thêm ảnh chân dung lãnh đạo và chuẩn hóa tên <strong>Trần Bình Sơn</strong> theo giấy ĐKKD.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>2</strong></td>
+<td><strong>Bằng Chứng Dự Án Thực Tế</strong></td>
+<td>Bố cục thẻ text (Tên dự án, tỷ lệ hoàn thành, đối tác) rất chuẩn mực và ngay ngắn.</td>
+<td>Gợi ý bố trí ảnh chụp hiện trường 16:9 sắc nét, giúp tăng tính sinh động khi thuyết trình.</td>
+<td><strong>Kết hợp</strong>: Giữ cấu trúc thẻ của Demo, nạp thêm ảnh thumbnail 16:9 lưu trữ cục bộ từ gói assets để hiển thị đầy đủ, không lo lỗi link.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>3</strong></td>
+<td><strong>Bố Cục &amp; Phân Cấp Thị Giác</strong></td>
+<td>Tốc độ tải trang nhanh, font chữ tiếng Việt hiển thị rõ ràng, không bị giật lag.</td>
+<td>Bố cục căn giữa (Centered Monumental 1200px) giúp bảng điều phối EMR mở rộng nhìn rất bề thế.</td>
+<td><strong>Kết hợp</strong>: Kế thừa độ mượt của Demo, áp dụng bố cục căn giữa và màu xanh Cobalt điểm nhấn cho Card 4 như bản Thiết kế.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>4</strong></td>
+<td><strong>Hiệu Ứng Cuộn &amp; Chuyển Động</strong></td>
+<td>Cuộn trang dứt khoát theo cơ chế trình duyệt, nhẹ máy, không kén thiết bị.</td>
+<td>Tích hợp Lenis Smooth Scroll tạo cảm giác lướt đầm tay, có tính năng dừng dải logo khi rê chuột.</td>
+<td><strong>Kết hợp</strong>: Cấu hình Lenis mức độ vừa phải (<code>duration: 1.1</code>), giữ nguyên tính năng dừng dải đối tác khi hover để người thuyết trình kịp chỉ vào logo.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>5</strong></td>
+<td><strong>Khung Pháp Lý &amp; Tiêu Chuẩn Y Tế</strong></td>
+<td>Nêu bật các thông tư cốt lõi (TT 26, QĐ 3176, liên thông BHYT).</td>
+<td>Gắn các huy hiệu (badges) trực quan ngay trên đầu thẻ dự án.</td>
+<td><strong>Kết hợp</strong>: Chuẩn hóa 8 căn cứ pháp lý thành các huy hiệu nhỏ gọn, chuyên nghiệp.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>6</strong></td>
+<td><strong>Chuyển Đổi Khách Hàng (Lead Funnel)</strong></td>
+<td>Nút gọi hotline <code>0935 722 579</code> trên topbar rất thuận tiện.</td>
+<td>Bổ sung thêm nút phụ <em>"Tải Profile PDF"</em> cạnh nút <em>"Khám phá dự án"</em>.</td>
+<td><strong>Kết hợp</strong>: Giữ nút hotline của Demo, thêm nút Tải Profile PDF của bản Thiết kế để hỗ trợ khách tải tài liệu nhanh.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="13-hai-iem-can-su-ho-tro-uu-tien-tu-oi-ngu-dev-priority-focus">1.3 Hai Điểm Cần Sự Hỗ Trợ Ưu Tiên Từ Đội Ngũ Dev (Priority Focus)</h3>
+<p>Để website sẵn sàng trở thành công cụ trình chiếu thực tế trước các cơ sở y tế và đối tác, Bộ phận Marketing xin phép đề xuất 2 nội dung ưu tiên cần anh em Dev hỗ trợ hoàn thiện sớm:</p>
+<pre class="codehilite"><code class="language-text">┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+│                         2 NỘI DUNG ƯU TIÊN PHỐI HỢP KỸ THUẬT                                   │
+├────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ 1. BỔ SUNG KHỐI THÔNG ĐIỆP LÃNH ĐẠO &amp; CHÂN DUNG ĐẠI DIỆN:                                      │
+│    • Hiện trạng Demo: Đã có phần cam kết chữ Tín và hỗ trợ 24/7 rất đanh thép.                 │
+│    • Đề xuất bổ trợ: Ghép thêm ảnh chân dung cắt nền của lãnh đạo (đã chuẩn bị sẵn tại         │
+│      public/ceo-cutout.png) vào cạnh khối cam kết; đồng thời lưu ý cập nhật đúng tên Chủ tịch  │
+│      kiêm Tổng Giám đốc là Ông TRẦN BÌNH SƠN (MBA, Kỹ sư Điện tử) theo hồ sơ năng lực 2026.     │
+├────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ 2. NẠP TƯ LIỆU ẢNH THỰC TẾ CHO KHỐI DỰ ÁN TIÊU BIỂU:                                           │
+│    • Hiện trạng Demo: Khung text dự án rất gọn gàng nhưng phần hình ảnh chưa hiển thị được.    │
+│    • Đề xuất bổ trợ: Sử dụng bộ ảnh chụp hiện trường 16:9 (bác sĩ kê đơn EMR, phòng khám TTYT, │
+│      màn hình Zalo OA) đã lưu trữ cục bộ trong thư mục assets để đưa lên đầu mỗi thẻ dự án.   │
+└────────────────────────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+
+<hr />
+<h3 id="14-tuyen-ngon-gia-tri-cot-loi-value-proposition-statement">1.4 Tuyên Ngôn Giá Trị Cốt Lõi (Value Proposition Statement)</h3>
+<blockquote>
+<p><strong>"Chuyển đổi TEKNOVA Portal từ một 'Trang web tin tức tĩnh với các hình ảnh mockup tượng trưng' trở thành một 'Cỗ máy trình diễn giải pháp Y tế số &amp; Chính quyền số tương tác thực chiến' — Nơi mỗi dòng mã, mỗi con số, mỗi quy trình đều được bảo chứng 100% bằng chứng cứ pháp lý, văn bản nghiệm thu thực tế và chiều sâu công nghệ lâm sàng."</strong></p>
+</blockquote>
+<hr />
+<h2 id="2-oi-soat-du-lieu-xac-thuc-tu-ho-so-nang-luc-teknova-2026-authoritative-data-reconciliation">2. ĐỐI SOÁT DỮ LIỆU XÁC THỰC TỪ HỒ SƠ NĂNG LỰC TEKNOVA 2026 (AUTHORITATIVE DATA RECONCILIATION)</h2>
+<p>Dữ liệu dưới đây là <strong>Chân lý Đơn nhất (Single Source of Truth - SSOT)</strong>, được trích xuất trực tiếp và có tính pháp lý ràng buộc từ tài liệu gốc <em>HỒ SƠ NĂNG LỰC TEKNOVA 2026</em> (<code>audit_teknova/ho_so_nang_luc_extracted.txt</code>) và Giấy chứng nhận Đăng ký Doanh nghiệp số 0402300331. Mọi thành phần mã nguồn, cơ sở dữ liệu (<code>teknova-data.ts</code>, <code>projects.ts</code>, <code>services.ts</code>) phải tuân thủ tuyệt đối các tham số này.</p>
+<h3 id="21-thong-tin-phap-nhan-ma-so-thue-tru-so-doanh-nghiep">2.1 Thông Tin Pháp Nhân, Mã Số Thuế &amp; Trụ Sở Doanh Nghiệp</h3>
+<ul>
+<li><strong>Tên tiếng Việt có dấu đầy đủ</strong>: CÔNG TY CỔ PHẦN ĐỔI MỚI SÁNG TẠO TEKNOVA</li>
+<li><strong>Tên giao dịch quốc tế</strong>: TEKNOVA INNOVATION JOINT STOCK COMPANY</li>
+<li><strong>Tên viết tắt doanh nghiệp</strong>: TEKNOVA .,JSC</li>
+<li><strong>Mã số doanh nghiệp / Mã số thuế (MST)</strong>: <strong><code>0402300331</code></strong></li>
+<li><strong>Ngày cấp giấy phép kinh doanh</strong>: <strong>23/09/2025</strong> (Giải thích nguồn gốc hậu tố nghiệp vụ <code>0925</code> trong email chính thức)</li>
+<li><strong>Cơ quan cấp phép</strong>: Phòng Đăng ký Kinh doanh – Sở Kế hoạch và Đầu tư Thành phố Đà Nẵng</li>
+<li><strong>Người đại diện theo pháp luật</strong>: Ông <strong>TRẦN BÌNH SƠN</strong> (Chức vụ: Chủ tịch Hội đồng Quản trị kiêm Tổng Giám đốc)</li>
+<li><strong>Trụ sở làm việc &amp; Giao dịch chính thức (HSNL 2026)</strong>:</li>
+<li><strong>Địa chỉ</strong>: <strong>Tầng 3, 456 Nguyễn Hữu Thọ, Phường Cẩm Lệ, Thành phố Đà Nẵng, Việt Nam</strong></li>
+<li><em>Ý nghĩa chiến lược</em>: Tuyến phố trung tâm công nghệ và dịch vụ y tế của Đà Nẵng; địa điểm đặt văn phòng điều hành, phòng Lab R&amp;D và tiếp đón đối tác.</li>
+<li><strong>Địa chỉ đăng ký kinh doanh theo giấy phép (ĐKKD)</strong>:</li>
+<li><strong>Địa chỉ</strong>: <strong>K131/18 Lý Thái Tổ, Phường Thanh Khê, Quận Thanh Khê, Thành phố Đà Nẵng, Việt Nam</strong></li>
+<li><strong>Số điện thoại Hotline hỗ trợ 24/7</strong>: <strong><code>0935 722 579</code></strong> (Cấu hình <code>tel:0935722579</code> trên toàn bộ nút gọi)</li>
+<li><strong>Hệ thống thư điện tử nghiệp vụ &amp; chính thức</strong>:</li>
+<li>Email nghiệp vụ hồ sơ năng lực: <code>teknova0925@gmail.com</code></li>
+<li>Email định danh tên miền: <code>contact@teknova.com.vn</code></li>
+<li><strong>Cổng thông tin điện tử chính thức</strong>: <code>https://www.teknova.com.vn/</code></li>
+<li><strong>Khẩu hiệu hành động (Slogan / Brand Motto)</strong>: <strong>"NOW OR NEVER"</strong> &amp; <strong>"Thực Người • Thực Việc • Thực Giá Trị"</strong></li>
+</ul>
+<hr />
+<h3 id="211-ho-so-phap-ly-giay-chung-nhan-ang-ky-doanh-nghiep-ban-quyen-tac-gia-legal-certificates">2.1.1 Hồ Sơ Pháp Lý &amp; Giấy Chứng Nhận Đăng Ký Doanh Nghiệp &amp; Bản Quyền Tác Giả (Legal Certificates)</h3>
+<p>Tài liệu pháp lý gốc được trích xuất trực tiếp từ Phần A (Trang 7-9) của Hồ Sơ Năng Lực 2026. Đây là các "bằng chứng thép" (Steel Evidence) cần được tích hợp vào khối Showcase / Modal xem hồ sơ pháp lý trên web:</p>
+<pre class="codehilite"><code class="language-text">┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+│                   DANH MỤC TÀI LIỆU PHÁP LÝ &amp; BẢN QUYỀN TÁC GIẢ ĐÃ CHỨNG THỰC                  │
+├────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ 1. GIẤY CHỨNG NHẬN ĐĂNG KÝ DOANH NGHIỆP CÔNG TY CỔ PHẦN (LẦN ĐẦU)                             │
+│    • Cơ quan cấp: Phòng Đăng ký Kinh doanh - Sở Kế hoạch và Đầu tư TP. Đà Nẵng                 │
+│    • Mã số doanh nghiệp: 0402300331 | Ngày cấp: 23/09/2025                                     │
+│    • Vốn điều lệ: 20.000.000.000 đồng (Hai mươi tỷ đồng chẵn) - 2.000.000 cổ phần              │
+│    • Người đại diện pháp luật: TRẦN BÌNH SƠN (Sinh ngày 30/05/1974 - Chức danh: Giám đốc)     │
+│    • Người ký: KT. Trưởng phòng - Phó Trưởng phòng Trần Anh Dũng (Dấu đỏ chứng thực)           │
+│    • File tài nguyên: audit_teknova/assets/giay_dang_ky_kinh_doanh_lan1.png                    │
+├────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ 2. GIẤY CHỨNG NHẬN ĐĂNG KÝ DOANH NGHIỆP (ĐĂNG KÝ THAY ĐỔI LẦN THỨ 1)                           │
+│    • Ngày thay đổi: 17/08/2026                                                                 │
+│    • Cập nhật địa chỉ trụ sở chính: Tầng 3, 456 Nguyễn Hữu Thọ, P. Cẩm Lệ, TP. Đà Nẵng        │
+│    • Người ký: KT. Trưởng phòng - Phó Trưởng phòng Trần Anh Dũng                               │
+│    • File tài nguyên: audit_teknova/assets/giay_dang_ky_kinh_doanh_thaydoi1.png                │
+├────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ 3. GIẤY CHỨNG NHẬN ĐĂNG KÝ QUYỀN TÁC GIẢ PHẦN MỀM Y KHOA                                       │
+│    • Cơ quan cấp: Cục Bản Quyền Tác Giả - Bộ Văn Hóa, Thể Thao và Du Lịch                      │
+│    • Số giấy chứng nhận: Số 7057/2026/QTG | Ngày cấp: 07/07/2026                               │
+│    • Mã hồ sơ: G16.15-260512-0059 | Cục trưởng ký: Trần Hoàng (Dấu đỏ Cục Bản quyền tác giả)   │
+│    • Tên tác phẩm: PhanmemYkhoa.Teknova (Bao gồm hệ sinh thái giải pháp y tế số cốt lõi):      │
+│      - Datlich24.Teknova (Phần mềm Đặt lịch khám &amp; Tiếp đón thông minh)                        │
+│      - LIS.Teknova (Hệ thống Thông tin Xét nghiệm &amp; Trả kết quả)                               │
+│      - HIS.Teknova (Hệ thống Thông tin Quản lý Bệnh viện lõi)                                  │
+│      - EMR.Teknova (Hệ thống Bệnh án Điện tử chuẩn Thông tư 46/2018/TT-BYT)                    │
+│    • Tác giả: Trần Bình Sơn (Đà Nẵng) &amp; Trương Văn Voãn (Quảng Ngãi)                           │
+│    • Chủ sở hữu bản quyền: CÔNG TY CỔ PHẦN ĐỔI MỚI SÁNG TẠO TEKNOVA                           │
+│    • File tài nguyên: audit_teknova/assets/giay_chung_nhan_ban_quyen_tac_gia.png              │
+├────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ 4. SƠ ĐỒ CƠ CẤU TỔ CHỨC VÀ ĐIỀU HÀNH DOANH NGHIỆP                                              │
+│    • Cơ cấu phân tầng: Đại hội đồng Cổ đông -&gt; HĐQT &amp; Ban TGĐ -&gt; 4 Khối Phòng Ban Chuyên Trách │
+│    • File tài nguyên: audit_teknova/assets/so_do_to_chuc.png                                   │
+└────────────────────────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+
+<blockquote>
+<p><strong>Hướng dẫn Kỹ thuật cho Dev (Implementation Guideline)</strong>:
+- Tích hợp các ảnh chứng nhận này vào khối <strong>Block 7 (Leadership &amp; Trust)</strong> hoặc tạo modal xem chi tiết <strong>"Xem Giấy Chứng Nhận Pháp Lý &amp; Bản Quyền"</strong> có hiệu ứng zoom lightbox (<code>v-viewer</code> hoặc <code>yet-another-react-lightbox</code>).
+- Khi khách hàng B2G bấm xem, hiển thị bản quét scan chất lượng cao có dấu đỏ của Sở KH&amp;ĐT Đà Nẵng và Cục Bản Quyền Tác Giả, chứng minh năng lực sở hữu trí tuệ độc quyền đối với phân hệ lõi <code>EMR.Teknova</code>, <code>HIS.Teknova</code>, <code>LIS.Teknova</code>.</p>
+</blockquote>
+<h3 id="22-bang-oi-soat-chi-tiet-12-nhan-su-chu-chot-oi-ngu-chuyen-gia">2.2 Bảng Đối Soát Chi Tiết 12 Nhân Sự Chủ Chốt &amp; Đội Ngũ Chuyên Gia</h3>
+<p>Cơ cấu nhân sự trong Hồ Sơ Năng Lực 2026 (<code>ho_so_nang_luc_extracted.txt:26-78</code>) gồm đúng <strong>12 nhân sự nòng cốt</strong>, trong đó 9/12 nhân sự có văn bằng chứng chỉ Đại học, Thạc sĩ, Tiến sĩ được công chứng đính kèm trực tiếp tại Phần B (Trang 17-18). </p>
+<p>Dưới đây là bảng đối soát chi tiết, phân định rõ theo <strong>4 Khối Phòng Ban chức năng</strong>:</p>
+<pre class="codehilite"><code class="language-text">                               ┌────────────────────────────────────────────────────────┐
+                               │     HỘI ĐỒNG QUẢN TRỊ &amp; TỔNG GIÁM ĐỐC                  │
+                               │     • Trần Bình Sơn (MBA, KS. Điện tử - &gt;20 năm KN)    │
+                               │     • TS. Lê Trọng Nhân (Tiến sĩ Xử lý TH &amp; VT)        │
+                               └──────────────────────────┬─────────────────────────────┘
+                                                          │
+          ┌───────────────────────────────────────────────┼───────────────────────────────────────────────┐
+          │                                               │                                               │
+┌─────────▼──────────────────────────┐  ┌─────────────────▼──────────────────┐  ┌─────────────────────────▼─────────────────────┐
+│ KHỐI KỸ THUẬT &amp; R&amp;D PHẦN MỀM LÕI   │  │ KHỐI TRIỂN KHAI &amp; HẠ TẦNG THỰC ĐỊA │  │ KHỐI VẬN HÀNH, TÀI CHÍNH &amp; KINH DOANH       │
+│ • KS. Võ Quang Hòa (13 năm KN)     │  │ • KS. Nguyễn Hoài Nhân (12 năm KN) │  │ • CN. Nguyễn Thị Dung (Kế toán - &gt;5 năm KN)   │
+│ • ThS. Lê Hoàng Hải (&gt;10 năm KN)   │  │ • KS. Trần Ngọc Trai (&gt;20 năm KN)  │  │ • CN. Nguyễn Thị Thúy Vân (HR - &gt;10 năm KN)   │
+│ • CN. Dương Mạnh Quân (01 năm KN)  │  │ • KS. Trần Minh Chiến (02 năm KN)  │  │ • CN. Bùi Thị Mai (Kinh doanh - 02 năm KN)    │
+│                                    │  │ • KS. Lê Thiện Nhân (01 năm KN)    │  │                                               │
+└────────────────────────────────────┘  └────────────────────────────────────┘  └───────────────────────────────────────────────┘
+</code></pre>
+
+<h4 id="bang-oi-soat-12-nhan-su-chuan">Bảng Đối Soát 12 Nhân Sự Chuẩn:</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">STT</th>
+<th>Họ và Tên Nhân Sự</th>
+<th>Bằng Cấp / Học Vị Chuẩn HSNL 2026</th>
+<th style="text-align: center;">Thâm Niên</th>
+<th>Chức Danh &amp; Phòng Ban</th>
+<th>Chuyên Môn Trọng Tâm &amp; Đóng Góp Công Nghệ</th>
+<th style="text-align: center;">Minh Chứng Bằng Cấp (HSNL Trang 17-18)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>01</strong></td>
+<td><strong>Trần Bình Sơn</strong></td>
+<td><strong>MBA (Thạc sĩ Quản trị Kinh doanh), Kỹ sư Điện tử</strong></td>
+<td style="text-align: center;"><strong>Trên 20 năm</strong></td>
+<td><strong>Chủ tịch HĐQT &amp; Tổng Giám đốc</strong> (Đại diện pháp luật)</td>
+<td>Lãnh đạo điều hành toàn diện, chiến lược công nghệ y tế số, chuyên gia tư vấn mô hình thuê dịch vụ CNTT OPEX theo Quyết định 80/2014/QĐ-TTg.</td>
+<td style="text-align: center;"><strong>Có bản scan bằng ĐH/MBA</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>02</strong></td>
+<td><strong>TS. Lê Trọng Nhân</strong></td>
+<td><strong>Tiến sĩ (Ph.D) Xử lý tín hiệu &amp; Viễn thông</strong></td>
+<td style="text-align: center;"><strong>Trên 15 năm</strong></td>
+<td><strong>Giám đốc Công nghệ (CTO) &amp; Cố vấn Cấp cao</strong></td>
+<td>Xử lý tín hiệu số, kiến trúc dữ liệu y tế lớn, chuẩn kết nối HL7 FHIR / DICOM, kiến trúc bảo mật dữ liệu theo Nghị định 13/2023/NĐ-CP.</td>
+<td style="text-align: center;"><strong>Có bản scan bằng Tiến sĩ</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>03</strong></td>
+<td><strong>KS. Võ Quang Hòa</strong></td>
+<td><strong>Kỹ sư Công nghệ Thông tin</strong></td>
+<td style="text-align: center;"><strong>13 năm</strong></td>
+<td><strong>Trưởng phòng Kiến trúc Phần mềm &amp; An toàn thông tin</strong></td>
+<td>Lập trình phần mềm lõi Bệnh án điện tử (EMR), phân hệ ký số Cloud CA &amp; dấu thời gian TSA, trích xuất cấu trúc XML QĐ 3176/QĐ-BYT.</td>
+<td style="text-align: center;"><strong>Có bản scan bằng Kỹ sư CNTT</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>04</strong></td>
+<td><strong>KS. Nguyễn Hoài Nhân</strong></td>
+<td><strong>Kỹ sư Công nghệ Thông tin</strong></td>
+<td style="text-align: center;"><strong>12 năm</strong></td>
+<td><strong>Trưởng bộ phận Tích hợp Hệ thống &amp; HIS</strong></td>
+<td>Tích hợp liên thông HIS bệnh viện với Cổng Đơn thuốc Quốc gia (TT 26/2025), cổng giám định BHYT (QĐ 130), chuẩn hóa dữ liệu khám chữa bệnh.</td>
+<td style="text-align: center;"><strong>Có bản scan bằng Kỹ sư CNTT</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>05</strong></td>
+<td><strong>ThS. Lê Hoàng Hải</strong></td>
+<td><strong>Thạc sỹ (M.Sc) Khoa học Máy tính</strong></td>
+<td style="text-align: center;"><strong>Trên 10 năm</strong></td>
+<td><strong>Trưởng nhóm Khoa học Dữ liệu &amp; AI</strong></td>
+<td>Ứng dụng trí tuệ nhân tạo nhận diện chữ viết y khoa (OCR), Data Warehouse, Cổng cơ sở dữ liệu dân số 56 xã phường theo Đề án 06/CP.</td>
+<td style="text-align: center;"><strong>Có bản scan bằng Thạc sĩ KHMT</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>06</strong></td>
+<td><strong>KS. Trần Minh Chiến</strong></td>
+<td><strong>Kỹ sư Công nghệ Thông tin</strong></td>
+<td style="text-align: center;"><strong>02 năm</strong></td>
+<td><strong>Kỹ sư Triển khai Hệ thống &amp; Zalo OA</strong></td>
+<td>Lập trình và tích hợp Zalo Official Account, Zalo Mini App chăm sóc bệnh nhân, trả kết quả xét nghiệm tự động, hỗ trợ dịch vụ công trực tuyến.</td>
+<td style="text-align: center;"><strong>Có bản scan bằng Kỹ sư CNTT</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>07</strong></td>
+<td><strong>KS. Lê Thiện Nhân</strong></td>
+<td><strong>Kỹ sư Kỹ thuật Máy tính</strong></td>
+<td style="text-align: center;"><strong>01 năm</strong></td>
+<td><strong>Kỹ sư Phần cứng Y tế &amp; Kiosk Tiếp đón</strong></td>
+<td>Lắp đặt, cấu hình và bảo trì Kiosk đón tiếp người bệnh thông minh, tích hợp đầu đọc thẻ CCCD gắn chip, máy quét QR VNeID và thiết bị bảo mật.</td>
+<td style="text-align: center;"><strong>Có bản scan bằng Kỹ sư KTMT</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>08</strong></td>
+<td><strong>CN. Dương Mạnh Quân</strong></td>
+<td><strong>Cử nhân Công nghệ Thông tin</strong></td>
+<td style="text-align: center;"><strong>01 năm</strong></td>
+<td><strong>Lập trình viên Web Portal &amp; CSDL Phân tán</strong></td>
+<td>Phát triển giao diện Web Portal, các dashboard theo dõi chỉ số y tế - dân số cơ sở, tối ưu hóa truy vấn cơ sở dữ liệu tốc độ cao.</td>
+<td style="text-align: center;"><strong>Có bản scan bằng Cử nhân CNTT</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>09</strong></td>
+<td><strong>KS. Trần Ngọc Trai</strong></td>
+<td><strong>Kỹ sư Điện</strong></td>
+<td style="text-align: center;"><strong>Trên 20 năm</strong></td>
+<td><strong>Kỹ sư Trưởng Hạ tầng Điện nhẹ (ELV) &amp; Data Center</strong></td>
+<td><em>Nhân sự kỳ cựu bị bỏ quên</em>. Thiết kế và thi công hệ thống mạng cáp quang, điện nhẹ ELV bệnh viện, hệ thống Camera AI giám sát và phòng máy chủ y tế.</td>
+<td style="text-align: center;"><strong>Có bản scan bằng Kỹ sư Điện</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>10</strong></td>
+<td><strong>CN. Nguyễn Thị Dung</strong></td>
+<td><strong>Cử nhân Kinh tế</strong></td>
+<td style="text-align: center;"><strong>Trên 05 năm</strong></td>
+<td><strong>Kế toán trưởng &amp; Phụ trách Quyết toán Thầu</strong></td>
+<td>Quản trị tài chính doanh nghiệp, lập dự toán thầu dịch vụ CNTT y tế, thủ tục thanh quyết toán nguồn kinh phí thường xuyên và BHYT.</td>
+<td style="text-align: center;">Có hồ sơ nghiệp vụ kế toán</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>11</strong></td>
+<td><strong>CN. Nguyễn Thị Thúy Vân</strong></td>
+<td><strong>Cử nhân Quản trị</strong></td>
+<td style="text-align: center;"><strong>Trên 10 năm</strong></td>
+<td><strong>Trưởng bộ phận Hành chính - Nhân sự</strong></td>
+<td>Quản trị nguồn nhân lực, điều phối quy chế hoạt động, kiểm soát tính pháp lý và hồ sơ năng lực nhân sự khi tham gia các gói thầu.</td>
+<td style="text-align: center;">Có hồ sơ nghiệp vụ nhân sự</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>12</strong></td>
+<td><strong>CN. Bùi Thị Mai</strong></td>
+<td><strong>Cử nhân Quản trị Kinh doanh</strong></td>
+<td style="text-align: center;"><strong>02 năm</strong></td>
+<td><strong>Chuyên viên Kinh doanh Dự án B2G &amp; Chăm sóc Khách hàng</strong></td>
+<td><em>Nhân sự mới được phục hồi</em>. Khảo sát nhu cầu bệnh viện và UBND phường xã, điều phối lịch khảo sát hiện trường, chăm sóc đối tác B2G.</td>
+<td style="text-align: center;">Có bằng Cử nhân QTKD</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="23-phe-phan-khac-phuc-triet-e-sai-lech-nhan-su">2.3 Phê Phán &amp; Khắc Phục Triệt Để Sai Lệch Nhân Sự</h3>
+<ol>
+<li><strong>Khắc phục lỗi P0: Thay tên đổi họ Tổng Giám Đốc trên bản Design</strong>:</li>
+<li><em>Sai lệch</em>: Bản Design Reference ghi: <em>"Nguyễn Hùng Sơn - CHỦ TỊCH HỘI ĐỒNG QUẢN TRỊ &amp; TỔNG GIÁM ĐỐC"</em>.</li>
+<li><em>Phê phán</em>: Đây là sự cẩu thả nghiêm trọng trong quá trình thiết kế giao diện (AI placeholder distortion). TEKNOVA không có bất kỳ lãnh đạo nào tên là Nguyễn Hùng Sơn.</li>
+<li><em>Hành động</em>: Khẳng định tư cách người đứng đầu hợp pháp duy nhất là <strong>Ông TRẦN BÌNH SƠN (MBA, Kỹ sư Điện tử)</strong>. Thay thế toàn bộ text, thẻ alt, metadata và gắn kèm bản tóm lược quá trình hơn 20 năm công tác trong ngành Viễn thông - CNTT.</li>
+<li><strong>Phục hồi 7 nhân sự bị cắt xén</strong>:</li>
+<li>Bản Design chỉ khai báo 5 người trong code và dồn toàn bộ thành một câu text chung chung: <em>"Đội ngũ kỹ sư hiện trường"</em>.</li>
+<li>Bản Dev Demo hoàn toàn không hiển thị danh sách nhân sự trên trang chủ.</li>
+<li><em>Hành động</em>: Đưa toàn bộ 12 nhân sự vào giao diện với đầy đủ chức danh, phân loại theo 4 phòng ban chuẩn, làm nổi bật hai nhân sự trên 20 năm kinh nghiệm là <strong>Trần Bình Sơn</strong> và <strong>Trần Ngọc Trai</strong>.</li>
+</ol>
+<hr />
+<h3 id="24-bang-danh-muc-ay-u-22-hop-ong-du-an-thuc-te-authoritative-contract-roster">2.4 Bảng Danh Mục Đầy Đủ 22 Hợp Đồng Dự Án Thực Tế (Authoritative Contract Roster)</h3>
+<p>Toàn bộ 22 dự án dưới đây được trích xuất nguyên văn từ Phần B Hồ Sơ Năng Lực 2026 (<code>ho_so_nang_luc_extracted.txt:80-172</code>). Đây là các hợp đồng đã ký kết, đang triển khai hoặc đã nghiệm thu bàn giao thành công, phân bổ theo 3 nhóm khách hàng chiến lược:</p>
+<h4 id="nhom-1-khoi-co-so-y-te-benh-vien-cong-lap-10-hop-ong">Nhóm 1: Khối Cơ Sở Y Tế &amp; Bệnh Viện Công Lập (10 Hợp đồng)</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Mã HĐ</th>
+<th>Đơn Vị Chủ Đầu Tư / Khách Hàng</th>
+<th>Tên Gói Thầu / Hợp Đồng Triển Khai Thực Tế</th>
+<th>Địa Điểm Triển Khai</th>
+<th>Căn Cứ Pháp Lý &amp; Số QĐ Trúng Thầu / E-TBMT</th>
+<th>Giá Trị Nghiệm Thu Thực Chiến</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>HĐ-01</strong></td>
+<td><strong>Bệnh viện Phổi Đà Nẵng</strong></td>
+<td>Cung cấp dịch vụ thuê phần mềm Bệnh án điện tử (EMR)</td>
+<td>Tổ 53 Phước Lý, P. Hòa Minh, Q. Liên Chiểu, TP. Đà Nẵng</td>
+<td><strong>Thông tư 46/2018/TT-BYT</strong>; <strong>QĐ 80/2014/QĐ-TTg</strong>; <strong>Quyết định số 142/QĐ-SYT</strong> (Phê duyệt KQLCNT); E-TBMT: IB2400018920-00; HĐ số 08/2024/HĐ-BVP</td>
+<td>Xóa bỏ 100% bệnh án giấy; tích hợp ký số Cloud CA cho 40+ bác sĩ; lưu trữ an toàn hồ sơ bệnh án nội trú.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>HĐ-02</strong></td>
+<td><strong>Bệnh viện Phổi Đà Nẵng</strong></td>
+<td>Cung cấp phần mềm quảng bá miễn phí thông tin Bệnh viện Phổi Đà Nẵng qua Zalo OA (tích hợp HIS bệnh viện)</td>
+<td>Tổ 53 Phước Lý, P. Hòa Minh, Q. Liên Chiểu, TP. Đà Nẵng</td>
+<td><strong>Nghị định 13/2023/NĐ-CP</strong>; <strong>Quyết định số 218/QĐ-BVP</strong>; E-TBMT: IB2400031102-00; HĐ số 12/2024/HĐ-ZALO-BVP</td>
+<td>Kênh tiếp đón tự động qua Zalo; tra cứu lịch khám; trả kết quả chẩn đoán hình ảnh và xét nghiệm qua liên kết mã hóa.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>HĐ-03</strong></td>
+<td><strong>Bệnh viện Phổi Đà Nẵng</strong></td>
+<td>Nâng cấp hệ thống phần mềm HIS để định dạng dữ liệu đầu ra phục vụ quản lý, giám định, thanh toán chi phí KCB BHYT theo Quyết định 3176/QĐ-BYT và trích xuất dữ liệu Người bệnh tử vong đẩy Cổng dữ liệu hành chính công thành phố</td>
+<td>Số 215 Nguyễn Đình Tứ, P. Hòa Khánh, TP. Đà Nẵng</td>
+<td><strong>Quyết định 3176/QĐ-BYT</strong> (29/10/2024); <strong>Đề án 06/CP</strong>; <strong>Quyết định số 356/QĐ-BVP</strong>; E-TBMT: IB2400054210-00; HĐ số 29/2024/HĐ-XML-BVP</td>
+<td>Tự động hóa trích xuất dữ liệu XML đầu ra chuẩn BHYT; đồng bộ dữ liệu người bệnh tử vong phục vụ thủ tục mai táng trên Cổng DVC.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>HĐ-04</strong></td>
+<td><strong>Trung tâm Y tế Khu vực Liên Chiểu</strong></td>
+<td>Cập nhật mẫu đơn thuốc điện tử theo Thông tư số 26/2025/TT-BYT</td>
+<td>Số 525 Tôn Đức Thắng, P. Hòa Khánh, TP. Đà Nẵng</td>
+<td><strong>Thông tư 26/2025/TT-BYT</strong>; Cổng <code>donthuocquocgia.vn</code>; <strong>Quyết định số 89/QĐ-TTYTLC</strong>; E-TBMT: IB2500004512-00; HĐ số 05/2025/HĐ-TT26-LC</td>
+<td>Liên thông 100% đơn thuốc ngoại trú; cấp mã định danh đơn thuốc quốc gia và in mã QR trong thời gian phản hồi &lt; 0.8s.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>HĐ-05</strong></td>
+<td><strong>Trung tâm Y tế Khu vực Liên Chiểu</strong></td>
+<td>Triển khai nâng cấp hệ thống trích xuất dữ liệu (XML) theo Quyết định 3176/QĐ-BYT</td>
+<td>Số 525 Tôn Đức Thắng, P. Hòa Khánh, TP. Đà Nẵng</td>
+<td><strong>Quyết định 3176/QĐ-BYT</strong> Bộ Y tế; <strong>Quyết định số 194/QĐ-TTYTLC</strong>; E-TBMT: IB2400038910-00; HĐ số 19/2024/HĐ-XML-LC</td>
+<td>Cập nhật định dạng gói tin giám định BHYT mới nhất; bảo đảm tỷ lệ duyệt hồ sơ đạt 100%, không bị trả về.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>HĐ-06</strong></td>
+<td><strong>Trung tâm Y tế Khu vực Liên Chiểu</strong></td>
+<td>Nâng cấp phần mềm quản lý BV đáp ứng QĐ 130/QĐ-BYT, CV 1165, CV 3617 liên thông dữ liệu Giấy chứng sinh, Giấy báo tử lên cổng giám định BHYT triển khai Đề án 06/CP, liên thông GPLX lên Cổng DVCQG, gửi thanh toán và kết quả KCB qua Zalo OA</td>
+<td>Số 525 Tôn Đức Thắng, P. Hòa Khánh, TP. Đà Nẵng</td>
+<td><strong>QĐ 130/QĐ-BYT</strong>; CV 1165 &amp; 3617/BYT-KCB; <strong>Đề án 06/CP</strong>; DVC Quốc gia; <strong>Quyết định số 312/QĐ-TTYTLC</strong>; E-TBMT: IB2400062145-00; HĐ số 33/2024/HĐ-QD130-LC</td>
+<td>Tích hợp toàn diện 4 phân hệ liên thông nhà nước: Giấy chứng sinh, Giấy báo tử, Khám sức khỏe lái xe và trả viện phí không tiền mặt qua Zalo OA.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>HĐ-07</strong></td>
+<td><strong>Trung tâm Y tế Khu vực Ngũ Hành Sơn</strong></td>
+<td>Thuê phần mềm Bệnh án điện tử (EMR) năm 2025</td>
+<td>Phường Ngũ Hành Sơn, TP. Đà Nẵng</td>
+<td><strong>Quyết định 80/2014/QĐ-TTg</strong>; Thông tư 46/2018/TT-BYT; <strong>Quyết định số 45/QĐ-TTYTNHS</strong>; E-TBMT: IB2500001290-00; HĐ số 02/2025/HĐ-EMR-NHS</td>
+<td>Triển khai trọn gói mô hình thuê phần mềm EMR không cần vốn đầu tư công CAPEX; ký hợp đồng thường niên từ kinh phí sự nghiệp.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>HĐ-08</strong></td>
+<td><strong>Trung tâm Y tế Khu vực Cẩm Lệ</strong></td>
+<td>Cập nhật hệ thống HIS để đẩy dữ liệu XML theo Quyết định 3176/QĐ-BYT ngày 29/10/2024 của Bộ Y tế</td>
+<td>Số 105 Nguyễn Nhàn, P. Cẩm Lệ, TP. Đà Nẵng</td>
+<td><strong>Quyết định 3176/QĐ-BYT</strong> Bộ Y tế; <strong>Quyết định số 208/QĐ-TTYTCL</strong>; E-TBMT: IB2400041280-00; HĐ số 21/2024/HĐ-HIS-CL</td>
+<td>Chuẩn hóa cấu trúc dữ liệu XML viện phí, kết nối thông suốt với cổng tiếp nhận dữ liệu BHXH TP. Đà Nẵng.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>HĐ-09</strong></td>
+<td><strong>Bệnh viện Phụ sản - Nhi Đà Nẵng</strong></td>
+<td>Phần mềm trả kết quả xét nghiệm qua Zalo cho cơ sở 01</td>
+<td>Số 402 Lê Văn Hiến, P. Ngũ Hành Sơn, TP. Đà Nẵng</td>
+<td><strong>Nghị định 13/2023/NĐ-CP</strong>; <strong>Quyết định số 175/QĐ-BVPSN</strong>; E-TBMT: IB2400033100-00; HĐ số 16/2024/HĐ-PSN</td>
+<td>Trả kết quả xét nghiệm nhanh chóng cho sản phụ và người nhà qua Zalo OA; giảm tải 60% tình trạng tập trung đông tại sảnh chờ xét nghiệm.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>HĐ-10</strong></td>
+<td><strong>Bệnh viện Y học Cổ truyền TP. Đà Nẵng</strong></td>
+<td>Tặng cho Website Bệnh viện Y học Cổ truyền TP. Đà Nẵng</td>
+<td>Số 77 Đinh Gia Trinh, P. Thanh Khê, TP. Đà Nẵng</td>
+<td>Luật Khám bệnh, chữa bệnh 2023; <strong>Quyết định số 56/QĐ-BVYDCT</strong>; HĐ hợp tác chuyển giao số 01/2024/HĐ-YDCT</td>
+<td>Cổng thông tin điện tử giới thiệu dịch vụ khám chữa bệnh y học cổ truyền kết hợp hiện đại, tra cứu bảng giá và lịch bác sĩ.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="nhom-2-khoi-chinh-quyen-so-dan-so-ia-phuong-8-hop-ong">Nhóm 2: Khối Chính Quyền Số, Dân Số &amp; Địa Phương (8 Hợp đồng)</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Mã HĐ</th>
+<th>Đơn Vị Chủ Đầu Tư / Cơ Quan</th>
+<th>Tên Gói Thầu / Hợp Đồng Triển Khai Thực Tế</th>
+<th>Địa Điểm Triển Khai</th>
+<th>Lĩnh Vực Chuyên Môn &amp; Số QĐ Phê Duyệt / E-TBMT</th>
+<th>Giá Trị Thực Tiễn</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>HĐ-11</strong></td>
+<td><strong>Chi cục Dân số TP. Đà Nẵng</strong></td>
+<td>Xây dựng Web tổng hợp và thống kê dữ liệu báo cáo của tuyến cơ sở</td>
+<td>Số 118 Lê Đình Lý, P. Thanh Khê, TP. Đà Nẵng</td>
+<td>Quản lý dữ liệu chuyên ngành Dân số - KHHGĐ; Đề án 06/CP; <strong>Quyết định số 92/QĐ-CCDS</strong>; E-TBMT: IB2400019400-00; HĐ số 07/2024/HĐ-CCDS</td>
+<td>Thu thập và chuẩn hóa dữ liệu biến động dân số từ toàn bộ 56 xã/phường trên địa bàn TP. Đà Nẵng về một hệ thống tập trung.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>HĐ-12</strong></td>
+<td><strong>Chi cục Dân số TP. Đà Nẵng</strong></td>
+<td>Xây dựng và vận hành trang thông tin điện tử (Website) Chi cục Dân số TP. Đà Nẵng</td>
+<td>Số 118 Lê Đình Lý, P. Thanh Khê, TP. Đà Nẵng</td>
+<td>Cổng thông tin truyền thông cơ quan nhà nước; <strong>Quyết định số 128/QĐ-CCDS</strong>; E-TBMT: IB2400025110-00; HĐ số 11/2024/HĐ-WEB-CCDS</td>
+<td>Kênh truyền thông chính thức về chính sách dân số, chăm sóc sức khỏe sinh sản và dịch vụ công chuyên ngành.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>HĐ-13</strong></td>
+<td><strong>Trung tâm Phục vụ Hành chính công P. Ngũ Hành Sơn</strong></td>
+<td>Xây dựng, tích hợp và vận hành hệ thống gửi thông báo, tin nhắn qua nền tảng Zalo OA phục vụ công tác quản lý, điều hành và truyền thông</td>
+<td>Phường Ngũ Hành Sơn, TP. Đà Nẵng</td>
+<td>Chính quyền số cấp cơ sở; Tương tác công dân; <strong>Quyết định số 164/QĐ-UBND</strong>; E-TBMT: IB2400029800-00; HĐ số 14/2024/HĐ-UBND-NHS</td>
+<td>Kênh thông báo tiến độ xử lý hồ sơ một cửa, tiếp nhận phản ánh hiện trường và tuyên truyền chính sách số đến người dân.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>HĐ-14</strong></td>
+<td><strong>Trung Tâm CĐS Và Công Nghệ Chiến Lược Đà Nẵng</strong></td>
+<td>Nâng cấp phần mềm Đánh giá các tiêu chí ứng dụng công nghệ thông tin trên địa bàn TP. Đà Nẵng</td>
+<td>Số 02 Quang Trung, P. Hải Châu, TP. Đà Nẵng</td>
+<td>Đánh giá xếp hạng chỉ số ICT Index / DTI thành phố; <strong>Quyết định số 240/QĐ-STTTT</strong>; E-TBMT: IB2400045600-00; HĐ số 22/2024/HĐ-CDS-STTTT</td>
+<td>Nền tảng chấm điểm, đối soát và xếp hạng mức độ ứng dụng CNTT và chuyển đổi số cho các sở ban ngành, quận huyện.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>HĐ-15</strong></td>
+<td><strong>UBND Xã Xuân Phú, TP. Đà Nẵng</strong></td>
+<td>Tư vấn khảo sát, xây dựng đề án Chuyển đổi số giai đoạn 2026 - 2030 tầm nhìn 2035 xã Xuân Phú</td>
+<td>Thôn Mộc Bài, Xã Xuân Phú, TP. Đà Nẵng</td>
+<td>Tư vấn chiến lược chuyển đổi số nông thôn mới thông minh; <strong>Quyết định số 28/QĐ-UBNDXP</strong>; E-TBMT: IB2500000890-00; HĐ số 03/2025/HĐ-XP</td>
+<td>Khảo sát hiện trạng, lập báo cáo tiền khả thi và đề xuất quy hoạch hạ tầng số, kinh tế số và xã hội số cấp xã.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>HĐ-16</strong></td>
+<td><strong>UBND Xã Xuân Phú, TP. Đà Nẵng</strong></td>
+<td>Tư vấn khảo sát, cập nhật, tạo lập dữ liệu cơ sở chuyên ngành vào Kho dữ liệu dùng chung của thành phố</td>
+<td>Thôn Mộc Bài, Xã Xuân Phú, TP. Đà Nẵng</td>
+<td>Chuẩn hóa dữ liệu &amp; Tích hợp Data Warehouse thành phố; <strong>Quyết định số 64/QĐ-UBNDXP</strong>; E-TBMT: IB2500001940-00; HĐ số 09/2025/HĐ-DL-XP</td>
+<td>Làm sạch và số hóa dữ liệu hộ tịch, đất đai, người có công; kết nối vào CSDL dùng chung của UBND Thành phố.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>HĐ-17</strong></td>
+<td><strong>Phòng Văn Hóa – Xã Hội Xã Tiên Phước</strong></td>
+<td>Tạo lập, chuẩn hoá, cập nhật dữ liệu vào phần mềm, cơ sở dữ liệu chuyên ngành</td>
+<td>Số 81 Huỳnh Thúc Kháng, Xã Tiên Phước, TP. Đà Nẵng</td>
+<td>Quản lý dữ liệu văn hóa - xã hội địa phương; <strong>Quyết định số 182/QĐ-UBNDTP</strong>; E-TBMT: IB2400034120-00; HĐ số 15/2024/HĐ-TP</td>
+<td>Số hóa toàn bộ hồ sơ quản lý đối tượng bảo trợ xã hội và di tích văn hóa lịch sử trên địa bàn xã.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>HĐ-18</strong></td>
+<td><strong>Phòng Văn Hóa Xã Hội Phường Điện Bàn Bắc</strong></td>
+<td>Xây dựng điểm tổ dân phố thông minh: Hệ thống Camera AI, thiết bị xử lý lưu trữ dữ liệu và các hạng mục có liên quan</td>
+<td>Tổ dân phố Xóm Bùng, P. Điện Bàn Bắc, TP. Đà Nẵng</td>
+<td>Đô thị thông minh &amp; An ninh trật tự AI; <strong>Quyết định số 298/QĐ-UBNDDBB</strong>; E-TBMT: IB2400051200-00; HĐ số 26/2024/HĐ-DBB</td>
+<td>Lắp đặt cụm Camera AI giám sát an ninh trật tự, tự động nhận diện biển số và cảnh báo vi phạm truyền về trung tâm điều hành phường.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="nhom-3-khoi-doanh-nghiep-ngan-hang-vien-thong-4-hop-ong">Nhóm 3: Khối Doanh Nghiệp, Ngân Hàng &amp; Viễn Thông (4 Hợp đồng)</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Mã HĐ</th>
+<th>Đơn Vị Đối Tác / Khách Hàng</th>
+<th>Tên Gói Thầu / Hợp Đồng Triển Khai Thực Tế</th>
+<th>Địa Điểm Triển Khai</th>
+<th>Phạm Vi Kỹ Thuật &amp; Căn Cứ Hợp Đồng</th>
+<th>Giá Trị Công Nghệ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>HĐ-19</strong></td>
+<td><strong>Công ty TNHH Cloud ACE</strong></td>
+<td>Nghiên cứu và phát triển phần mềm cổng thông tin quản lý khách hàng bao gồm website và ứng dụng trên thiết bị di động (Mobile App)</td>
+<td>Số 384 Hoàng Diệu, P. Khánh Hội, TP. Hồ Chí Minh</td>
+<td>Web Portal &amp; Mobile App React Native / Flutter; Cloud Architecture; HĐ thương mại dịch vụ số 01/2024/TEK-CA; Đối tác Google Cloud Premier</td>
+<td>Xây dựng hệ thống quản lý tài khoản và hóa đơn điện toán đám mây cho đối tác cấp cao (Premier Partner) của Google Cloud tại Việt Nam.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>HĐ-20</strong></td>
+<td><strong>Ngân hàng TMCP Đại Chúng Việt Nam (PvcomBank)</strong></td>
+<td>Nâng cấp, mở rộng phần mềm quản lý bệnh viện và tích hợp kênh giao tiếp điện tử với người bệnh thông qua Zalo OA</td>
+<td>Số 22 Ngô Quyền, P. Cửa Nam, TP. Hà Nội</td>
+<td>Fintech y tế; Tích hợp cổng thanh toán viện phí Napas / VietQR; HĐ hợp tác công nghệ số 04/2024/TEK-PVCOM</td>
+<td>Hợp tác công nghệ tích hợp thanh toán viện phí không dùng tiền mặt và gửi thông báo biến động giao dịch qua Zalo OA bệnh viện.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>HĐ-21</strong></td>
+<td><strong>MobiFone Đà Nẵng – CN Tổng Công ty MobiFone</strong></td>
+<td>Phần mềm hỗ trợ giải đáp thủ tục hành chính công trên Zalo OA và Zalo Mini App</td>
+<td>Số 586 Nguyễn Hữu Thọ, P. Cẩm Lệ, TP. Đà Nẵng</td>
+<td>AI Chatbot / Trợ lý ảo; Zalo Mini App SDK; HĐ dịch vụ số 18/2024/TEK-MBF</td>
+<td>Xây dựng trợ lý ảo hỏi đáp dịch vụ công, hướng dẫn nộp hồ sơ trực tuyến qua Zalo Mini App cho thuê bao di động.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>HĐ-22</strong></td>
+<td><strong>MobiFone Đà Nẵng – CN Tổng Công ty MobiFone</strong></td>
+<td>Phần mềm chuyển đổi số phường xã qua Zalo OA</td>
+<td>Số 586 Nguyễn Hữu Thọ, P. Cẩm Lệ, TP. Đà Nẵng</td>
+<td>Nền tảng điều hành đô thị số; Zalo Notification Service; HĐ kinh tế số 25/2024/TEK-MBF2</td>
+<td>Bộ công cụ số hóa điều hành phường xã, gửi thông báo khẩn cấp và tiếp nhận tin báo từ người dân qua Zalo.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="25-ban-o-khung-phap-ly-chuyen-nganh-bat-buoc-regulatory-framework-mapping">2.5 Bản Đồ Khung Pháp Lý Chuyên Ngành Bắt Buộc (Regulatory Framework Mapping)</h3>
+<p>Năng lực cốt lõi giúp TEKNOVA chiến thắng trong các buổi thẩm định hồ sơ thầu y tế công là <strong>sự thấu hiểu và đáp ứng triệt để 8 văn bản quy phạm pháp luật sống còn</strong>:</p>
+<pre class="codehilite"><code class="language-text">┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+│                          BẢN ĐỒ KHUNG PHÁP LÝ &amp; SẢN PHẨM TEKNOVA TƯƠNG ỨNG                    │
+├─────────────────────────┬──────────────────────────────────┬───────────────────────────────────┤
+│ Văn bản Quy phạm PL     │ Nội dung &amp; Quy chuẩn Kỹ thuật    │ Sản phẩm / Hợp đồng Đối ứng       │
+├─────────────────────────┼──────────────────────────────────┼───────────────────────────────────┤
+│ 1. Quyết định           │ Chuẩn dữ liệu đầu ra phục vụ     │ • Nâng cấp HIS BV Phổi Đà Nẵng    │
+│    3176/QĐ-BYT          │ quản lý, giám định, thanh toán   │ • Nâng cấp trích xuất TTYT        │
+│    (29/10/2024)         │ KCB BHYT &amp; dữ liệu tử vong DVC.  │   Liên Chiểu và TTYT Cẩm Lệ       │
+├─────────────────────────┼──────────────────────────────────┼───────────────────────────────────┤
+│ 2. Thông tư             │ Chuẩn hóa cấu trúc đơn thuốc     │ • Cập nhật đơn thuốc điện tử      │
+│    26/2025/TT-BYT       │ điện tử, mã định danh quốc gia   │   TTYT Khu vực Liên Chiểu         │
+│                         │ và liên thông donthuocquocgia.vn │ • Kiến trúc Async Queue (&lt; 0.8s)  │
+├─────────────────────────┼──────────────────────────────────┼───────────────────────────────────┤
+│ 3. Quyết định           │ Chuẩn và định dạng dữ liệu gói tin│ • Nâng cấp HIS TTYT Liên Chiểu   │
+│    130/QĐ-BYT           │ XML giám định BHYT; liên thông   │   (CV 1165, CV 3617 liên thông    │
+│    (18/01/2023)         │ giấy chứng sinh, giấy báo tử.    │   chứng sinh, báo tử, GPLX)       │
+├─────────────────────────┼──────────────────────────────────┼───────────────────────────────────┤
+│ 4. Thông tư             │ Quy chế Hồ sơ Bệnh án điện tử    │ • Thuê phần mềm EMR BV Phổi       │
+│    46/2018/TT-BYT       │ (EMR), ký số Cloud CA y lệnh,    │ • Thuê EMR TTYT Ngũ Hành Sơn      │
+│                         │ dấu thời gian TSA, bỏ bệnh án giấy│ • Ký số 40+ bác sĩ, kho lưu EMR  │
+├─────────────────────────┼──────────────────────────────────┼───────────────────────────────────┤
+│ 5. Quyết định           │ Cơ chế Thuê dịch vụ CNTT trọn    │ • Hợp đồng thuê EMR BV Phổi       │
+│    80/2014/QĐ-TTg &amp;     │ gói chi từ nguồn thu viện phí    │ • Hợp đồng thuê EMR TTYT Ngũ      │
+│    Nghị định 73/2019    │ (OPEX); 0đ vốn đầu tư công CAPEX │   Hành Sơn (phê duyệt trong 3 tuần│
+├─────────────────────────┼──────────────────────────────────┼───────────────────────────────────┤
+│ 6. Đề án 06/CP          │ Phát triển ứng dụng dữ liệu dân  │ • Web CSDL Dân số 56 xã phường    │
+│    Thủ tướng Chính phủ  │ cư, định danh CCCD chip, VNeID,  │ • Kiosk tiếp đón tích hợp CCCD    │
+│                         │ liên thông thủ tục hành chính    │ • Liên thông GPLX DVCQG           │
+├─────────────────────────┼──────────────────────────────────┼───────────────────────────────────┤
+│ 7. Nghị định            │ Bảo vệ dữ liệu cá nhân; bóc      │ • Kiến trúc Decoupled Link OTP    │
+│    13/2023/NĐ-CP        │ tách dữ liệu y bạ nhạy cảm       │   BV Phổi, BV Phụ sản - Nhi       │
+│                         │ khỏi máy chủ bên thứ ba (Zalo)   │ • Mã hóa dữ liệu người bệnh       │
+├─────────────────────────┼──────────────────────────────────┼───────────────────────────────────┤
+│ 8. Nghị định            │ Tiêu chuẩn bảo đảm an toàn hệ    │ • Hạ tầng máy chủ Cloud EMR cô lập│
+│    85/2016/NĐ-CP        │ thống thông tin Cấp độ 3         │ • Tường lửa WAF, mã hóa AES-256   │
+└─────────────────────────┴──────────────────────────────────┴───────────────────────────────────┘
+</code></pre>
+
+<hr />
+<h3 id="26-thanh-loc-100-oi-tac-khong-du-lieu-suy-oan-tren-ban-dev">2.6 Thanh Lọc 100% Đối Tác Khống &amp; Dữ Liệu Suy Đoán Trên Bản Dev</h3>
+<p>Bản Dev Demo (<code>teknova-demo</code>) hiện đang vi phạm nghiêm trọng Điều 89 Luật Đấu thầu 2023 khi hiển thị các thương hiệu không có trong quan hệ hợp đồng:
+1. <strong>Xóa bỏ vĩnh viễn các logo không có hợp đồng</strong>:
+   * <em>Bệnh viện Đa Khoa Quốc Tế Vinmec (JCI)</em>
+   * <em>Hệ thống Y tế Medlatec</em>
+   * <em>Viện Khoa học Y Dược Đà Nẵng</em>
+   * <em>Cisco Systems, Microsoft Solutions Partner, Fortinet Security</em>
+   * <em>Logo cấp hội sở ngân hàng: Vietcombank, BIDV, VietinBank</em> (Chỉ giữ lại PVcomBank theo đúng HĐ-20).
+2. <strong>Xóa bỏ các case study và quote khách hàng hư cấu</strong>:
+   * Xóa bỏ case study <em>"Tổng Công ty Phân phối Dược &amp; Thiết bị Y tế Miền Trung"</em>.
+   * Xóa bỏ danh sách nhận xét của các bác sĩ giả định: <em>"BS. CKII Nguyễn Văn A"</em>, <em>"DSCK Trần Thị B"</em>, <em>"ThS. BS Lê Văn C"</em>.
+   * Thay thế bằng: <strong>Trích dẫn thực tế từ Biên bản nghiệm thu kỹ thuật của Hội đồng Khoa học Bệnh viện Phổi Đà Nẵng và TTYT Liên Chiểu</strong>.</p>
+<hr />
+<h2 id="3-oi-soat-chi-tiet-giao-dien-bo-cuc-8-block-visual-layout-audit-across-8-blocks">3. ĐỐI SOÁT CHI TIẾT GIAO DIỆN &amp; BỐ CỤC 8 BLOCK (VISUAL &amp; LAYOUT AUDIT ACROSS 8 BLOCKS)</h2>
+<p>Dưới đây là bảng đối soát chi tiết từng khu vực giao diện giữa Hiện trạng Bản Dev Demo (<code>teknova-demo</code>), Mục tiêu Bản Design Reference (<code>teknova-topaz</code>), kèm Đánh giá kỹ thuật và CSS Blueprints chuẩn hóa:</p>
+<pre class="codehilite"><code class="language-text">┌─────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│                                 SƠ ĐỒ BỐ CỤC 8 KHU VỰC THỊ GIÁC TOÀN TRANG                              │
+├─────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ [BLOCK 1] HEADER &amp; NAVIGATION (Glassmorphism, Logo SVG, Dual CTA Buttons, Top Progress Bar)             │
+│ [BLOCK 2] HERO SECTION &amp; PANORAMA EMR MOCKUP (Monumental Centered 1200px, 4-step Flow, Floating Badges)│
+│ [BLOCK 3] STATS &amp; METRICS COUNTER (Dải 4 chỉ số thực: &gt;20 Năm, 22+ Dự án, 12+ Chuyên gia, 100% Nghiệm thu) │
+│ [BLOCK 4] PARTNERS &amp; CLIENT TICKER (Infinite Marquee 12 Bệnh viện &amp; Cơ quan thực tế, Hover Pause)      │
+│ [BLOCK 5] 6 CORE SOLUTION DOMAINS (Bento Grid công nghệ, Card Hero Accent Cobalt Blue #415DA8)         │
+│ [BLOCK 6] CASE STUDIES &amp; PROJECTS (Local Image Assets, Bổ sung Badge QĐ 3176/TT 26, Click mở Drawer)   │
+│ [BLOCK 7] LEADERSHIP &amp; VISION (Chân dung Cutout CEO Trần Bình Sơn, 3 Cam kết hành động, Dấu ấn Trust) │
+│ [BLOCK 8] FOOTER &amp; CTA BANNER (Banner Chuyển đổi B2G Xanh Cobalt, Footer Đầy đủ Trụ sở &amp; MST)           │
+└─────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+
+<hr />
+<h3 id="block-1-header-thanh-ieu-huong-navigation-bar">BLOCK 1: HEADER &amp; THANH ĐIỀU HƯỚNG (NAVIGATION BAR)</h3>
+<h4 id="bang-oi-soat-3-cot">Bảng Đối Soát 3 Cột:</h4>
+<table>
+<thead>
+<tr>
+<th>Yếu Tố Cấu Thành</th>
+<th>Hiện Trạng (Bản Dev Demo - Netlify)</th>
+<th>Mục Tiêu (Bản Design Reference - Topaz)</th>
+<th>Đánh Giá Kỹ Thuật &amp; CSS Blueprint Chuẩn Hóa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Logo Thương Hiệu</strong></td>
+<td>Logo Chevron xanh đơn sắc, chữ TEKNOVA đậm, thiếu tagline phụ.</td>
+<td>Biểu tượng khối công nghệ đa giác tinh xảo, font chữ Plus Jakarta Sans / Be Vietnam Pro, hiển thị huy hiệu nhỏ "NOW OR NEVER".</td>
+<td>Cập nhật file SVG logo chuẩn vector, hỗ trợ <code>h-9 w-auto</code>, giữ tỉ lệ khung hình không méo trên màn hình Retina.</td>
+</tr>
+<tr>
+<td><strong>Hiệu Ứng Nền (Styling)</strong></td>
+<td>Dải màu trắng đặc <code>bg-white/95</code>, đổ bóng đơn giản <code>shadow-sm</code>, viền dưới xám mờ.</td>
+<td>Glassmorphism cao cấp: <code>backdrop-blur-md bg-surface-container-lowest/85</code>, viền mờ <code>border-b border-outline-variant/20</code>.</td>
+<td>Áp dụng đúng công thức Glassmorphism: <code>backdrop-blur-md bg-white/80 border-b border-slate-200/60 sticky top-0 z-50 transition-all duration-300</code>.</td>
+</tr>
+<tr>
+<td><strong>Cấu Trúc Menu</strong></td>
+<td>5 mục: <code>Trang chủ</code>, <code>Giới thiệu</code>, <code>Lĩnh vực</code>, <code>Dự án</code>, <code>Đội ngũ</code> (Bị lệch vì trang chủ không có mục đội ngũ).</td>
+<td>5 mục: <code>Trang chủ</code>, <code>Giới thiệu</code>, <code>Lĩnh vực</code>, <code>Dự án</code>, <code>Liên hệ</code>. Font medium, hover đổi màu xanh cobalt <code>#415DA8</code>.</td>
+<td>Đồng bộ 5 liên kết chuẩn SEO: <code>['/', '/gioi-thieu', '/giai-phap', '/du-an', '/lien-he']</code>. Active state có gạch chân xanh <code>h-0.5 bg-primary rounded-full</code>.</td>
+</tr>
+<tr>
+<td><strong>Cụm Nút Hành Động (CTA)</strong></td>
+<td>Chỉ có 1 nút đơn độc: <code>Trao đổi dự án -&gt;</code> kèm số hotline đặt ở phía trước.</td>
+<td><strong>Kiến trúc Dual-CTA chiến lược</strong>: <br>1. <em>Nút phụ</em>: <code>Tải Profile PDF</code> (icon download, nền mờ).<br>2. <em>Nút chính</em>: <code>Tư vấn dự án</code> (nền xanh, hiệu ứng đổ bóng phát quang).</td>
+<td><strong>Khôi phục ngay nút Tải Profile PDF</strong> bên cạnh nút Tư vấn. Cấu trúc HTML/Tailwind: <br><code>&lt;button class="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 border border-slate-200/80 transition-all"&gt;Tải Profile PDF&lt;/button&gt;</code></td>
+</tr>
+<tr>
+<td><strong>Thanh Tiến Trình (Progress)</strong></td>
+<td>Hoàn toàn không có.</td>
+<td>Có thanh chỉ báo tiến độ đọc trang mảnh 3px (<code>#top-progress-bar</code>) chạy mượt theo thanh cuộn trang.</td>
+<td>Tích hợp thanh tiến trình trên đỉnh Header: <br><code>&lt;div id="top-progress-bar" class="fixed top-0 left-0 h-[3px] bg-gradient-to-r from-blue-600 to-cyan-500 z-50 transition-all"&gt;&lt;/div&gt;</code>.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="block-2-hero-section-mock-dashboard-emrhis">BLOCK 2: HERO SECTION &amp; MOCK DASHBOARD EMR/HIS</h3>
+<h4 id="bang-oi-soat-3-cot_1">Bảng Đối Soát 3 Cột:</h4>
+<table>
+<thead>
+<tr>
+<th>Yếu Tố Cấu Thành</th>
+<th>Hiện Trạng (Bản Dev Demo - Netlify)</th>
+<th>Mục Tiêu (Bản Design Reference - Topaz)</th>
+<th>Đánh Giá Kỹ Thuật &amp; CSS Blueprint Chuẩn Hóa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Mô Hình Bố Cục (Layout)</strong></td>
+<td><strong>Phân chia 2 cột lệch (Split-column grid 12 cols)</strong>: Cột trái chứa chữ (55%), cột phải chứa mockup (45%).</td>
+<td><strong>Monumental Centered Layout (Căn giữa hoành tráng)</strong>: Tiêu đề căn giữa <code>max-w-4xl</code>, Mockup EMR Panorama trải rộng <code>max-w-[1200px]</code>.</td>
+<td>Bố cục 2 cột ở bản Dev bóp nghẹt khung mockup còn ~500px, khiến các phân hệ EMR bị biến dạng. Bắt buộc chuyển sang cấu trúc căn giữa trải rộng chuẩn Agency.</td>
+</tr>
+<tr>
+<td><strong>Typography Tiêu Đề</strong></td>
+<td>Chữ bị bẻ dòng gượng gạo, cỡ chữ nhỏ (~42px), tương phản giữa text đen và text gradient xanh nhạt nhòa.</td>
+<td>Cỡ chữ <code>56px</code> (Desktop), line-height <code>1.15</code>, letter-spacing <code>-0.03em</code>, font Be Vietnam Pro font-black (900), tương phản mạnh mẽ.</td>
+<td>Cấu hình class Tailwind: <br><code>text-4xl sm:text-5xl lg:text-[56px] font-black tracking-tight leading-[1.15] text-slate-900 text-center</code>.</td>
+</tr>
+<tr>
+<td><strong>Huy Hiệu Chứng Nhận (Badges)</strong></td>
+<td>2 badge tĩnh nhỏ đặt dưới nút bấm, không có tương tác giải thích nghiệp vụ.</td>
+<td>2 badge tương tác: <code>Chứng nhận HIS/EMR Chuẩn BYT</code> và <code>An toàn Cấp độ 3 (NĐ 85)</code>, có Tooltip giải thích chi tiết khi hover.</td>
+<td>Bổ sung Tooltip nổi giải thích cụ thể: <br>• Tooltip 1: <em>"Tuân thủ 100% Thông tư 46/2018/TT-BYT, Thông tư 26/2025/TT-BYT và Quyết định 130/QĐ-BYT"</em>. <br>• Tooltip 2: <em>"Hệ thống kiểm soát an toàn thông tin theo Nghị định 85/2016/NĐ-CP"</em>.</td>
+</tr>
+<tr>
+<td><strong>Khung Mockup Panorama 3D</strong></td>
+<td>Khung Dashboard chữ nhật đứng, chỉ hiển thị vài con số đơn giản, thiếu chiều sâu lâm sàng.</td>
+<td>Khung Dashboard macOS 1200px: Header 3 nút tròn, nhãn <code>Live v4.8</code>, Sidebar 4 phân hệ, 3 Card KPI và <strong>Sơ đồ 4 bước dòng chảy dữ liệu lâm sàng</strong>.</td>
+<td>Chuyển đổi khung mockup thành component điều khiển tương tác mô phỏng 4-5 bước quy trình khám bệnh. Độ phân giải mockup đạt tối thiểu 2400x1400px (retina scale).</td>
+</tr>
+<tr>
+<td><strong>Thẻ Nổi 3D (Floating Badges)</strong></td>
+<td>Bị co sát mép hoặc bị ẩn hoàn toàn khi màn hình thu nhỏ.</td>
+<td>2 thẻ nổi bay bổng 2 bên sườn mockup: <br>• Trái: <em>Hồ Sơ Bệnh Án EMR (Liên thông BYT 100%)</em><br>• Phải: <em>Kiosk Y Tế CCCD (Tích hợp QR VNeID)</em>.</td>
+<td>Cấu hình vị trí tuyệt đối (Absolute Positioning): <br><code>class="absolute -left-6 top-1/4 p-4 rounded-xl bg-white/95 shadow-xl border border-slate-100 backdrop-blur-md hidden md:flex items-center gap-3 animate-float-slow"</code>.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="block-3-stats-metrics-counter">BLOCK 3: STATS &amp; METRICS COUNTER</h3>
+<h4 id="bang-oi-soat-3-cot_2">Bảng Đối Soát 3 Cột:</h4>
+<table>
+<thead>
+<tr>
+<th>Yếu Tố Cấu Thành</th>
+<th>Hiện Trạng (Bản Dev Demo - Netlify)</th>
+<th>Mục Tiêu (Bản Design Reference - Topaz)</th>
+<th>Đánh Giá Kỹ Thuật &amp; CSS Blueprint Chuẩn Hóa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Tính Xác Thực Của Số Liệu</strong></td>
+<td>Hiển thị: <code>15+ Năm</code>, <strong><code>50+ Dự án</code> (Phóng đại)</strong>, <code>20+ Chuyên gia</code>, <code>100% Hài lòng</code>.</td>
+<td>Hiển thị: <strong><code>&gt;20 Năm</code> Kinh nghiệm</strong>, <strong><code>22+</code> Dự án Thực tế</strong>, <strong><code>12</code> Chuyên gia Nòng cốt</strong>, <strong><code>100%</code> Nghiệm thu Chuẩn BYT</strong>.</td>
+<td>Con số <code>50+</code> ở bản Dev là phóng đại phi thực tế, vi phạm đạo đức dữ liệu. Phải chuẩn hóa chính xác theo HSNL 2026: <strong><code>22+</code> Hợp đồng thực tế</strong> và <strong><code>&gt;20 Năm</code> thâm niên lãnh đạo</strong>.</td>
+</tr>
+<tr>
+<td><strong>Lỗi Kỹ Thuật Counter (Lỗi NaN)</strong></td>
+<td>Số liệu tĩnh, không có animation.</td>
+<td>Bản Design bị lỗi hydration kịch bản chạy số, render thành chuỗi lỗi: <strong><code>00+ Năm</code>, <code>00+ Dự án</code>, <code>00+ Chuyên gia</code>, <code>000%</code></strong>.</td>
+<td>Khắc phục triệt để lỗi NaN bằng Intersection Observer hook an toàn với fallback số tĩnh nếu trình duyệt tắt JavaScript.</td>
+</tr>
+<tr>
+<td><strong>Styling &amp; Nhịp Điệu Nền</strong></td>
+<td>Nền trắng trơn, không có đường phân cách, bị lẫn vào khối Hero phía trên.</td>
+<td>Dải nền màu lam nhạt <code>bg-surface-container-low</code> (<code>#EFF4FF</code>), viền bo mềm <code>rounded-2xl</code>, tạo nhịp nghỉ thị giác tinh tế.</td>
+<td>Áp dụng cấu trúc: <br><code>&lt;div class="py-10 bg-slate-50 border-y border-slate-200/60 my-12"&gt;...&lt;/div&gt;</code> với lưới 4 cột chia đều <code>grid grid-cols-2 lg:grid-cols-4 gap-6</code>.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="block-4-partners-client-ticker">BLOCK 4: PARTNERS &amp; CLIENT TICKER</h3>
+<h4 id="bang-oi-soat-3-cot_3">Bảng Đối Soát 3 Cột:</h4>
+<table>
+<thead>
+<tr>
+<th>Yếu Tố Cấu Thành</th>
+<th>Hiện Trạng (Bản Dev Demo - Netlify)</th>
+<th>Mục Tiêu (Bản Design Reference - Topaz)</th>
+<th>Đánh Giá Kỹ Thuật &amp; CSS Blueprint Chuẩn Hóa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Danh Mục Đối Tác (Integrity)</strong></td>
+<td><strong>Chứa logo đối tác khống</strong>: Vinmec, Cisco, Microsoft, Fortinet, BIDV, Vietcombank, Medlatec, Viện KH Y Dược.</td>
+<td><strong>100% Khách hàng &amp; Cơ quan thật theo HSNL 2026</strong>: BV Phổi, TTYT Liên Chiểu, Ngũ Hành Sơn, Cẩm Lệ, BV Phụ sản - Nhi, Chi cục Dân số, Cloud ACE, MobiFone, PVcomBank...</td>
+<td><strong>LỖI P0 PHÁP LÝ</strong>: Thanh lọc toàn bộ 100% đối tác không có hợp đồng. Sử dụng trọn bộ 11 logo vector/PNG chất lượng cao đã trích xuất từ bản Design Topaz (<code>audit_teknova/assets/partners/</code>).</td>
+</tr>
+<tr>
+<td><strong>Thiết Kế Thẻ Đối Tác (Pill Card)</strong></td>
+<td>Chỉ có logo đen trắng xám xịt đặt trơ trọi trên nền, không có thông tin ngữ cảnh.</td>
+<td>Thiết kế dạng <code>partner-pill</code>: Logo nằm trong hộp bảo vệ nền trắng bo góc <code>w-10 h-10</code>, bên cạnh có tên đơn vị và tên phân hệ đã triển khai.</td>
+<td>Cấu trúc component thẻ đối tác: <br><code>&lt;div class="flex items-center gap-3 px-4 py-2.5 rounded-xl bg-white border border-slate-200 shadow-xs hover:border-blue-400 transition-all shrink-0"&gt;</code> <br><code>&lt;img src="/assets/img/partners/bv_phoi.png" class="w-8 h-8 object-contain"&gt;</code> <br><code>&lt;div class="text-left"&gt;&lt;p class="text-xs font-bold text-slate-800"&gt;BV Phổi Đà Nẵng&lt;/p&gt;&lt;p class="text-[10px] text-slate-500"&gt;Bệnh án điện tử EMR&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;</code></td>
+</tr>
+<tr>
+<td><strong>Chuyển Động (Animation)</strong></td>
+<td>Chạy giật cục, thiếu lớp gradient làm mờ ở 2 mép container.</td>
+<td>Infinite Marquee chạy mượt mà ở chu kỳ 35-40s, 2 bên phủ gradient che mờ (<code>from-surface to-transparent</code>), tự dừng khi di chuột (pause on hover).</td>
+<td>Sử dụng CSS keyframes: <br><code>@keyframes marquee { 0% { transform: translateX(0%); } 100% { transform: translateX(-50%); } }</code> <br><code>.animate-marquee { animation: marquee 35s linear infinite; }</code> <br><code>.animate-marquee:hover { animation-play-state: paused; }</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="danh-muc-tai-san-logo-oi-tac-a-san-sang-ban-giao-dev-trong-audit_teknovaassetspartners">Danh Mục Tài Sản Logo Đối Tác Đã Sẵn Sàng Bàn Giao Dev (Trong <code>audit_teknova/assets/partners/</code>):</h4>
+<ol>
+<li><code>bv_phoi_clean.png</code> (82.2 KB) — Bệnh viện Phổi Đà Nẵng (Dự án EMR &amp; Zalo OA)</li>
+<li><code>bv_phusan_nhi_clean.png</code> (70.9 KB) — Bệnh viện Phụ sản - Nhi Đà Nẵng (Trả kết quả xét nghiệm Zalo)</li>
+<li><code>ttyt_lienchieu_clean.png</code> (53.7 KB) — Trung tâm Y tế Khu vực Liên Chiểu (Đơn thuốc điện tử TT 26 &amp; QĐ 130)</li>
+<li><code>ttyt_nguhanhson_clean.png</code> (69.7 KB) — Trung tâm Y tế Khu vực Ngũ Hành Sơn (Thuê phần mềm EMR)</li>
+<li><code>ttyt_camle_clean.png</code> (50.0 KB) — Trung tâm Y tế Khu vực Cẩm Lệ (Nâng cấp trích xuất XML QĐ 3176)</li>
+<li><code>chicuc_danso_clean.png</code> (39.3 KB) — Chi cục Dân số TP. Đà Nẵng (Cơ sở dữ liệu dân số 56 xã/phường)</li>
+<li><code>danang_gov_clean.png</code> (44.8 KB) — Trung tâm CĐS &amp; Công nghệ Chiến lược ĐN / UBND P. Ngũ Hành Sơn</li>
+<li><code>cloud_ace_clean.png</code> (9.4 KB) — Công ty TNHH Cloud ACE (Cổng thông tin &amp; Mobile App Google Cloud Premier)</li>
+<li><code>bv_yhoccotruyen_clean.png</code> (46.0 KB) — Bệnh viện Y học Cổ truyền Đà Nẵng (Cổng thông tin bệnh viện)</li>
+<li><code>mobifone_clean.png</code> (9.9 KB) — MobiFone Đà Nẵng (Phần mềm hành chính công Zalo Mini App)</li>
+<li><code>pvcombank_icon.png</code> (17.2 KB) — Ngân hàng PVcomBank (Fintech thanh toán viện phí Kiosk)</li>
+</ol>
+<hr />
+<h3 id="block-5-6-tru-cot-linh-vuc-hoat-ong-core-domains-bento-grid">BLOCK 5: 6 TRỤ CỘT LĨNH VỰC HOẠT ĐỘNG (CORE DOMAINS BENTO GRID)</h3>
+<h4 id="bang-oi-soat-3-cot_4">Bảng Đối Soát 3 Cột:</h4>
+<table>
+<thead>
+<tr>
+<th>Yếu Tố Cấu Thành</th>
+<th>Hiện Trạng (Bản Dev Demo - Netlify)</th>
+<th>Mục Tiêu (Bản Design Reference - Topaz)</th>
+<th>Đánh Giá Kỹ Thuật &amp; CSS Blueprint Chuẩn Hóa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Cấu Trúc Khối (Redundancy)</strong></td>
+<td><strong>Thừa thãi 2 khối liên tiếp</strong>: <br>1. "6 Lĩnh vực cốt lõi" (Lưới 6 card)<br>2. "Các bài toán tập trung" (5 card trùng lặp).</td>
+<td><strong>1 Khối Bento Grid duy nhất gồm 6 Trụ Cột</strong>: Bố cục chặt chẽ, không bị loãng trang, phân cấp rõ rệt vai trò từng trụ cột.</td>
+<td>Xóa bỏ hoàn toàn khối "Các bài toán tập trung" bị trùng lặp; gộp toàn bộ giải pháp mũi nhọn vào lưới 6 Bento Card chuẩn mực.</td>
+</tr>
+<tr>
+<td><strong>Card Điểm Nhấn (Hero Accent Card)</strong></td>
+<td>Cả 6 card đều dùng màu nền trắng nhờ nhờ giống hệt nhau; không có card nào làm điểm tựa thị giác.</td>
+<td><strong>Card 4 (Chuyển đổi số - AI - Big Data - Cloud)</strong> được phủ màu xanh Cobalt nguyên khối <code>bg-primary text-white</code>, bóng đổ sâu, icon trắng, nhãn vàng "Nổi Bật".</td>
+<td>Thiết lập Card 4 thành Hero Anchor: <br><code>class="col-span-1 md:col-span-2 lg:col-span-1 rounded-2xl p-6 bg-gradient-to-br from-blue-600 to-indigo-700 text-white shadow-xl shadow-blue-500/20 relative overflow-hidden group"</code></td>
+</tr>
+<tr>
+<td><strong>Hệ Thống Icon &amp; Micro-Interaction</strong></td>
+<td>Icon ảnh bitmap độ phân giải thấp, không có tương tác phản hồi khi rê chuột.</td>
+<td>Icon phong cách kỹ thuật (Google Material Symbols / Lucide SVG), hiệu ứng nhấc thẻ 6px (<code>card-elevate</code>), icon phóng to 112% (<code>icon-bounce</code>).</td>
+<td>Bổ sung class tương tác CSS: <br><code>transition-all duration-300 ease-out hover:-translate-y-1.5 hover:shadow-lg hover:border-blue-300</code>.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="block-6-du-an-tieu-bieu-case-studies-critical-gap">BLOCK 6: DỰ ÁN TIÊU BIỂU &amp; CASE STUDIES (CRITICAL GAP)</h3>
+<h4 id="bang-oi-soat-3-cot_5">Bảng Đối Soát 3 Cột:</h4>
+<table>
+<thead>
+<tr>
+<th>Yếu Tố Cấu Thành</th>
+<th>Hiện Trạng (Bản Dev Demo - Netlify)</th>
+<th>Mục Tiêu (Bản Design Reference - Topaz)</th>
+<th>Đánh Giá Kỹ Thuật &amp; CSS Blueprint Chuẩn Hóa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Tình Trạng Ảnh Thumbnail</strong></td>
+<td><strong>LỖI P0 BLOCKER: 100% ẢNH THUMBNAIL BỊ TRẮNG TOÁT</strong>. Link Google Public Storage bị hết hạn token xác thực và chặn CORS.</td>
+<td>Hình ảnh sắc nét chuẩn 16:9, chụp hiện trường phòng mổ, buồng khám, Kiosk đón tiếp thực tế tại các bệnh viện Đà Nẵng.</td>
+<td><strong>Khắc phục ngay lập tức</strong>: Chuyển đổi toàn bộ đường dẫn ảnh sang thư mục cục bộ <code>public/assets/img/projects/emr_hospital.jpg</code>, <code>tt26_prescription.jpg</code>, <code>zalo_oa_his.jpg</code>... Tuyệt đối không dùng URL CDN ngoài tạm bợ.</td>
+</tr>
+<tr>
+<td><strong>Phân Loại &amp; Căn Cứ Pháp Lý</strong></td>
+<td>Chỉ có nhãn text mờ nhạt ("Y Tế Thông Minh", "Hành Chính").</td>
+<td>Mỗi dự án gắn liền với huy hiệu pháp lý cụ thể: <code>Thông tư 46/2018</code>, <code>Thông tư 26/2025</code>, <code>QĐ 3176/QĐ-BYT</code>, <code>QĐ 130/QĐ-BYT</code>.</td>
+<td>Bổ sung dải badge pháp lý trên đầu mỗi thẻ dự án: <br><code>&lt;span class="px-2.5 py-1 rounded-md text-[11px] font-bold bg-blue-50 text-blue-700 border border-blue-200"&gt;TT 46/2018/TT-BYT&lt;/span&gt;</code></td>
+</tr>
+<tr>
+<td><strong>Tương Tác Khi Nhấp Chuột</strong></td>
+<td>Nhấp vào không có bất kỳ phản hồi nào; thẻ dự án chỉ đóng vai trò text tĩnh.</td>
+<td>Nhấp vào thẻ kích hoạt <strong>Slide-Over Drawer mở từ cạnh phải</strong>, hiển thị hồ sơ nghiệm thu 8 tầng thông tin và deep-link URL.</td>
+<td>Tích hợp tính năng Case Study Detail Drawer (xem đặc tả kỹ thuật chi tiết tại Mục 6.3).</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="block-7-ban-lanh-ao-triet-ly-van-hanh-critical-gap">BLOCK 7: BAN LÃNH ĐẠO &amp; TRIẾT LÝ VẬN HÀNH (CRITICAL GAP)</h3>
+<h4 id="bang-oi-soat-3-cot_6">Bảng Đối Soát 3 Cột:</h4>
+<table>
+<thead>
+<tr>
+<th>Yếu Tố Cấu Thành</th>
+<th>Hiện Trạng (Bản Dev Demo - Netlify)</th>
+<th>Mục Tiêu (Bản Design Reference - Topaz)</th>
+<th>Đánh Giá Kỹ Thuật &amp; CSS Blueprint Chuẩn Hóa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Sự Hiện Diện Của Lãnh Đạo</strong></td>
+<td><strong>LỖI P0 BLOCKER: CẮT BỎ 100% KHỐI LÃNH ĐẠO</strong>. Chỉ có một ô text vuông xanh đen vô danh ghi "Ban Lãnh Đạo TEKNOVA".</td>
+<td>Khối Chân dung Lãnh đạo bề thế chia 2 cột: Cột trái (7 cols) thông điệp và 3 cam kết; Cột phải (5 cols) chân dung cắt nền CEO.</td>
+<td><strong>Tái lập toàn diện khối Lãnh đạo</strong>. Khẳng định vai trò của Chủ tịch kiêm Tổng Giám đốc <strong>Trần Bình Sơn (MBA, Kỹ sư Điện tử, &gt;20 năm KN)</strong>.</td>
+</tr>
+<tr>
+<td><strong>Hình Ảnh Chân Dung Lãnh Đạo</strong></td>
+<td>Hoàn toàn không có hình ảnh người thật.</td>
+<td>Ảnh chân dung cắt nền (Cutout Portrait) chất lượng cao mặc veston lịch thiệp, đặt đứng chạm sàn, xếp lớp trên khối họa tiết lam ngọc.</td>
+<td>Sử dụng file ảnh cắt nền <code>/ceo-cutout.png</code> chất lượng cao, đổ bóng đa tầng: <code>filter drop-shadow-[0_20px_30px_rgba(15,23,42,0.15)]</code>.</td>
+</tr>
+<tr>
+<td><strong>Cam Kết Hành Động &amp; Trust Seal</strong></td>
+<td>Không có cam kết nào cụ thể.</td>
+<td>3 Luận điểm hành động đanh thép + Quote triết lý nghiệp vụ + Con dấu niềm tin (Trust Seal) chiếc khiên xanh ngọc.</td>
+<td>Khắc họa 3 cam kết hành động: <br>1. <em>Hơn 20 năm thâm niên Viễn thông - CNTT và tư vấn y tế số</em>.<br>2. <em>Chỉ đạo chuyển giao 22+ dự án phần mềm và chính quyền số</em>.<br>3. <em>Bảo chứng tuyệt đối tôn chỉ: "Thực Người • Thực Việc • Thực Giá Trị"</em>.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="block-8-footer-cta-banner-cuoi-trang">BLOCK 8: FOOTER &amp; CTA BANNER CUỐI TRANG</h3>
+<h4 id="bang-oi-soat-3-cot_7">Bảng Đối Soát 3 Cột:</h4>
+<table>
+<thead>
+<tr>
+<th>Yếu Tố Cấu Thành</th>
+<th>Hiện Trạng (Bản Dev Demo - Netlify)</th>
+<th>Mục Tiêu (Bản Design Reference - Topaz)</th>
+<th>Đánh Giá Kỹ Thuật &amp; CSS Blueprint Chuẩn Hóa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Tone Màu Banner CTA</strong></td>
+<td>Nền màu xanh đen thẫm <code>bg-[#0b1c30]</code> gây tối tăm, phá vỡ nhịp điệu ánh sáng của tổng thể Light Theme.</td>
+<td>Banner bo góc <code>rounded-3xl</code> phủ gradient xanh cobalt rực rỡ (<code>from-blue-600 via-indigo-600 to-blue-700</code>), hiệu ứng ánh sáng tỏa tròn.</td>
+<td>Thay thế background xanh đen bằng: <br><code>class="rounded-3xl p-8 sm:p-12 bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-800 text-white shadow-2xl relative overflow-hidden"</code>.</td>
+</tr>
+<tr>
+<td><strong>Minh Bạch Trụ Sở Doanh Nghiệp</strong></td>
+<td>Chỉ ghi địa chỉ ĐKKD cũ: <code>K131/18 Lý Thái Tổ</code>. <strong>Thiếu hoàn toàn trụ sở làm việc chính thức</strong>.</td>
+<td>Hiển thị song song 2 địa chỉ chuẩn mực: <br>• <strong>VP Trụ sở chính</strong>: Tầng 3, 456 Nguyễn Hữu Thọ, Cẩm Lệ, Đà Nẵng.<br>• <strong>Địa chỉ ĐKKD</strong>: K131/18 Lý Thái Tổ, Thanh Khê, Đà Nẵng.</td>
+<td>Chuẩn hóa thông tin văn phòng làm việc để cán bộ các bệnh viện và cơ quan dễ dàng tới khảo sát thực địa.</td>
+</tr>
+<tr>
+<td><strong>Mã Số Doanh Nghiệp (MST)</strong></td>
+<td>Bị ẩn hoàn toàn ở Footer (trong code cũ từng có số giả <code>0402123456</code>).</td>
+<td>Hiển thị rõ ràng ở dòng bản quyền: <code>Mã số thuế: 0402300331</code>.</td>
+<td>Cập nhật dòng bản quyền cuối trang: <br><code>© 2026 CÔNG TY CỔ PHẦN ĐỔI MỚI SÁNG TẠO TEKNOVA. Mã số doanh nghiệp: 0402300331 cấp ngày 23/09/2025 tại Sở KH&amp;ĐT TP. Đà Nẵng.</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="39-anh-gia-hieu-ung-hover-scroll-tinh-thuc-te-o-chuyen-nghiep-trong-showcase-b2g-marketing-to-dev-observations">3.9 ĐÁNH GIÁ HIỆU ỨNG HOVER &amp; SCROLL: TÍNH THỰC TẾ &amp; ĐỘ CHUYÊN NGHIỆP TRONG SHOWCASE B2G (MARKETING TO DEV OBSERVATIONS)</h3>
+<p>Từ trải nghiệm thực tế của đội ngũ Marketing khi trực tiếp cầm laptop/tablet đi demo giải pháp trước các bác sĩ, ban giám đốc và hội đồng thẩm định, các hiệu ứng vi mô (micro-interactions) như <strong>Hover</strong> và <strong>Scroll</strong> đóng vai trò quyết định cảm giác "phần mềm xịn, mượt mà" hay "web tĩnh sơ sài":</p>
+<h4 id="1-anh-gia-hien-trang-hieu-ung-scroll-scroll-experience-audit">1. Đánh Giá Hiện Trạng Hiệu Ứng Scroll (Scroll Experience Audit)</h4>
+<ul>
+<li><strong>Hiện trạng Bản Dev Demo (<code>teknova-demo</code>)</strong>:</li>
+<li><em>Cảm giác cuộn</em>: Sử dụng cơ chế Native Scroll mặc định của trình duyệt (<code>overflow-y: auto</code>). Khi cuộn trên chuột rời (mouse wheel) hoặc trackpad máy tính Windows, nhịp cuộn bị giật từng khấc (stepping scroll), thiếu độ hãm quán tính.</li>
+<li><em>Hiệu ứng xuất hiện (Scroll Trigger)</em>: Không có hiệu ứng fade-in hay trượt nhẹ khi lướt qua các section. Toàn bộ nội dung hiện diện tĩnh ngay từ đầu, tạo cảm giác thiếu chiều sâu và hơi khô cứng đối với một website công nghệ cao.</li>
+<li><strong>Hiện trạng Bản Design Reference (<code>teknova-topaz</code>)</strong>:</li>
+<li><em>Cảm giác cuộn</em>: Đã tích hợp thư viện <strong>Lenis Smooth Scroll</strong> (<code>window.lenis = true</code>). Thao tác cuộn chuột có độ đầm, quán tính dừng êm ái (damping factor ~0.1), mang lại cảm giác lướt rất cao cấp như các trang giới thiệu sản phẩm của Apple hay Stripe.</li>
+<li><em>Điểm cần lưu ý thực tế (Marketing Observation)</em>: 
+    &gt; <em>"Lenis cuộn rất êm và sang, nhưng khi trình chiếu trên máy chiếu phòng họp có tần số quét thấp (60Hz hoặc qua cổng HDMI/VGA cũ), hiệu ứng smooth scroll nếu cấu hình quán tính quá dài có thể gây cảm giác 'trôi tuột' hoặc hơi trễ tay (laggy feel) khi cần dừng nhanh để chỉ vào một con số cụ thể."</em></li>
+<li><strong>Đề xuất kỹ thuật khiêm tốn gửi đội Dev (Dev Recommendations)</strong>:</li>
+<li><strong>Khuyến nghị 1 (Smooth Scroll vừa phải)</strong>: Bổ sung thư viện Lenis vào bản Dev nhưng tinh chỉnh thông số:
+    <code>javascript
+    // Cấu hình Lenis cân bằng giữa độ mượt và độ chính xác thực chiến
+    const lenis = new Lenis({
+      duration: 1.1,           // Thời gian hãm quán tính vừa phải (mặc định 1.2s dễ gây trôi)
+      easing: (t) =&gt; Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      orientation: 'vertical',
+      gestureOrientation: 'vertical',
+      smoothWheel: true,
+      wheelMultiplier: 1.0,    // Giữ tỉ lệ 1.0 để người dùng cuộn tới đâu kiểm soát được tới đó
+      touchMultiplier: 1.5,
+    });</code></li>
+<li><strong>Khuyến nghị 2 (Top Progress Bar)</strong>: Bản Design có dải thanh tiến trình mỏng màu xanh trên đỉnh đầu trang (<code>h-[2px] bg-primary z-50 fixed top-0</code>) hiển thị % trang đã cuộn. Đây là chi tiết cực kỳ tinh tế, giúp người xem biết mình đang ở đoạn nào của bài thuyết trình. Đề xuất Dev đưa component này vào <code>AppHeader.vue</code>.</li>
+</ul>
+<hr />
+<h4 id="2-anh-gia-hien-trang-hieu-ung-hover-hover-micro-interactions-audit">2. Đánh Giá Hiện Trạng Hiệu Ứng Hover (Hover &amp; Micro-Interactions Audit)</h4>
+<p>Trong môi trường B2G y tế, người dùng (đặc biệt là các bác sĩ và cán bộ quản lý) cần <strong>sự phản hồi thị giác rõ ràng (Tactile Feedback)</strong> để biết phần tử nào click được, phần tử nào là dữ liệu tham khảo:</p>
+<ul>
+<li><strong>Bảng Đối Soát Hiệu Ứng Hover Giữa 2 Bản</strong>:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Thành Phần Giao Diện</th>
+<th>Hiện Trạng Bản Dev Demo</th>
+<th>Bản Design Reference (Topaz)</th>
+<th>Nhận Xét Thực Tế Từ Marketing &amp; Đề Xuất Cho Dev</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Các Nút Bấm Chính (Primary CTA)</strong></td>
+<td>Đổi màu nền đơn giản (<code>hover:bg-blue-700</code>), không có chuyển dịch vị trí hay đổ bóng.</td>
+<td>Đổ bóng phát quang (<code>glow-btn</code>), nâng nhẹ 1px, hiệu ứng mũi tên trượt sang phải 3px (<code>group-hover:translate-x-1</code>).</td>
+<td><strong>Rất tốt trên Design</strong>: Hiệu ứng mũi tên chuyển động giúp người xem có động lực bấm thử. Đề xuất Dev áp dụng class: <code>transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-blue-500/25 active:translate-y-0</code>.</td>
+</tr>
+<tr>
+<td><strong>Thẻ Trụ Cột Lĩnh Vực (Domain Cards)</strong></td>
+<td>Không đổi trạng thái hoặc chỉ đổi màu viền rất mờ nhạt.</td>
+<td>Nâng cao 6px (<code>-translate-y-1.5</code>), bóng đổ lan rộng <code>shadow-xl</code>, icon dịch chuyển nhẹ.</td>
+<td><strong>Cần sự chừng mực</strong>: Nâng 6px là vừa vặn, không nên lạm dụng phóng to (<code>scale-105</code>) vì sẽ làm che khuất chữ của card bên cạnh trên màn hình 1366x768.</td>
+</tr>
+<tr>
+<td><strong>Dải Logo Đối Tác (Partner Pills)</strong></td>
+<td>Đứng yên hoặc chạy giật cục; rê chuột vào không có phản ứng.</td>
+<td>Khi rê chuột vào dải marquee: <strong>Toàn bộ dải tự dừng lại (Pause on Hover)</strong>; logo bên trong phóng to nhẹ 110% (<code>scale-110</code>).</td>
+<td><strong>Tính năng Showcase then chốt</strong>: Khi đối tác hỏi <em>"Ủa các bạn làm cho Bệnh viện Phổi gói nào?"</em>, người thuyết trình rê chuột vào để dải dừng lại, trỏ chuột cho khách xem. Đề xuất Dev bắt buộc giữ <code>hover:pause-animation</code>.</td>
+</tr>
+<tr>
+<td><strong>Thẻ Dự Án (Case Study Cards)</strong></td>
+<td>Rê chuột vào không có con trỏ <code>cursor-pointer</code>, cảm giác như ảnh tĩnh chết.</td>
+<td>Thẻ nổi khối, ảnh thumbnail zoom chậm 105% (<code>group-hover:scale-105 transition-transform duration-500</code>), mũi tên góc thẻ xoay chéo 45 độ.</td>
+<td><strong>Rất trực quan</strong>: Báo hiệu cho khách biết thẻ này có thể bấm để xem chi tiết nghiệm thu bên trong.</td>
+</tr>
+<tr>
+<td><strong>Thực Đơn Điều Hướng (Nav Links)</strong></td>
+<td>Đổi màu chữ xanh thông thường.</td>
+<td>Đổi màu chữ xanh đậm thương hiệu + gạch chân mờ chuyển động mượt mà.</td>
+<td>Gợi ý Dev thêm hiệu ứng thanh line trượt nhẹ dưới chân menu để tăng độ tinh tế.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="3-tieu-chuan-thuc-te-chuyen-nghiep-professionalism-pragmatism-standard">3. Tiêu Chuẩn Thực Tế &amp; Chuyên Nghiệp (Professionalism &amp; Pragmatism Standard)</h4>
+<p>Từ kinh nghiệm thực chiến B2G, Bộ phận Marketing xin tổng kết 3 nguyên tắc "vàng" về mặt hiệu ứng để trang web đạt chuẩn mực cao nhất:
+1. <strong>Nguyên tắc "Không lạm dụng chuyển động rườm rà (No Over-Animation)"</strong>: Tránh các hiệu ứng xoay lật 3D quá đà, nảy tưng bừng hay giật màn hình. Đối tượng khách hàng là Bác sĩ, Giám đốc Bệnh viện và Cơ quan nhà nước luôn đánh giá cao sự <strong>điềm đạm, vững chãi, tốc độ phản hồi dứt khoát (&lt; 250ms)</strong> hơn là sự phô trương kỹ xảo.
+2. <strong>Nguyên tắc "Tôn trọng thiết bị yếu &amp; Màn hình cảm ứng"</strong>: Các hiệu ứng hover chỉ kích hoạt trên thiết bị có chuột (<code>@media (hover: hover)</code>), tránh bị "kẹt trạng thái hover" (sticky hover bug) khi khách hàng vuốt chạm trên iPad/máy tính bảng.
+3. <strong>Nguyên tắc "Đồng nhất nhịp điệu (Cohesive Timing Function)"</strong>: Toàn bộ chuyển đổi hover nên dùng chung một hàm gia tốc <code>cubic-bezier(0.16, 1, 0.3, 1)</code> với thời gian <code>200ms - 300ms</code> để tạo cảm giác toàn bộ giao diện là một khối thống nhất, mượt mà và đẳng cấp.</p>
+<hr />
+<h2 id="4-anh-gia-trai-nghiem-thao-tac-rao-can-showcase-b2g-ux-showcase-readiness">4. ĐÁNH GIÁ TRẢI NGHIỆM THAO TÁC &amp; RÀO CẢN SHOWCASE B2G (UX &amp; SHOWCASE READINESS)</h2>
+<h3 id="41-phan-tich-tam-ly-noi-au-cua-4-oi-tuong-muc-tieu-persona-pain-points">4.1 Phân Tích Tâm Lý &amp; Nỗi Đau Của 4 Đối Tượng Mục Tiêu (Persona Pain Points)</h3>
+<p>Khi website được mở trên máy chiếu phòng họp hay máy tính bảng trong các buổi làm việc chính thức, 4 nhóm đối tượng có những mối quan tâm chuyên sâu cần được giải tỏa:</p>
+<pre class="codehilite"><code class="language-text">┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
+│                                 BẢN ĐỒ THẤU CẢM 4 ĐỐI TƯỢNG B2G                                 │
+├───────────────────────────────────┬─────────────────────────────────────────────────────────────┤
+│ 1. GIÁM ĐỐC BỆNH VIỆN             │ • Sợ triển khai dở dang, gián đoạn khám chữa bệnh.          │
+│    (Đại diện chủ đầu tư)          │ • Ám ảnh xuất toán BHYT hàng tỷ đồng do lệch giờ ký, sai mã │
+│                                   │   ICD-10 vs Dược thư, vượt CCHN bác sĩ và trùng chỉ định.   │
+│                                   │ • Bế tắc vốn đầu tư công CAPEX -&gt; Cần mô hình thuê OPEX QĐ80│
+├───────────────────────────────────┼─────────────────────────────────────────────────────────────┤
+│ 2. TRƯỞNG PHÒNG CNTT BỆNH VIỆN    │ • Sợ xung đột dữ liệu với HIS hiện hữu (VNPT, Viettel).     │
+│    (Chịu trách nhiệm kỹ thuật)    │ • Lo ngại hệ thống sập ban đêm, nhà thầu ở xa không hỗ trợ. │
+│                                   │ • Đòi hỏi chuẩn XML QĐ 130 và chứng nhận ATTT Cấp độ 3.     │
+├───────────────────────────────────┼─────────────────────────────────────────────────────────────┤
+│ 3. LÃNH ĐẠO SỞ Y TẾ / CHÍNH QUYỀN │ • Áp lực hoàn thành chỉ tiêu Đề án 06/CP và DTI của tỉnh.   │
+│    (Cơ quan quản lý nhà nước)     │ • Yêu cầu dữ liệu đồng bộ 56 xã/phường không phân mảnh.     │
+│                                   │ • Kiểm tra gắt gao tính chính danh, bằng cấp và MST thầu.   │
+├───────────────────────────────────┼─────────────────────────────────────────────────────────────┤
+│ 4. NHÀ ĐẦU TƯ &amp; ĐỐI TÁC TELCO     │ • Đánh giá năng lực liên danh thầu chuyên môn y tế.         │
+│    (MobiFone, Cloud ACE, PVcom)   │ • Thẩm tra chất xám của đội ngũ R&amp;D và quyền sở hữu trí tuệ.│
+│                                   │ • Năng lực mở rộng sản phẩm từ Đà Nẵng ra toàn quốc.        │
+└───────────────────────────────────┴─────────────────────────────────────────────────────────────┘
+</code></pre>
+
+<h4 id="1-giam-oc-benh-vien">1. Giám Đốc Bệnh Viện:</h4>
+<ul>
+<li><em>Nỗi sợ lớn nhất</em>: Quyết định bỏ bệnh án giấy theo Thông tư 46 là quyết định mang tính sinh mệnh của bệnh viện. Nếu hệ thống EMR mới hoạt động chập chờn, bác sĩ phản đối, bệnh nhân ùn ứ, bảo hiểm xã hội từ chối thanh toán thì Giám đốc là người chịu trách nhiệm trực tiếp trước Sở Y tế và pháp luật. Đặc biệt, nỗi ám ảnh lớn nhất của Giám đốc Bệnh viện Hạng I là <strong>nguy cơ xuất toán BHYT hàng tỷ đồng</strong> — không chỉ vì sai lệch dấu thời gian TSA mà chủ yếu do:</li>
+<li><em>Chẩn đoán ICD-10 không phù hợp chỉ định thuốc theo Dược thư Quốc gia (TT 20/2022/TT-BYT)</em>;</li>
+<li><em>Chỉ định kỹ thuật hoặc kê đơn vượt quá phạm vi chuyên môn trên Chứng chỉ hành nghề (CCHN) của bác sĩ</em>;</li>
+<li><em>Trùng lặp chỉ định thuốc, xét nghiệm trong cùng đợt khám / 24 giờ</em>.</li>
+<li><em>Kỳ vọng trên Portal</em>: Phải nhìn thấy <strong>bằng chứng sống động về quy trình vận hành trơn tru</strong> tại các bệnh viện tương đương (như BV Phổi Đà Nẵng); chứng minh năng lực của <strong>Module Pre-Audit Rule Engine (Hệ thống Tiền Giám Định Lâm Sàng)</strong> kiểm soát rủi ro xuất toán tự động ngay lúc bác sĩ ra y lệnh; đồng thời hiểu rõ phương án thuê dịch vụ CNTT theo Quyết định 80/2014 để ký hợp đồng ngay từ nguồn thu viện phí thường niên mà không phải chờ duyệt ngân sách đầu tư công 2-3 năm.</li>
+</ul>
+<h4 id="2-truong-phong-cntt-benh-vien">2. Trưởng Phòng CNTT Bệnh Viện:</h4>
+<ul>
+<li><em>Nỗi sợ lớn nhất</em>: Nhà cung cấp phần mềm "hứa thật nhiều nhưng làm không được bao nhiêu". Bệnh viện đang vận hành HIS hiện hữu của các hãng lớn, việc tích hợp thêm EMR hoặc cổng đơn thuốc Thông tư 26 nếu bị lỗi đồng bộ dữ liệu sẽ làm tê liệt toàn bộ khâu thanh toán ra viện.</li>
+<li><em>Kỳ vọng trên Portal</em>: Cần công cụ xem trực tiếp cấu trúc gói tin (Payload Inspector), chứng minh độ trễ liên thông &lt; 0.8 giây, cơ chế hàng đợi bất đồng bộ (Async Queue) tự phục hồi khi cổng Bộ Y tế rớt mạng và thông số ký số tập trung Cloud CA.</li>
+</ul>
+<h4 id="3-lanh-ao-so-y-te-chinh-quyen-ia-phuong">3. Lãnh Đạo Sở Y Tế &amp; Chính Quyền Địa Phương:</h4>
+<ul>
+<li><em>Nỗi sợ lớn nhất</em>: Nhà thầu kê khai khống năng lực, đưa logo các đơn vị không có thực để lừa dối cơ quan quản lý; nhân sự đăng ký trong hồ sơ thầu không có bằng cấp chuyên ngành hoặc là tên mượn.</li>
+<li><em>Kỳ vọng trên Portal</em>: Tính minh bạch 100%. Phải tra cứu được mã số thuế <code>0402300331</code>, trụ sở làm việc tại số 456 Nguyễn Hữu Thọ, tên Chủ tịch Trần Bình Sơn trùng khớp giấy phép ĐKKD, xem được bản scan bằng cấp của 12 chuyên gia và hồ sơ 22 hợp đồng thật trên địa bàn.</li>
+</ul>
+<h4 id="4-nha-au-tu-oi-tac-tong-thau-vien-thong-mobifone-cloud-ace-pvcombank">4. Nhà Đầu Tư &amp; Đối Tác Tổng Thầu Viễn Thông (MobiFone, Cloud ACE, PVcomBank):</h4>
+<ul>
+<li><em>Kỳ vọng trên Portal</em>: Nhìn thấy kiến trúc phần mềm hiện đại, khả năng tùy biến giải pháp linh hoạt và cam kết SLA dịch vụ chặt chẽ để yên tâm ký kết hợp đồng hợp tác chiến lược hoặc liên danh tham gia các gói thầu lớn.</li>
+</ul>
+<hr />
+<h3 id="42-nam-iem-nghen-gay-nghi-ngo-tinh-xac-thuc-tren-web-cu-chien-luoc-khac-phuc">4.2 Năm Điểm Nghẽn Gây Nghi Ngờ Tính Xác Thực Trên Web Cũ &amp; Chiến Lược Khắc Phục</h3>
+<ol>
+<li><strong>Điểm nghẽn 1: Thiếu minh chứng vận hành tương tác trực tiếp (Static Mockup Skepticism)</strong>:</li>
+<li><em>Thực trạng</em>: Khách hàng chỉ thấy các ảnh chụp màn hình bất động, nghi ngờ đây là các bản vẽ Photoshop tải từ trên mạng về.</li>
+<li><em>Chiến lược khắc phục</em>: Tích hợp <strong>Tính năng 1: Interactive Live Hospital Flow Mockup</strong> mô phỏng sống động 5 bước khám chữa bệnh có thể nhấp chuột điều khiển, xem gói tin JSON thật và thử nghiệm cơ chế ngắt mạng tự phục hồi.</li>
+<li><strong>Điểm nghẽn 2: Thẻ dự án nông cạn, mất ảnh thumbnail (Broken Thumbnails &amp; Shallow Proof)</strong>:</li>
+<li><em>Thực trạng</em>: 100% ảnh thumbnail dự án trên bản Dev bị trắng toát; nhấp vào không có thông tin chi tiết.</li>
+<li><em>Chiến lược khắc phục</em>: Thay thế toàn bộ bằng ảnh chụp thực tế lưu trữ cục bộ; tích hợp <strong>Tính năng 3: Case Study Detail Drawer</strong> mở ngăn kéo 8 tầng thông tin chiều sâu cho đủ 22 hợp đồng.</li>
+<li><strong>Điểm nghẽn 3: Khủng hoảng nhận diện nhân thân lãnh đạo (Identity Crisis)</strong>:</li>
+<li><em>Thực trạng</em>: Bản Dev giấu sạch lãnh đạo; bản Design đổi tên Chủ tịch thành "Nguyễn Hùng Sơn" hư cấu.</li>
+<li><em>Chiến lược khắc phục</em>: Tái lập toàn diện khối Lãnh đạo với chân dung cutout của ông <strong>Trần Bình Sơn (MBA, Kỹ sư Điện tử)</strong>; tích hợp <strong>Tính năng 4: Team Showcase Tab</strong> hiển thị đủ 12 nhân sự và văn bằng scan thẩm định.</li>
+<li><strong>Điểm nghẽn 4: Rào cản tiếp cận hồ sơ năng lực (Profile Download Barrier)</strong>:</li>
+<li><em>Thực trạng</em>: Chỉ có link tải file PDF dung lượng lớn, cán bộ không thể xem nhanh trên trình duyệt trong các buổi hội ý ngắn.</li>
+<li><em>Chiến lược khắc phục</em>: Xây dựng <strong>Tính năng 2: In-browser Profile PDF Viewer / Flipbook</strong> lật trang 3D siêu tốc (&lt; 0.5s) kèm cổng thu thập đầu mối (Lead Capture) nhẹ nhàng khi tải bản dấu đỏ.</li>
+<li><strong>Điểm nghẽn 5: Form đăng ký bán lẻ generic, thiếu cam kết thời gian (No-SLA Generic Form)</strong>:</li>
+<li><em>Thực trạng</em>: Form liên hệ đơn điệu như web bán hàng tiêu dùng, không có phân loại cơ sở y tế và không có cam kết thời gian liên hệ lại.</li>
+<li><em>Chiến lược khắc phục</em>: Thiết kế <strong>Tính năng 5: Direct Demo Booking Form</strong> phân hạng bệnh viện (Hạng I, Hạng II, TTYT) và đưa ra cam kết văn bản Kỹ sư trưởng phản hồi trong vòng 24 giờ làm việc.</li>
+</ol>
+<hr />
+<h2 id="5-dev-action-plan-ma-tran-phan-loai-muc-o-nghiem-trong-severity-matrix-remediation-blueprint">5. DEV ACTION PLAN &amp; MA TRẬN PHÂN LOẠI MỨC ĐỘ NGHIÊM TRỌNG (SEVERITY MATRIX &amp; REMEDIATION BLUEPRINT)</h2>
+<h3 id="51-ma-tran-phan-loai-muc-o-nghiem-trong-chi-tiet">5.1 Ma Trận Phân Loại Mức Độ Nghiêm Trọng Chi Tiết</h3>
+<p>Bảng dưới đây phân loại toàn bộ các vấn đề kỹ thuật và nội dung cần xử lý trong đợt nâng cấp, xếp theo 4 cấp độ ưu tiên: <strong>P0 (Blocker) -&gt; P1 (Critical) -&gt; P2 (Major) -&gt; P3 (Minor)</strong>:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Mã Lỗi</th>
+<th>Tên Vấn Đề Cần Khắc Phục</th>
+<th style="text-align: center;">Phân Hạng</th>
+<th>Vị Trí Tệp Cần Chỉnh Sửa</th>
+<th>Giải Pháp Kỹ Thuật &amp; CSS Specs Cụ Thể</th>
+<th style="text-align: center;">Thời Gian Dự Kiến</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>P0-01</strong></td>
+<td><strong>Khủng hoảng nhân thân Lãnh đạo &amp; Cắt xén 7/12 nhân sự</strong></td>
+<td style="text-align: center;"><strong>P0 (Blocker)</strong></td>
+<td><code>teknova-data.ts</code>, <code>HomeView.vue</code>, <code>LeadershipSection.vue</code></td>
+<td>Khôi phục tên <strong>Trần Bình Sơn</strong> (MBA, Kỹ sư Điện tử), chèn ảnh cutout <code>/ceo-cutout.png</code>, bổ sung đầy đủ 12 nhân sự (đặc biệt KS. Trần Ngọc Trai &gt;20 năm KN và Bùi Thị Mai).</td>
+<td style="text-align: center;"><strong>4 Man-hours</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>P0-02</strong></td>
+<td><strong>Trắng toát 100% thumbnail dự án tại Block 6 trên Netlify</strong></td>
+<td style="text-align: center;"><strong>P0 (Blocker)</strong></td>
+<td><code>HomeView.vue:240-310</code>, <code>public/assets/img/projects/</code></td>
+<td>Tải và lưu trữ vĩnh viễn 6 ảnh thumbnail chuẩn 16:9 vào thư mục cục bộ <code>public/assets/img/projects/</code>; thay thế toàn bộ link <code>lh3.googleusercontent.com</code> bằng đường dẫn nội bộ.</td>
+<td style="text-align: center;"><strong>3 Man-hours</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>P1-01</strong></td>
+<td><strong>Bỏ sót 16/22 hợp đồng thực tế từ HSNL 2026</strong></td>
+<td style="text-align: center;"><strong>P1 (Critical)</strong></td>
+<td><code>teknova-data.ts:250-450</code>, <code>CaseStudies.vue</code></td>
+<td>Nạp toàn bộ 22 hợp đồng từ SSOT vào cấu trúc mảng <code>PROJECTS_ROSTER</code>, phân 3 tabs: Y tế (10 HĐ), Chính quyền (8 HĐ), Doanh nghiệp (4 HĐ).</td>
+<td style="text-align: center;"><strong>6 Man-hours</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>P1-02</strong></td>
+<td><strong>Tồn tại logo đối tác khống &amp; Case study dược phẩm hư cấu</strong></td>
+<td style="text-align: center;"><strong>P1 (Critical)</strong></td>
+<td><code>HomeView.vue:150-185</code>, <code>teknova-data.ts:353-388</code></td>
+<td>Xóa sạch logo Vinmec, Cisco, Microsoft, Fortinet, BIDV, Vietcombank. Thay bằng 12 logo thật (BV Phổi, TTYT Liên Chiểu...). Xóa case study Dược Miền Trung, thay bằng Cloud ACE hoặc MobiFone.</td>
+<td style="text-align: center;"><strong>3 Man-hours</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>P1-03</strong></td>
+<td><strong>Hero Section bị ép thành 2 cột làm biến dạng mockup EMR</strong></td>
+<td style="text-align: center;"><strong>P1 (Critical)</strong></td>
+<td><code>HomeView.vue:60-140</code>, <code>HeroSection.vue</code></td>
+<td>Tái cấu trúc Hero sang dạng Monumental Centered 1200px: Text tiêu đề căn giữa <code>max-w-4xl</code>, đặt mockup EMR Panorama trải rộng phía dưới kèm 2 floating badges.</td>
+<td style="text-align: center;"><strong>5 Man-hours</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>P2-01</strong></td>
+<td><strong>Lỗi vỡ biến số hiển thị <code>00+</code> trên dải số liệu thành tựu</strong></td>
+<td style="text-align: center;"><strong>P2 (Major)</strong></td>
+<td><code>CounterSection.vue</code>, <code>nav-router.js</code></td>
+<td>Sửa logic đếm số NaN; cấu hình giá trị khởi tạo an toàn: <code>&gt;20 Năm</code>, <code>22+ Dự án</code>, <code>12 Chuyên gia</code>, <code>100% Nghiệm thu</code>.</td>
+<td style="text-align: center;"><strong>2 Man-hours</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>P2-02</strong></td>
+<td><strong>Khối Lĩnh vực hoạt động bị trùng lặp 2 lần liên tiếp</strong></td>
+<td style="text-align: center;"><strong>P2 (Major)</strong></td>
+<td><code>HomeView.vue:190-235</code></td>
+<td>Xóa bỏ khối "Các bài toán TEKNOVA tập trung"; chuyển sang Bento Grid 6 ô duy nhất với Card 4 (AI/Cloud) phủ màu xanh Cobalt <code>bg-primary</code> nổi bật.</td>
+<td style="text-align: center;"><strong>3 Man-hours</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>P2-03</strong></td>
+<td><strong>Footer và Header thiếu thông tin trụ sở chính và MST</strong></td>
+<td style="text-align: center;"><strong>P2 (Major)</strong></td>
+<td><code>AppFooter.vue</code>, <code>AppHeader.vue</code></td>
+<td>Bổ sung trụ sở chính: <code>Tầng 3, 456 Nguyễn Hữu Thọ, Cẩm Lệ, Đà Nẵng</code> và <code>Mã số thuế: 0402300331</code>. Thêm nút Tải Profile PDF trên Header.</td>
+<td style="text-align: center;"><strong>2 Man-hours</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>P3-01</strong></td>
+<td><strong>Banner CTA cuối trang mang màu xanh đen <code>#0b1c30</code> tối tăm</strong></td>
+<td style="text-align: center;"><strong>P3 (Minor)</strong></td>
+<td><code>HomeView.vue:420-460</code></td>
+<td>Đổi sang gradient xanh cobalt rực rỡ <code>bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-800</code>, bo góc lớn <code>rounded-3xl</code>.</td>
+<td style="text-align: center;"><strong>1 Man-hour</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>P3-02</strong></td>
+<td><strong>Thiếu liên kết giao thức gọi điện thoại trực tiếp <code>tel:</code></strong></td>
+<td style="text-align: center;"><strong>P3 (Minor)</strong></td>
+<td><code>AppHeader.vue</code>, <code>AppFooter.vue</code></td>
+<td>Bọc số hotline <code>0935 722 579</code> trong thẻ <code>&lt;a href="tel:0935722579"&gt;</code>.</td>
+<td style="text-align: center;"><strong>0.5 Man-hour</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="52-huong-dan-ky-thuat-di-chuyen-tai-nguyen-anh-sang-thu-muc-cuc-bo-local-assets-migration-guide">5.2 Hướng Dẫn Kỹ Thuật Di Chuyển Tài Nguyên Ảnh Sang Thư Mục Cục Bộ (Local Assets Migration Guide)</h3>
+<p>Để chấm dứt vĩnh viễn thảm họa link ảnh CDN bên thứ ba bị hết hạn token xác thực hoặc bị chặn bảo mật (Cross-Origin Resource Sharing - CORS), Đội Dev bắt buộc phải thực hiện quy trình chuẩn hóa tài nguyên theo các bước sau:</p>
+<h4 id="1-quy-hoach-cau-truc-thu-muc-tai-nguyen-chuan">1. Quy hoạch cấu trúc thư mục tài nguyên chuẩn:</h4>
+<pre class="codehilite"><code class="language-text">public/
+├── assets/
+│   ├── img/
+│   │   ├── branding/
+│   │   │   ├── logo_teknova_vector.svg
+│   │   │   └── ceo_tran_binh_son_cutout.png
+│   │   ├── mockups/
+│   │   │   ├── emr_panorama_dashboard.webp
+│   │   │   ├── kiosk_checkin_flow.webp
+│   │   │   └── prescription_tt26_mobile.webp
+│   │   ├── partners/
+│   │   │   ├── bv_phoi_danang.png
+│   │   │   ├── ttyt_lienchieu.png
+│   │   │   ├── ttyt_nguhanhson.png
+│   │   │   ├── ttyt_camle.png
+│   │   │   ├── bv_phusan_nhi.png
+│   │   │   ├── chicuc_danso.png
+│   │   │   ├── cloud_ace.png
+│   │   │   ├── mobifone_danang.png
+│   │   │   └── pvcombank.png
+│   │   └── projects/
+│   │       ├── case_01_emr_bvphoi.webp
+│   │       ├── case_02_tt26_lienchieu.webp
+│   │       ├── case_03_zalo_his_phusan.webp
+│   │       ├── case_04_danso_56phuong.webp
+│   │       ├── case_05_camera_ai_dpmt.webp
+│   │       └── case_06_cloudace_portal.webp
+</code></pre>
+
+<h4 id="2-quy-tac-toi-uu-hoa-inh-dang-anh-khac-phuc-file-ceo-cutout">2. Quy tắc tối ưu hóa định dạng ảnh &amp; Khắc phục file CEO Cutout:</h4>
+<ul>
+<li>Toàn bộ ảnh thumbnail và mockup phải được chuyển sang định dạng <strong>WebP</strong> với chất lượng <code>quality: 85%</code> để giảm dung lượng file xuống dưới 120KB mà vẫn giữ độ sắc nét hoàn hảo trên màn hình Retina 2x.</li>
+<li>Logo đối tác phải dùng định dạng <strong>PNG trong suốt (transparent)</strong> hoặc <strong>SVG</strong>, đặt vừa vặn trong khung bounding box <code>120x60px</code>.</li>
+<li><strong>Tối ưu hóa file CEO Cutout (<code>ceo-cutout.png</code>)</strong>:</li>
+<li><em>Hiện trạng phát hiện</em>: File <code>teknova-portal/public/ceo-cutout.png</code> ban đầu nặng 1,028 KB (~1.03 MB), vượt quá 300% ngưỡng trần 350KB của tiêu chí AC-10.</li>
+<li><em>Quy chuẩn nén WebP &amp; PNG</em>: <ol>
+<li>Xuất bản tệp WebP chất lượng 85% (<code>ceo-cutout.webp</code>, dung lượng nén đạt 92.3 KB, giảm 91% dung lượng).</li>
+<li>Nén tệp PNG gốc sử dụng thuật toán phân cấp lượng tử 256 màu FASTOCTREE (<code>ceo-cutout.png</code>, dung lượng nén đạt 156.9 KB, vượt qua ngưỡng kiểm định &lt; 350KB) bảo toàn độ tương phản và kênh Alpha trong suốt.</li>
+</ol>
+</li>
+<li>Cấu trúc hiển thị HTML hỗ trợ nạp đa định dạng:
+    <code>html
+    &lt;picture&gt;
+      &lt;source srcset="/ceo-cutout.webp" type="image/webp" /&gt;
+      &lt;img src="/ceo-cutout.png" alt="Chủ tịch HĐQT kiêm Tổng Giám đốc Trần Bình Sơn" class="w-full h-auto object-contain" /&gt;
+    &lt;/picture&gt;</code></li>
+</ul>
+<h4 id="3-ac-ta-kien-truc-service-worker-cachestorage-pwa-offline-resilience-cho-benh-vien">3. Đặc Tả Kiến Trúc Service Worker &amp; CacheStorage (PWA Offline Resilience Cho Bệnh Viện):</h4>
+<ul>
+<li><strong>Bối cảnh thực tế</strong>: Khi kỹ sư Teknova pitching tại phòng họp giao ban tầng hầm, trung tâm dữ liệu hoặc hội trường bệnh viện có hạ tầng mạng nội bộ cách ly, không có sóng Wi-Fi/4G, trang web không có Service Worker sẽ lập tức bị báo lỗi kết nối mạng (màn hình "khủng long" offline).</li>
+<li><strong>Đặc tả cài đặt PWA &amp; Service Worker (<code>sw.js</code>)</strong>:</li>
+<li>Tích hợp <code>vite-plugin-pwa</code> (Workbox) trong chu trình build Next.js / Vite.</li>
+<li>Đăng ký Service Worker với các chiến lược bộ đệm theo nhóm tài nguyên:<ol>
+<li><em>App Shell (HTML, CSS, JS runtime, Font Inter/Plus Jakarta Sans)</em>: Áp dụng chiến lược <code>NetworkFirst</code> kèm fallback tức thì sang <code>CacheStorage</code> nếu mạng không phản hồi trong 800ms.</li>
+<li><em>Tài nguyên Hình ảnh Cục bộ (<code>/public/assets/img/**</code>, <code>ceo-cutout.png</code>, <code>ceo-cutout.webp</code>)</em>: Áp dụng chiến lược <code>StaleWhileRevalidate</code> lưu trong Cache API (<code>teknova-image-cache-v1</code>).</li>
+<li><em>Hồ sơ Năng lực In-browser Flipbook</em>: Pre-cache toàn bộ 18 trang WebP (<code>page_01.webp</code> đến <code>page_18.webp</code>) ngay khi Service Worker được kích hoạt lần đầu.</li>
+</ol>
+</li>
+<li>Bổ sung <code>manifest.json</code> đăng ký PWA, cho phép cài đặt portal như một Native Desktop App / Tablet App sẵn sàng trình diễn 100% Offline.</li>
+<li><strong>Giao diện phản hồi trạng thái mạng</strong>: Khi ngắt kết nối internet, thanh điều hướng Header hiển thị pill badge màu cam: <code>[ ⚡ Ngoại Tuyến: Chế Độ Trình Diễn PWA CacheStorage Sẵn Sàng ]</code>.</li>
+</ul>
+<hr />
+<h2 id="6-ac-ta-ky-thuat-prd-cho-5-tinh-nang-nang-tam-showcase">6. ĐẶC TẢ KỸ THUẬT PRD CHO 5 TÍNH NĂNG NÂNG TẦM SHOWCASE</h2>
+<p>Dưới đây là bản đặc tả kỹ thuật chi tiết (Product Requirement Document - PRD) của 5 tính năng nâng cấp then chốt nhằm biến Cổng thông tin TEKNOVA thành công cụ trình diễn giải pháp B2G/B2B vượt trội:</p>
+<pre class="codehilite"><code class="language-text">┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
+│                               5 TÍNH NĂNG TRÌNH DIỄN B2G ĐỘT PHÁ                                │
+├─────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ TÍNH NĂNG 1: INTERACTIVE LIVE HOSPITAL FLOW MOCKUP (Mô phỏng 5 bước chu trình khám chữa bệnh)  │
+│ TÍNH NĂNG 2: IN-BROWSER PROFILE PDF FLIPBOOK &amp; LEAD CAPTURE (Trình đọc lật trang HSNL 2026)    │
+│ TÍNH NĂNG 3: CASE STUDY DETAIL SLIDE-OVER DRAWER (Hồ sơ nghiệm thu 8 tầng cho 22 dự án)        │
+│ TÍNH NĂNG 4: TEAM &amp; KEY PERSONNEL SHOWCASE TAB (12 Nhân sự, 4 Khối ban &amp; Thẩm định Bằng cấp)   │
+│ TÍNH NĂNG 5: DIRECT DEMO BOOKING WIDGET VỚI HOSPITAL TIERING &amp; CAM KẾT SLA 24H                  │
+└─────────────────────────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+
+<hr />
+<h3 id="tinh-nang-1-interactive-live-hospital-flow-mockup">TÍNH NĂNG 1: INTERACTIVE LIVE HOSPITAL FLOW MOCKUP</h3>
+<h4 id="1-thong-tin-chung-user-story">1. Thông Tin Chung &amp; User Story</h4>
+<ul>
+<li><strong>Tên component</strong>: <code>HospitalFlowSimulator</code> (Tích hợp tại Hero Section và trang <code>/giai-phap/benh-an-dien-tu-emr</code>).</li>
+<li><strong>User Story</strong>: <blockquote>
+<p><em>"Với tư cách là Giám đốc Bệnh viện hoặc Trưởng phòng CNTT, tôi muốn tương tác trực tiếp với một quy trình khám bệnh khép kín 5 bước mô phỏng thực tế ngay trên trình duyệt web, để tôi có thể kiểm chứng được tính liên thông dữ liệu, độ trễ xử lý từng mili-giây, khả năng ký số Cloud CA và phương án phòng ngừa rủi ro xuất toán BHYT mà không cần phải cài đặt phần mềm thử nghiệm phức tạp."</em></p>
+</blockquote>
+</li>
+<li><strong>Giá trị Showcase B2G</strong>: Xóa tan hoàn toàn định kiến "website chỉ toàn hình ảnh Photoshop lượm lặt". Chứng minh đẳng cấp làm chủ kiến trúc y tế lâm sàng thời gian thực của TEKNOVA.</li>
+</ul>
+<h4 id="2-luong-tuong-tac-uxui-chi-tiet-qua-5-buoc-lam-sang">2. Luồng Tương Tác UX/UI Chi Tiết Qua 5 Bước Lâm Sàng</h4>
+<pre class="codehilite"><code class="language-text">[BƯỚC 1: TIẾP ĐÓN KIOSK] ──&gt; [BƯỚC 2: KHÁM BỆNH EMR] ──&gt; [BƯỚC 3: KÊ ĐƠN TT 26]
+  • Quét CCCD Chip / VNeID     • Chẩn đoán ICD-10 J44.1     • Kê thuốc Salbutamol / Corticoid
+  • Phân luồng Phòng 204        • Dấu sinh tồn: SpO2 96%     • Async Queue liên thông BYT (780ms)
+  • Latency: 12ms               • Ký số Cloud CA (34ms)      • Mã QR Đơn thuốc (&lt; 0.8s)
+                                                                     │
+                                                                     ▼
+[BƯỚC 5: ZALO OA &amp; VIETQR] &lt;── [BƯỚC 4: GIÁM ĐỊNH BHYT XML QĐ 130 / QĐ 3176]
+  • Decoupled Link bảo mật      • Pre-Audit Rule Engine (Tiền giám định 4 quy tắc)
+  • Xác thực OTP + 4 số CCCD    • Tự động đóng gói 5 bảng XML (XML1 - XML5)
+  • Thanh toán QR gạch nợ tức thì • Tem thời gian TSA Ban Cơ yếu Chính phủ (HTTP 200 SUCCESS)
+</code></pre>
+
+<ol>
+<li><strong>Bước 1: Tiếp đón tự động &amp; Phân luồng Kiosk (Patient Intake)</strong>:</li>
+<li><em>Hành động</em>: Người dùng nhấp nút "Mô phỏng quét thẻ CCCD gắn chip" hoặc "Quẹt thẻ BHYT".</li>
+<li><em>Phản hồi UI</em>: Hiển thị thông tin người bệnh: Ông Nguyễn Văn An (58 tuổi, CCCD: <code>048068******</code>), thẻ BHYT <code>GD47901289*****</code> còn giá trị sử dụng. Hệ thống tự động phân luồng vào Phòng 204 - Chuyên khoa Hô hấp. Số thứ tự: <code>#42</code>. Thời gian phản hồi tiếp nhận: <code>12ms</code>.</li>
+<li><strong>Bước 2: Khám bệnh lâm sàng &amp; Bệnh án điện tử EMR (Consultation &amp; EMR)</strong>:</li>
+<li><em>Hành động</em>: Bác sĩ chọn mã bệnh và xác nhận chỉ số sinh tồn.</li>
+<li><em>Phản hồi UI</em>: Nhập mã chẩn đoán ICD-10: <code>J44.1</code> (Đợt cấp bệnh phổi tắc nghẽn mạn tính - COPD), bệnh kèm <code>I10</code> (Tăng huyết áp). Nhịp thở <code>22 l/p</code>, SpO2 <code>96%</code>, Huyết áp <code>125/80 mmHg</code>. Kích hoạt nút "Ký số Cloud CA y lệnh" -&gt; Hiển thị chứng thư số RSA-2048 xác thực kèm dấu thời gian TSA Ban Cơ yếu. Độ trễ ký số: <code>34ms</code>.</li>
+<li><strong>Bước 3: Kê đơn thuốc điện tử liên thông Quốc gia (Prescription TT 26/2025/TT-BYT)</strong>:</li>
+<li><em>Hành động</em>: Bác sĩ phát hành đơn thuốc điều trị ngoại trú.</li>
+<li><em>Cơ chế kỹ thuật</em>: Kích hoạt hàng đợi xử lý bất đồng bộ (<code>Async Queue Worker</code>) đẩy dữ liệu sang Cổng <code>donthuocquocgia.vn</code>.</li>
+<li><em>Mô phỏng độ trễ thực tế</em>: Hệ thống mô phỏng đúng thời gian trễ xử lý hàng đợi bất đồng bộ <code>780ms</code> (TT 26 async queue latency).</li>
+<li><em>Phản hồi UI</em>: Cấp mã đơn thuốc quốc gia: <code>26001-DTQG-2026-99214</code>, in mã QR phản hồi trên màn hình trong thời gian <code>0.78s</code> (&lt; 0.8 giây theo yêu cầu). Độ trễ API: <code>22ms</code>.</li>
+<li><strong>Bước 4: Cổng đối soát, Pre-Audit Rule Engine &amp; Đóng gói XML Giám định BHYT (QĐ 130 &amp; QĐ 3176)</strong>:</li>
+<li><em>Hành động</em>: Cán bộ giám định nhấp "Trích xuất &amp; Kiểm tra 5 bảng dữ liệu XML".</li>
+<li><em>Hệ Thống Tiền Giám Định Lâm Sàng (Pre-Audit Rule Engine)</em>: Để bảo vệ bệnh viện trước nguy cơ xuất toán BHYT, hệ thống tự động chạy 4 quy tắc kiểm tra đối soát lâm sàng trước khi gửi dữ liệu:<ol>
+<li><em>Quy tắc 1 (Đồng bộ Dấu thời gian TSA)</em>: Kiểm tra nghiêm ngặt chuỗi thời gian y lệnh: Thời gian chỉ định &lt;= Thời gian thực hiện &lt;= Thời gian ký số y bác sĩ &lt;= Dấu thời gian TSA Ban Cơ yếu Chính phủ. Loại bỏ 100% lỗi lệch giờ ký số y lệnh.</li>
+<li><em>Quy tắc 2 (Đối soát Ánh xạ ICD-10 vs Danh mục Dược thư Quốc gia)</em>: Kiểm tra chẩn đoán ICD-10 có nằm trong chỉ định thanh toán của thuốc theo Thông tư 20/2022/TT-BYT. Cảnh báo và ngăn chặn ngay nếu kê kháng sinh phổ rộng (Ceftriaxone) hoặc giãn phế quản (Salbutamol) nhưng chỉ chẩn đoán Tăng huyết áp vô căn (I10) mà thiếu mã bệnh lý hô hấp.</li>
+<li><em>Quy tắc 3 (Phạm vi Chứng chỉ Hành nghề CCHN)</em>: Kiểm tra tính hợp lệ và phạm vi hoạt động chuyên môn ghi trên Chứng chỉ hành nghề (CCHN) của bác sĩ kê đơn/chỉ định dịch vụ kỹ thuật.</li>
+<li><em>Quy tắc 4 (Quét Trùng Lặp Chỉ Định Dịch Vụ / Duplicate Claims)</em>: Phát hiện và cảnh báo các chỉ định xét nghiệm, thuốc hoặc thủ thuật bị kê trùng lặp trong cùng một đợt khám (trong vòng 24 giờ).</li>
+</ol>
+</li>
+<li><em>Phản hồi UI</em>: Khi cả 4 quy tắc tiền kiểm tra đạt chuẩn, hệ thống tự động đóng gói 5 file XML: <code>XML1</code> (Tổng hợp KCB), <code>XML2</code> (Bảng thuốc), <code>XML3</code> (Vật tư y tế &amp; Dịch vụ kỹ thuật), <code>XML4</code> (Cận lâm sàng &amp; X-quang), <code>XML5</code> (Diễn biến lâm sàng). Trạng thái phản hồi: <strong>PRE-AUDIT PASSED: HỢP LỆ — 0% NGUY CƠ XUẤT TOÁN (HTTP 200 SUCCESS)</strong>. Độ trễ xử lý: <code>45ms</code>.</li>
+<li><strong>Bước 5: Trả kết quả, Nhắc lịch khám &amp; Thanh toán Viện phí qua Zalo OA (Decoupled Link &amp; VietQR)</strong>:</li>
+<li><em>Hành động</em>: Người bệnh mở thông báo trên ứng dụng Zalo điện thoại.</li>
+<li><em>Bảo mật Nghị định 13/2023/NĐ-CP</em>: Không truyền dữ liệu bệnh án qua máy chủ Zalo. Gửi <code>Decoupled Link</code> dùng một lần, yêu cầu nhập 4 số cuối CCCD để mở kết quả.</li>
+<li><em>Phản hồi UI</em>: Màn hình giả lập điện thoại nhận thông báo Zalo OA Bệnh viện Phổi Đà Nẵng, hiển thị mã VietQR PRO thanh toán phần đồng chi trả viện phí <code>142.000 VNĐ</code>, tự động gạch nợ trên hệ thống kế toán HIS và đồng bộ lịch hẹn tái khám sau 14 ngày.</li>
+</ol>
+<h4 id="3-bang-thanh-tra-ky-thuat-technical-inspector-panel-thu-nghiem-gay-loi-failure-simulation">3. Bảng Thanh Tra Kỹ Thuật (Technical Inspector Panel) &amp; Thử Nghiệm Gây Lỗi (Failure Simulation)</h4>
+<ul>
+<li><strong>Inspector Panel</strong>: Một tab bên cạnh cho phép kỹ sư xem trực tiếp cấu trúc gói tin (Live JSON/XML Payload) của từng bước, hiển thị thời gian phản hồi thực tế và có nút "Sao chép cấu trúc JSON" phục vụ các buổi họp kỹ thuật.</li>
+<li><strong>Nút mô phỏng rớt mạng (Inject Failure Toggle)</strong>: Khi bật nút <em>"Mô phỏng đứt kết nối Cổng Đơn thuốc Quốc gia"</em>, hệ thống chuyển sang chế độ <code>Async Queue Active</code>. Màn hình hiển thị: <em>"Đang lưu trữ tạm thời tại bộ đệm Redis nội bộ bệnh viện; đơn thuốc vẫn được cấp mã dự phòng hợp lệ; tự động tái gửi khi kết nối internet khôi phục"</em>. Tính năng này chứng minh hệ thống không bao giờ làm gián đoạn khâu cấp phát thuốc của bệnh viện.</li>
+</ul>
+<h4 id="4-kien-truc-ky-thuat-state-machine-typescript-contracts">4. Kiến Trúc Kỹ Thuật, State Machine &amp; TypeScript Contracts</h4>
+<pre class="codehilite"><code class="language-typescript">// Định nghĩa kiểu dữ liệu cho 5 bước mô phỏng lâm sàng
+export type HospitalStepId = 'intake' | 'emr' | 'prescription' | 'bhyt' | 'zalo';
+
+// Cụ thể hóa schema đơn thuốc điện tử TT 26/2025/TT-BYT
+export interface EPrecriptionPayload {
+  ma_cskcb: string; // Mã cơ sở khám chữa bệnh: &quot;48001&quot; (BV Phổi Đà Nẵng)
+  ma_bac_si: string; // Mã CCHN bác sĩ: &quot;BS04921&quot;
+  ma_don_thuoc: string; // Mã định danh quốc gia: &quot;26001-DTQG-2026-99214&quot;
+  chan_doan: string; // Mã bệnh ICD-10: &quot;J44.1&quot;
+  ngay_ke: string;
+  thuoc: Array&lt;{
+    ma_thuoc: string; // &quot;40.123&quot;
+    ten_thuoc: string; // &quot;Salbutamol 5mg&quot;
+    so_luong: number;
+    don_gia: number;
+    thanh_tien: number;
+    lieu_dung: string;
+  }&gt;;
+}
+
+// Cụ thể hóa schema 5 bảng XML giám định BHYT theo QĐ 130/QĐ-BYT &amp; QĐ 3176/QĐ-BYT
+export interface Insurance5XmlBundle {
+  // Bảng 1: Tổng hợp chi phí khám chữa bệnh BHYT
+  xml1TongHop: {
+    tag: '&lt;TONG_HOP&gt;';
+    MA_LK: string; // &quot;48001_2026_0001&quot;
+    MA_BN: string; // &quot;BN00982&quot;
+    MA_THE: string; // &quot;GD4790128912345&quot;
+    MA_DKBD: string; // &quot;48001&quot;
+    MA_BENH: string; // &quot;J44.1&quot;
+    NGAY_VAO: string; // &quot;202610150800&quot;
+    NGAY_RA: string; // &quot;202610151130&quot;
+    KET_QUA_DTRI: string; // &quot;1&quot;
+    TINH_TRANG_RV: string; // &quot;1&quot;
+    T_TONGCHI: number; // 450000
+    T_BHTT: number; // 360000
+    T_BNTT: number; // 90000
+  };
+  // Bảng 2: Chi tiết thuốc thanh toán BHYT
+  xml2ChiTietThuoc: {
+    tag: '&lt;CHI_TIET_THUOC&gt;';
+    danhSachThuoc: Array&lt;{
+      tag: '&lt;THUOC&gt;';
+      MA_LK: string;
+      MA_THUOC: string; // &quot;40.123&quot;
+      TEN_THUOC: string; // &quot;Salbutamol 5mg&quot;
+      SO_LUONG: number; // 2
+      DON_GIA: number; // 45000
+      THANH_TIEN: number; // 90000
+    }&gt;;
+  };
+  // Bảng 3: Chi tiết dịch vụ kỹ thuật &amp; vật tư y tế
+  xml3ChiTietDvktVtyt: {
+    tag: '&lt;CHI_TIET_DVKT_VTYT&gt;';
+    danhSachDvkt: Array&lt;{
+      tag: '&lt;DVKT&gt;';
+      MA_LK: string;
+      MA_DICH_VU: string; // &quot;DV.0192&quot;
+      TEN_DICH_VU: string; // &quot;Khám lâm sàng hô hấp&quot;
+      SO_LUONG: number;
+      DON_GIA: number;
+      THANH_TIEN: number;
+    }&gt;;
+  };
+  // Bảng 4: Chi tiết kết quả cận lâm sàng
+  xml4ChiTietCls: {
+    tag: '&lt;CHI_TIET_CLS&gt;';
+    danhSachCls: Array&lt;{
+      tag: '&lt;CLS&gt;';
+      MA_LK: string;
+      MA_DICH_VU: string; // &quot;XQ.001&quot;
+      NGAY_KQ: string;
+      KET_LUAN: string; // &quot;Hình ảnh phế trường sáng tăng dãn&quot;
+    }&gt;;
+  };
+  // Bảng 5: Diễn biến lâm sàng
+  xml5DienBienLamsang: {
+    tag: '&lt;DIEN_BIEN_LAMSANG&gt;';
+    danhSachDienBien: Array&lt;{
+      tag: '&lt;DIEN_BIEN&gt;';
+      MA_LK: string;
+      NGAY_YL: string;
+      DIEN_BIEN: string; // &quot;Bệnh nhân tỉnh, khó thở nhẹ, SpO2 96%&quot;
+    }&gt;;
+  };
+}
+
+export interface WorkflowStepData {
+  id: HospitalStepId;
+  stepIndex: number;
+  title: string;
+  subTitle: string;
+  legalAnchor: string;
+  latencyMs: number;
+  status: 'idle' | 'processing' | 'success' | 'fallback_active' | 'syncing';
+  metrics: { [key: string]: string };
+  payloadPreview: EPrecriptionPayload | Insurance5XmlBundle | Record&lt;string, unknown&gt;;
+}
+
+export interface HospitalFlowState {
+  currentStep: HospitalStepId;
+  isPlaying: boolean;
+  playbackSpeed: 1 | 2; // Tốc độ tự động phát: 1x (2.5s) hoặc 2x (1.25s)
+  isProcessing: boolean; // Trạng thái chuyển tiếp bất đồng bộ
+  currentStepLatencyMs: number; // Mô phỏng độ trễ thực tế 780ms (TT 26)
+  networkStatus: 'online' | 'offline' | 'syncing' | 'reconnecting';
+  isNetworkDownSimulated: boolean;
+  pendingQueueCount: number; // Bộ đếm hàng đợi Redis đệm ngoại tuyến
+  queueDrainCount: number; // Bộ đếm giải tỏa đơn thuốc khi phục hồi mạng
+  activeTab: 'ui_preview' | 'json_inspector';
+}
+</code></pre>
+
+<pre class="codehilite"><code class="language-javascript">// State Machine Transitions &amp; Async Latency Simulation
+function flowReducer(state, action) {
+  switch (action.type) {
+    case 'STEP_START':
+      return {
+        ...state,
+        isProcessing: true,
+        currentStepLatencyMs: 0
+      };
+    case 'STEP_PROGRESS':
+      return {
+        ...state,
+        currentStepLatencyMs: action.payload?.latencyMs || 780
+      };
+    case 'STEP_SUCCESS':
+      return {
+        ...state,
+        isProcessing: false,
+        currentStep: action.payload?.nextStep || state.currentStep
+      };
+    case 'NEXT_STEP': {
+      const steps = ['intake', 'emr', 'prescription', 'bhyt', 'zalo'];
+      const nextIdx = (steps.indexOf(state.currentStep) + 1) % steps.length;
+      return { ...state, currentStep: steps[nextIdx] };
+    }
+    case 'SET_STEP':
+      return { ...state, currentStep: action.payload };
+    case 'TOGGLE_PLAY':
+      return { ...state, isPlaying: !state.isPlaying };
+    case 'TOGGLE_NETWORK_SIMULATION': {
+      const willBeDown = !state.isNetworkDownSimulated;
+      return {
+        ...state,
+        isNetworkDownSimulated: willBeDown,
+        networkStatus: willBeDown ? 'offline' : 'syncing',
+        pendingQueueCount: willBeDown ? 5 : state.pendingQueueCount
+      };
+    }
+    case 'RECONNECT_DRAIN_TICK':
+      return {
+        ...state,
+        queueDrainCount: state.queueDrainCount + 1,
+        pendingQueueCount: Math.max(0, state.pendingQueueCount - 1)
+      };
+    case 'RECONNECT_COMPLETE':
+      return {
+        ...state,
+        networkStatus: 'online',
+        pendingQueueCount: 0,
+        queueDrainCount: 0
+      };
+    case 'SWITCH_TAB':
+      return { ...state, activeTab: action.payload };
+    default:
+      return state;
+  }
+}
+
+// Luồng điều phối bất đồng bộ với độ trễ hàng đợi thực tế 780ms (TT 26 Gateway Simulation):
+async function executeStepAsync(dispatch, nextStep) {
+  dispatch({ type: 'STEP_START' });
+  // Mô phỏng độ trễ hàng đợi liên thông Cổng Đơn thuốc Quốc gia 780ms
+  await new Promise((resolve) =&gt; setTimeout(resolve, 780));
+  dispatch({ type: 'STEP_PROGRESS', payload: { latencyMs: 780 } });
+  dispatch({ type: 'STEP_SUCCESS', payload: { nextStep } });
+}
+</code></pre>
+
+<hr />
+<h3 id="tinh-nang-2-in-browser-profile-pdf-viewer-flipbook-lead-capture">TÍNH NĂNG 2: IN-BROWSER PROFILE PDF VIEWER / FLIPBOOK &amp; LEAD CAPTURE</h3>
+<h4 id="1-thong-tin-chung-user-story_1">1. Thông Tin Chung &amp; User Story</h4>
+<ul>
+<li><strong>Tên component</strong>: <code>ProfileFlipbookReader</code> (Kích hoạt qua Modal khi nhấp nút "Tải Profile PDF" tại Header, Hero và Footer).</li>
+<li><strong>User Story</strong>: <blockquote>
+<p><em>"Với tư cách là Cán bộ Ban Giám đốc hoặc Phòng Kế hoạch Bệnh viện, tôi muốn có thể mở và đọc lướt toàn bộ cuốn Hồ Sơ Năng Lực 2026 của TEKNOVA trực tiếp ngay trên trình duyệt máy tính hoặc điện thoại mà không phải tải file nặng 30MB về máy, để tôi có thể thẩm định ngay thông tin pháp lý, danh sách nhân sự và văn bằng chứng chỉ trong lúc họp; đồng thời khi cần bản lưu trữ chính thức có đóng dấu đỏ, tôi có thể điền thông tin nhanh để tải về."</em></p>
+</blockquote>
+</li>
+<li><strong>Giá trị Showcase B2G</strong>: Tối ưu hóa phễu tiếp cận tài liệu thầu, loại bỏ 100% rào cản tải file nặng, cung cấp trải nghiệm đọc tài liệu số sang trọng và thu thập đầu mối B2G chất lượng cao.</li>
+</ul>
+<h4 id="2-cac-che-o-xem-cong-cu-tuong-tac">2. Các Chế Độ Xem &amp; Công Cụ Tương Tác</h4>
+<ul>
+<li><strong>Chế độ Lật trang 3D Realistic Flipbook (Desktop / iPad)</strong>: Tái hiện chân thực cảm giác lật mở cuốn kỷ yếu hồ sơ năng lực bìa cứng khổ ngang A4, góc lật uốn lượn tự nhiên theo con trỏ chuột kèm hiệu ứng bóng đổ trang giấy (<code>shadow-2xl</code>).</li>
+<li><strong>Chế độ Cuộn trang dọc liên tục (Mobile Vertical Scroll)</strong>: Tự động phát hiện màn hình di động (&lt; 768px) để chuyển sang chế độ cuộn trang dọc mượt mà, hỗ trợ thao tác chạm vuốt (touch swipe) và zoom hai ngón tay.</li>
+<li><strong>Mục lục tương tác nhấp tức thì (Interactive Deep-Link TOC)</strong>:</li>
+<li>Trang 4: Lĩnh vực hoạt động cốt lõi.</li>
+<li>Trang 6: Sơ đồ cơ cấu tổ chức 4 phòng ban.</li>
+<li>Trang 7: Giấy phép ĐKKD 0402300331 &amp; Bản quyền tác giả phần mềm EMR.</li>
+<li>Trang 10: Danh sách 12 nhân sự chủ chốt.</li>
+<li>Trang 12: Danh mục 22 Hợp đồng dự án thực tế.</li>
+<li>Trang 17-18: Bản scan văn bằng chứng chỉ gốc của các kỹ sư, thạc sĩ, tiến sĩ.</li>
+<li><strong>Thanh công cụ trình diễn (Presentation Toolbar)</strong>:</li>
+<li>Nút <code>[ ◀ Trang trước ]</code> / <code>[ Trang sau ▶ ]</code></li>
+<li>Ô nhập số trang trực tiếp: <code>Trang [ 12 ] / 18</code></li>
+<li>Nút <code>[ 🔍 Thu phóng 100% / 150% ]</code></li>
+<li>Nút <code>[ ⛶ Toàn màn hình (F11 Presentation) ]</code> tối ưu khi cắm cáp máy chiếu phòng họp.</li>
+</ul>
+<h4 id="3-cong-thu-thap-au-moi-nhe-nhang-3-field-lead-capture-gate">3. Cổng Thu Thập Đầu Mối Nhẹ Nhàng (3-Field Lead Capture Gate)</h4>
+<ul>
+<li><strong>Nguyên tắc Anti-Friction</strong>: Cho phép người dùng tự do đọc trực tuyến <strong>100% toàn bộ 18 trang</strong> của cuốn Hồ sơ năng lực mà không bắt buộc đăng nhập.</li>
+<li><strong>Thời điểm kích hoạt phễu</strong>: Chỉ khi người dùng bấm nút nổi bật màu xanh: <strong>"TẢI BẢN GỐC PDF CÓ DẤU ĐỎ ĐỂ LƯU HỒ SƠ THẦU"</strong>, hệ thống mới mở form popup trang nhã với đúng 3 trường thông tin:</li>
+<li><em>Họ và tên cán bộ</em>: (Ví dụ: BS. CKII Lê Văn Dũng)</li>
+<li><em>Đơn vị y tế / Cơ quan công tác</em>: (Ví dụ: Trung tâm Y tế Quận Hải Châu)</li>
+<li><em>Số điện thoại / Zalo</em>: (Ví dụ: 0914 123 456)</li>
+<li><strong>Cơ chế xử lý tức thời</strong>: Sau khi bấm gửi, trình duyệt tự động kích hoạt tải file <code>Teknova_Ho_So_Nang_Luc_2026_Official.pdf</code> ngay lập tức (không bắt người dùng phải vào email xác thực), đồng thời bắn Webhook thông báo cho bộ phận Pre-sales của TEKNOVA qua Telegram / CRM để kịp thời chăm sóc.</li>
+</ul>
+<h4 id="4-kien-truc-ky-thuat-zero-latency-assets-fallback">4. Kiến Trúc Kỹ Thuật (Zero-Latency Assets Fallback)</h4>
+<ul>
+<li>Để bảo đảm thời gian khởi chạy dưới <code>0.5 giây</code>, toàn bộ 18 trang PDF được kết xuất sẵn thành các file ảnh WebP tối ưu hóa cao (<code>/public/profile-assets/page_01.webp</code> ... <code>page_18.webp</code>, dung lượng mỗi trang chỉ ~85KB). Trình duyệt tải trước 2 trang đầu tiên, tạo cảm giác mở tức thì mà không cần đợi thư viện PDF.js giải mã file nhị phân nặng.</li>
+</ul>
+<h4 id="5-invisible-text-layer-bo-cong-cu-tim-kiem-van-ban-cho-thanh-tra-vien-searchable-pdf-flipbook">5. Invisible Text Layer &amp; Bộ Công Cụ Tìm Kiếm Văn Bản Cho Thanh Tra Viên (Searchable PDF Flipbook)</h4>
+<ul>
+<li><strong>Vấn đề thực tế</strong>: Khi thanh tra viên Sở Y tế hoặc thành viên Tổ chuyên gia đấu thầu cần kiểm tra nhanh các thông số pháp lý, họ thường bấm <code>Ctrl+F</code> để tìm kiếm mã số thuế (<code>0402300331</code>), tên Chủ tịch HĐQT (<code>Trần Bình Sơn</code>), hoặc căn cứ pháp lý (<code>Thông tư 46</code>). Do trang tài liệu được render dưới dạng ảnh WebP, tính năng tìm kiếm văn bản tự nhiên sẽ không hoạt động nếu thiếu lớp dữ liệu chữ (Text Layer).</li>
+<li><strong>Giải pháp Invisible Text Layer (DOM Text Overlay)</strong>:</li>
+<li>Tích hợp lớp phủ văn bản vô hình (<code>&lt;div class="invisible-text-layer select-text opacity-0 absolute inset-0 pointer-events-auto"&gt;</code>) đè khớp tọa độ 1:1 trên từng trang WebP trong Flipbook.</li>
+<li>Các khối chữ được bóc tách từ stream văn bản PDF gốc qua PDF.js, định vị chính xác theo tọa độ <code>(left, top, width, height)</code> của từng từ và dòng chữ.</li>
+<li>Cho phép người dùng bôi đen sao chép nội dung (Text Selection) và hỗ trợ phím tắt <code>Ctrl+F</code> bản địa của trình duyệt.</li>
+<li><strong>Bộ công cụ tìm kiếm nội bộ (Search in Flipbook Engine)</strong>:</li>
+<li>Trên thanh công cụ Flipbook tích hợp ô nhập: <code>[ 🔍 Search in Flipbook... ]</code>.</li>
+<li>Khi gõ từ khóa (ví dụ: <code>Trần Bình Sơn</code>, <code>0402300331</code>, <code>Bệnh viện Phổi Đà Nẵng</code>), hệ thống tự động quét chỉ mục (In-memory Keyword Index), làm sáng (highlight) các vị trí xuất hiện và hiển thị nút <code>[ Prev ]</code> / <code>[ Next ]</code> để người dùng nhảy trang tức thì đến đúng nội dung cần tra cứu.</li>
+</ul>
+<hr />
+<h3 id="tinh-nang-3-case-study-detail-drawer-modal-slide-over-deep-dive">TÍNH NĂNG 3: CASE STUDY DETAIL DRAWER / MODAL (SLIDE-OVER DEEP DIVE)</h3>
+<h4 id="1-thong-tin-chung-user-story_2">1. Thông Tin Chung &amp; User Story</h4>
+<ul>
+<li><strong>Tên component</strong>: <code>CaseStudyDetailDrawer</code> (Kích hoạt khi nhấp vào bất kỳ thẻ dự án nào trong 22 hợp đồng tại Trang chủ, trang <code>/du-an</code> hoặc trang <code>/giai-phap</code>).</li>
+<li><strong>User Story</strong>: <blockquote>
+<p><em>"Với tư cách là Cán bộ phụ trách Thẩm định hồ sơ thầu Bệnh viện hoặc Sở Y tế, tôi muốn nhấp vào bất kỳ dự án tiêu biểu nào của TEKNOVA để mở ra toàn bộ hồ sơ nghiệm thu chi tiết, xem được số hợp đồng, các phân hệ đã bàn giao, căn cứ văn bản luật, số liệu đo lường trước/sau và nhận xét của lãnh đạo đơn vị, để tôi có đầy đủ cơ sở pháp lý báo cáo lên Hội đồng mua sắm."</em></p>
+</blockquote>
+</li>
+<li><strong>Giá trị Showcase B2G</strong>: Biến mỗi dự án thành một hồ sơ năng lực thu nhỏ sắc bén, minh bạch hóa 100% bằng chứng triển khai thực địa, loại bỏ mọi nghi ngờ về năng lực thực tế của công ty.</li>
+</ul>
+<h4 id="2-cau-truc-8-tang-thong-tin-chieu-sau-trong-ngan-keo-slide-over">2. Cấu Trúc 8 Tầng Thông Tin Chiều Sâu Trong Ngăn Kéo Slide-Over</h4>
+<pre class="codehilite"><code class="language-text">┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ [✕ ĐÓNG] BỆNH VIỆN PHỔI ĐÀ NẴNG · CHI TIẾT DỰ ÁN TRIỂN KHAI EMR &amp; LIÊN THÔNG BHYT              │
+├─────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ TẦNG 1: BANNER ĐƠN VỊ &amp; HUY HIỆU ĐÁNH GIÁ                                                       │
+│ • Bệnh viện Chuyên khoa Hạng II Tuyến Thành phố · Quy mô 250 giường bệnh                        │
+│ • Địa chỉ: Tổ 53 Phước Lý, P. Hòa Minh, Q. Liên Chiểu, TP. Đà Nẵng                              │
+│ • Huy hiệu: [✓ ĐÃ NGHIỆM THU BỎ BỆNH ÁN GIẤY THEO THÔNG TƯ 46/2018/TT-BYT]                     │
+├─────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ TẦNG 2: THÔNG TIN HỢP ĐỒNG &amp; CĂN CỨ PHÊ DUYỆT TRÚNG THẦU (HSNL 2026)                            │
+│ • Hợp đồng 01: Thuê phần mềm EMR · HĐ số 08/2024/HĐ-BVP · Quyết định số 142/QĐ-SYT (KQLCNT)   │
+│   Mã E-TBMT Hệ thống Mạng Đấu thầu Quốc gia: IB2400018920-00 (muasamcong.mpi.gov.vn)            │
+│ • Hợp đồng 02: Nâng cấp HIS XML QĐ 3176 · HĐ số 29/2024/HĐ-XML-BVP · Quyết định số 356/QĐ-BVP │
+│ • Hợp đồng 03: Phần mềm Zalo OA tra cứu · HĐ số 12/2024/HĐ-ZALO-BVP · Quyết định số 218/QĐ-BVP│
+├─────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ TẦNG 3: BỐI CẢNH &amp; BÀI TOÁN KHÓ TRƯỚC TRIỂN KHAI                                                │
+│ • Hàng nghìn hồ sơ bệnh án giấy lưu kho quá tải, nguy cơ ẩm mốc, thất lạc bệnh án điều trị dài  │
+│   ngày; bác sĩ mất trung bình 35-40% thời gian trực buồng chỉ để ghi chép tay và ký sổ.         │
+│ • Áp lực xuất toán BHYT do sai lệch dấu thời gian ký y lệnh so với giờ thực hiện cận lâm sàng.  │
+├─────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ TẦNG 4: DANH MỤC PHÂN HỆ PHẦN MỀM ĐÃ BÀN GIAO THỰC TẾ                                           │
+│ [✓] Phân hệ Bệnh án điện tử nội trú các khoa lâm sàng (Nội Hô hấp, Hồi sức cấp cứu, Lao)       │
+│ [✓] Phân hệ Ký số tập trung Cloud CA &amp; Dấu thời gian TSA Ban Cơ yếu Chính phủ                    │
+│ [✓] Cổng trích xuất tự động gói tin XML liên thông Giám định BHYT theo QĐ 3176/QĐ-BYT            │
+│ [✓] Cổng đồng bộ dữ liệu Người bệnh tử vong đẩy Cổng Dịch vụ công TP. Đà Nẵng                   │
+├─────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ TẦNG 5: CĂN CỨ PHÁP LÝ NGHIỆM THU BẮT BUỘC                                                     │
+│ • Thông tư 46/2018/TT-BYT: Quy định về hồ sơ bệnh án điện tử, lưu trữ và bảo mật                │
+│ • Quyết định 3176/QĐ-BYT: Chuẩn dữ liệu đầu ra phục vụ quản lý, giám định, thanh toán KCB BHYT │
+│ • Quyết định 80/2014/QĐ-TTg: Cơ chế thuê dịch vụ CNTT thường niên chi từ nguồn thu viện phí    │
+│ • Nghị định 13/2023/NĐ-CP: Bảo vệ dữ liệu cá nhân bệnh nhân qua Decoupled Link Zalo OA         │
+├─────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ TẦNG 6: BẢNG SO SÁNH CHỈ SỐ ĐO LƯỜNG TÁC ĐỘNG (BEFORE vs. AFTER METRICS)                        │
+│ ┌──────────────────────────────────────────────┬──────────────────┬──────────────────┐          │
+│ │ Chỉ số Vận hành &amp; Đo lường                   │ Trước Khi Làm    │ Sau Khi Bàn Giao │          │
+│ ├──────────────────────────────────────────────┼──────────────────┼──────────────────┤          │
+│ │ Tỷ lệ bệnh án nội trú không giấy             │ 0.0% (100% giấy) │ 100% Điện tử     │          │
+│ │ Thời gian tra cứu tiền sử bệnh án cũ         │ 15 - 25 phút     │ &lt; 3 giây         │          │
+│ │ Tỷ lệ hồ sơ bị trả về kiểm tra dấu giờ BHYT  │ 8.4%             │ 0.0%             │          │
+│ │ Thời gian trả kết quả chẩn đoán qua Zalo     │ Chờ tại sảnh     │ Nhận sau 30 giây │          │
+│ └──────────────────────────────────────────────┴──────────────────┴──────────────────┘          │
+├─────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ TẦNG 7: TRÍCH DẪN ĐÁNH GIÁ THỰC TẾ TỪ LÃNH ĐẠO CƠ SỞ                                            │
+│ &quot;Kỹ sư TEKNOVA túc trực trực tiếp tại các khoa phòng cả ban đêm, hướng dẫn từng bác sĩ lớn tuổi │
+│ thao tác ký số y lệnh. Nhờ hệ thống dấu thời gian TSA chuẩn mực, đợt kiểm tra BHYT vừa qua     │
+│ bệnh viện không bị xuất toán một hồ sơ nào, thủ tục thanh quyết toán diễn ra rất thuận lợi.&quot;    │
+│ — Trích Biên bản Đánh giá Kỹ thuật, Hội đồng Khoa học Bệnh viện Phổi Đà Nẵng                    │
+├─────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ TẦNG 8: HÀNH ĐỘNG CHUYỂN ĐỔI TIẾP THEO (BOTTOM CONVERSION ACTION)                               │
+│ [ ĐĂNG KÝ THAM QUAN THỰC TẾ MÔ HÌNH NÀY TẠI BỆNH VIỆN PHỔI ĐÀ NẴNG ] -&gt; Tự động điền thông tin  │
+└─────────────────────────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+
+<h4 id="3-danh-muc-22-du-an-co-san-trong-he-thong-drawer">3. Danh Mục 22 Dự Án Có Sẵn Trong Hệ Thống Drawer</h4>
+<p>Hệ thống mã nguồn phải nạp đầy đủ cấu trúc dữ liệu cho <strong>tất cả 22 hợp đồng</strong> từ HSNL 2026 kèm định danh hợp đồng thực tế (<code>contractNumber</code> / <code>biddingRef</code> / Số Quyết định phê duyệt trúng thầu):
+1. <code>bv-phoi-emr</code>: Thuê phần mềm EMR Bệnh viện Phổi Đà Nẵng (HĐ số 08/2024/HĐ-BVP · Quyết định số 142/QĐ-SYT · E-TBMT: IB2400018920-00)
+2. <code>bv-phoi-zalo</code>: Phần mềm quảng bá và tra cứu Zalo OA tích hợp HIS Bệnh viện Phổi (HĐ số 12/2024/HĐ-ZALO-BVP · Quyết định số 218/QĐ-BVP)
+3. <code>bv-phoi-xml3176</code>: Nâng cấp HIS XML QĐ 3176 và dữ liệu tử vong DVC TP. Đà Nẵng (HĐ số 29/2024/HĐ-XML-BVP · Quyết định số 356/QĐ-BVP)
+4. <code>ttyt-lienchieu-tt26</code>: Cập nhật đơn thuốc điện tử TT 26/2025/TT-BYT tại TTYT Liên Chiểu (HĐ số 05/2025/HĐ-TT26-LC · Quyết định số 89/QĐ-TTYTLC)
+5. <code>ttyt-lienchieu-xml3176</code>: Nâng cấp trích xuất XML QĐ 3176 tại TTYT Liên Chiểu (HĐ số 19/2024/HĐ-XML-LC · Quyết định số 194/QĐ-TTYTLC)
+6. <code>ttyt-lienchieu-qd130</code>: Nâng cấp phần mềm BV đáp ứng QĐ 130, CV 1165, CV 3617, Đề án 06, GPLX và Zalo OA (HĐ số 33/2024/HĐ-QD130-LC · Quyết định số 312/QĐ-TTYTLC)
+7. <code>ttyt-camle-xml3176</code>: Cập nhật HIS đẩy XML QĐ 3176 tại TTYT Cẩm Lệ (HĐ số 21/2024/HĐ-HIS-CL · Quyết định số 208/QĐ-TTYTCL)
+8. <code>ttyt-nguhanhson-emr</code>: Thuê phần mềm Bệnh án điện tử EMR 2025 tại TTYT Ngũ Hành Sơn (HĐ số 02/2025/HĐ-EMR-NHS · Quyết định số 45/QĐ-TTYTNHS)
+9. <code>bv-phusannhi-zalo</code>: Phần mềm trả kết quả xét nghiệm qua Zalo cơ sở 01 BV Phụ sản - Nhi (HĐ số 16/2024/HĐ-PSN · Quyết định số 175/QĐ-BVPSN)
+10. <code>bv-yhoccotruyen</code>: Cổng thông tin điện tử Bệnh viện Y học Cổ truyền TP. Đà Nẵng (HĐ số 01/2024/HĐ-YDCT · Quyết định số 56/QĐ-BVYDCT)
+11. <code>chicuc-danso-web</code>: Web tổng hợp thống kê dữ liệu báo cáo cơ sở Chi cục Dân số Đà Nẵng (HĐ số 07/2024/HĐ-CCDS · Quyết định số 92/QĐ-CCDS)
+12. <code>chicuc-danso-portal</code>: Cổng thông tin điện tử Chi cục Dân số TP. Đà Nẵng (HĐ số 11/2024/HĐ-WEB-CCDS · Quyết định số 128/QĐ-CCDS)
+13. <code>ubnd-nguhanhson-zalo</code>: Hệ thống gửi thông báo, tin nhắn Zalo OA UBND P. Ngũ Hành Sơn (HĐ số 14/2024/HĐ-UBND-NHS · Quyết định số 164/QĐ-UBND)
+14. <code>xa-xuanphu-cds</code>: Đề án Chuyển đổi số 2026-2030 tầm nhìn 2035 Xã Xuân Phú (HĐ số 03/2025/HĐ-XP · Quyết định số 28/QĐ-UBNDXP)
+15. <code>xa-xuanphu-csdl</code>: Cập nhật, tạo lập dữ liệu cơ sở vào Kho dữ liệu dùng chung TP. Đà Nẵng (HĐ số 09/2025/HĐ-DL-XP · Quyết định số 64/QĐ-UBNDXP)
+16. <code>xa-tienphuoc-csdl</code>: Chuẩn hóa dữ liệu phần mềm, CSDL chuyên ngành Xã Tiên Phước (HĐ số 15/2024/HĐ-TP · Quyết định số 182/QĐ-UBNDTP)
+17. <code>tt-cds-danang</code>: Phần mềm đánh giá tiêu chí CNTT tại Trung tâm CĐS &amp; CN Chiến lược Đà Nẵng (HĐ số 22/2024/HĐ-CDS-STTTT · Quyết định số 240/QĐ-STTTT)
+18. <code>dienbanbac-ai</code>: Tổ dân phố thông minh: Camera AI và lưu trữ dữ liệu Phường Điện Bàn Bắc (HĐ số 26/2024/HĐ-DBB · Quyết định số 298/QĐ-UBNDDBB)
+19. <code>cloud-ace-portal</code>: Cổng thông tin khách hàng Web &amp; Mobile App cho Cloud ACE (Google Cloud Partner · HĐ thương mại số 01/2024/TEK-CA)
+20. <code>pvcombank-his</code>: Nâng cấp phần mềm quản lý BV và kênh giao tiếp Zalo OA (PVcomBank · HĐ hợp tác công nghệ số 04/2024/TEK-PVCOM)
+21. <code>mobifone-zalo-tthc</code>: Phần mềm giải đáp TTHC trên Zalo OA và Zalo Mini App (MobiFone Đà Nẵng · HĐ dịch vụ số 18/2024/TEK-MBF)
+22. <code>mobifone-zalo-phuongxa</code>: Phần mềm chuyển đổi số phường xã qua Zalo OA (MobiFone Đà Nẵng · HĐ kinh tế số 25/2024/TEK-MBF2)</p>
+<h4 id="4-ky-thuat-deep-link-url-animation-specs">4. Kỹ Thuật Deep-Link URL &amp; Animation Specs</h4>
+<ul>
+<li><strong>Đồng bộ Deep-Link</strong>: Khi drawer mở ra, tự động cập nhật URL thành <code>?project=bv-phoi-emr</code> qua <code>window.history.pushState</code>. Cho phép chuyên viên kinh doanh sao chép link gửi trực tiếp cho khách hàng mở đúng ca triển khai.</li>
+<li><strong>Animation Specs</strong>: </li>
+<li>Ngăn kéo trượt từ mép phải: <code>transform: translateX(100%) -&gt; translateX(0)</code>, thời lượng <code>300ms</code>, easing <code>cubic-bezier(0.16, 1, 0.3, 1)</code>.</li>
+<li>Lớp nền Backdrop làm mờ: <code>backdrop-blur-sm bg-slate-900/40</code>, hiệu ứng fade-in trong <code>200ms</code>.</li>
+<li>Phím tắt: Bấm <code>Escape</code> hoặc nhấp vùng ngoài để đóng ngăn kéo.</li>
+</ul>
+<hr />
+<h3 id="tinh-nang-4-team-key-personnel-showcase-tab">TÍNH NĂNG 4: TEAM &amp; KEY PERSONNEL SHOWCASE TAB</h3>
+<h4 id="1-thong-tin-chung-user-story_3">1. Thông Tin Chung &amp; User Story</h4>
+<ul>
+<li><strong>Tên component</strong>: <code>TeamPersonnelRoster</code> (Tích hợp tại Section <code>#experts</code> trên Trang chủ và trang <code>/gioi-thieu</code>).</li>
+<li><strong>User Story</strong>: <blockquote>
+<p><em>"Với tư cách là Thành viên Hội đồng Xét duyệt Hồ sơ thầu, tôi muốn xem xét danh sách nhân sự của TEKNOVA, phân định rõ ràng học vị, số năm kinh nghiệm, vai trò trong dự án và có thể mở xem bản tóm tắt văn bằng chứng chỉ đã được chứng thực trong Hồ sơ năng lực, để tôi bảo đảm rằng đội ngũ cam kết thực thi gói thầu hoàn toàn đủ năng lực chuyên môn theo quy định của Luật Đấu thầu."</em></p>
+</blockquote>
+</li>
+<li><strong>Giá trị Showcase B2G</strong>: Phục hồi uy tín nhân sự tối cao, minh bạch hóa 100% bằng cấp của 12 chuyên gia, dập tắt nghi ngờ về việc "thuê bằng khống" hoặc "nhân sự ảo".</li>
+</ul>
+<h5 id="2-cau-truc-bo-loc-phan-tang-4-khoi-phong-ban-division-filter-tabs">2. Cấu Trúc Bộ Lọc Phân Tầng 4 Khối Phòng Ban (Division Filter Tabs)</h5>
+<pre class="codehilite"><code class="language-text">[ TẤT CẢ (12) ]  [ BAN LÃNH ĐẠO &amp; CỐ VẤN (2) ]  [ KỸ THUẬT &amp; R&amp;D PHẦN MỀM (3) ]  [ TRIỂN KHAI &amp; HẠ TẦNG (4) ]  [ VẬN HÀNH &amp; KINH DOANH (3) ]
+</code></pre>
+
+<ul>
+<li><strong>Khối 1: Ban Lãnh Đạo &amp; Cố Vấn Cấp Cao (Executive Leadership)</strong>:</li>
+<li><strong>Trần Bình Sơn</strong> — Chủ tịch HĐQT &amp; Tổng Giám đốc (MBA, Kỹ sư Điện tử, &gt;20 năm KN).</li>
+<li><strong>TS. Lê Trọng Nhân</strong> — Giám đốc Công nghệ &amp; Cố vấn Cấp cao (Tiến sĩ Xử lý tín hiệu &amp; Viễn thông, &gt;15 năm KN).</li>
+<li><strong>Khối 2: Nghiên Cứu &amp; Phát Triển Phần Mềm Lõi (R&amp;D &amp; Core Engineering)</strong>:</li>
+<li><strong>KS. Võ Quang Hòa</strong> — Trưởng phòng Kiến trúc Phần mềm &amp; ATTT (Kỹ sư CNTT, 13 năm KN).</li>
+<li><strong>ThS. Lê Hoàng Hải</strong> — Trưởng nhóm Khoa học Dữ liệu &amp; AI (Thạc sĩ KHMT, &gt;10 năm KN).</li>
+<li><strong>CN. Dương Mạnh Quân</strong> — Lập trình viên Web Portal &amp; CSDL Phân tán (Cử nhân CNTT, 01 năm KN).</li>
+<li><strong>Khối 3: Triển Khai Thực Địa &amp; Hạ Tầng Mạng (Field Operations &amp; Infrastructure)</strong>:</li>
+<li><strong>KS. Nguyễn Hoài Nhân</strong> — Trưởng bộ phận Tích hợp Hệ thống &amp; HIS (Kỹ sư CNTT, 12 năm KN).</li>
+<li><strong>KS. Trần Ngọc Trai</strong> — Kỹ sư Trưởng Hạ tầng Điện nhẹ (ELV) &amp; Data Center (Kỹ sư Điện, &gt;20 năm KN). <em>Nhân sự kỳ cựu được khôi phục</em>.</li>
+<li><strong>KS. Trần Minh Chiến</strong> — Kỹ sư Triển khai Hệ thống &amp; Zalo OA (Kỹ sư CNTT, 02 năm KN).</li>
+<li><strong>KS. Lê Thiện Nhân</strong> — Kỹ sư Phần cứng Y tế &amp; Kiosk Tiếp đón (Kỹ sư Kỹ thuật Máy tính, 01 năm KN).</li>
+<li><strong>Khối 4: Vận Hành Tổng Hợp, Tài Chính &amp; Kinh Doanh (Administration &amp; Business)</strong>:</li>
+<li><strong>CN. Nguyễn Thị Dung</strong> — Kế toán trưởng &amp; Phụ trách Quyết toán Thầu (Cử nhân Kinh tế, &gt;5 năm KN).</li>
+<li><strong>CN. Nguyễn Thị Thúy Vân</strong> — Trưởng bộ phận Hành chính - Nhân sự (Cử nhân Quản trị, &gt;10 năm KN).</li>
+<li><strong>CN. Bùi Thị Mai</strong> — Chuyên viên Kinh doanh Dự án B2G &amp; Chăm sóc Khách hàng (Cử nhân QTKD, 02 năm KN). <em>Nhân sự mới được bổ sung</em>.</li>
+</ul>
+<h4 id="3-modal-xem-van-bang-chung-thuc-scan-tu-hsnl-credential-verification-modal">3. Modal Xem Văn Bằng Chứng Thực Scan Từ HSNL (Credential Verification Modal)</h4>
+<ul>
+<li>Đối với 9 nhân sự có chứng chỉ công chứng đính kèm trong HSNL 2026 (Trần Bình Sơn, Lê Trọng Nhân, Võ Quang Hòa, Nguyễn Hoài Nhân, Lê Hoàng Hải, Trần Minh Chiến, Lê Thiện Nhân, Dương Mạnh Quân, Trần Ngọc Trai):</li>
+<li>Trên thẻ nhân sự có nút bấm: <strong>"Xem Bằng Cấp &amp; Chứng Chỉ Thẩm Định"</strong>.</li>
+<li>Khi nhấp vào, mở Modal hiển thị trích lục thông tin văn bằng: Tên trường đại học cấp bằng (Đại học Bách Khoa, Đại học Kinh Tế...), số hiệu bằng, chuyên ngành đào tạo và dấu giáp lai đã đối soát trong Hồ Sơ Năng Lực 2026.</li>
+</ul>
+<hr />
+<h3 id="tinh-nang-5-direct-demo-booking-form-voi-dynamic-tiering-cam-ket-sla-24h">TÍNH NĂNG 5: DIRECT DEMO BOOKING FORM VỚI DYNAMIC TIERING &amp; CAM KẾT SLA 24H</h3>
+<h4 id="1-thong-tin-chung-user-story_4">1. Thông Tin Chung &amp; User Story</h4>
+<ul>
+<li><strong>Tên component</strong>: <code>EnterpriseDemoBookingWidget</code> (Kích hoạt qua Modal khi nhấp nút "Tư Vấn Dự Án" / "Đặt Lịch Khảo Sát Hiện Trường", hoặc nhúng cố định tại trang <code>/lien-he</code>).</li>
+<li><strong>User Story</strong>: <blockquote>
+<p><em>"Với tư cách là Lãnh đạo Bệnh viện hoặc Đơn vị Hành chính, tôi muốn điền một form yêu cầu tư vấn có phân định rõ hạng bệnh viện của tôi, chức danh công tác và các bài toán y tế chuyên sâu cần giải quyết, đồng thời nhận được cam kết bằng văn bản về thời gian phản hồi của Kỹ sư trưởng trong vòng 24 giờ, để tôi có thể chủ động sắp xếp lịch họp chuyên môn của đơn vị."</em></p>
+</blockquote>
+</li>
+<li><strong>Giá trị Showcase B2G</strong>: Chuyển đổi từ form bán lẻ sơ sài sang quy trình tiếp nhận dịch vụ B2G đẳng cấp cao, xác lập niềm tin vững chắc về tính chuyên nghiệp và tốc độ hỗ trợ hiện trường.</li>
+</ul>
+<h4 id="2-cau-truc-form-4-buoc-thong-minh-chuan-b2g">2. Cấu Trúc Form 4 Bước Thông Minh Chuẩn B2G</h4>
+<pre class="codehilite"><code class="language-text">┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ ĐĂNG KÝ KHẢO SÁT HIỆN TRƯỜNG &amp; DEMO PHẦN MỀM LÂM SÀNG                                [✕ ĐÓNG]   │
+│ TEKNOVA cam kết cử chuyên gia kỹ thuật hỗ trợ trực tiếp tại cơ sở của Quý đơn vị                │
+├─────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ BƯỚC 1: PHÂN HẠNG CƠ SỞ Y TẾ &amp; TÊN ĐƠN VỊ CÔNG TÁC (*)                                          │
+│   (◉) Bệnh viện Chuyên khoa / Hạng I Tuyến Tỉnh, Thành Phố                                      │
+│   ( ) Bệnh viện Đa khoa / Hạng II Tuyến Quận, Huyện                                             │
+│   ( ) Trung tâm Y tế Khu vực / Bệnh viện Đa khoa Khu vực                                        │
+│   ( ) Trạm Y tế Xã, Phường / Phòng khám Đa khoa Tư nhân                                         │
+│   ( ) Cơ quan Quản lý Nhà nước (Sở Y tế, UBND Phường/Xã, Chi cục Dân số)                        │
+│                                                                                                 │
+│   Tên đơn vị: [ Bệnh viện Phổi Đà Nẵng                                        ]                 │
+├─────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ BƯỚC 2: THÔNG TIN CÁN BỘ ĐẠI DIỆN                                                               │
+│   Chức danh / Vai trò công tác (*):                                                             │
+│   [ Giám đốc / Phó Giám đốc Bệnh viện                                     ▼ ]                   │
+│   (Menu chọn: Trưởng phòng Kế hoạch Tổng hợp, Trưởng phòng CNTT, Trưởng khoa Dược, Bác sĩ trưởng)│
+│                                                                                                 │
+│   Họ và tên cán bộ: [ BS. CKII Nguyễn Văn An           ]                                        │
+│   Số điện thoại di động / Zalo (*): [ 0935 722 579     ] (Kiểm tra đúng định dạng di động VN)   │
+│   Email công vụ / Đơn vị (*): [ nguyenvanan@bvphoidanang.gov.vn           ]                      │
+├─────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ BƯỚC 3: NHU CẦU GIẢI PHÁP TRỌNG TÂM &amp; HÌNH THỨC LÀM VIỆC                                        │
+│   Các phân hệ mong muốn khảo sát:                                                               │
+│   [☑] Bệnh án điện tử EMR bỏ hoàn toàn bệnh án giấy (Thông tư 46/2018/TT-BYT)                   │
+│   [☑] Cập nhật mẫu Đơn thuốc điện tử liên thông Quốc gia (Thông tư 26/2025/TT-BYT)              │
+│   [ ] Nâng cấp trích xuất 5 bảng XML &amp; Giám định BHYT (Quyết định 130 &amp; QĐ 3176)                │
+│   [ ] Tư vấn gói thuê dịch vụ CNTT OPEX chi từ nguồn thu viện phí (Quyết định 80/2014)          │
+│   [ ] Kênh tiếp đón, trả kết quả và thanh toán viện phí qua Zalo OA                             │
+│                                                                                                 │
+│   Hình thức làm việc mong muốn:                                                                 │
+│   (•) Kỹ sư TEKNOVA mang thiết bị demo trực tiếp tại Bệnh viện (On-site)                        │
+│   ( ) Họp trình diễn giải pháp trực tuyến qua Zoom / Google Meet (Online)                       │
+│   ( ) Đăng ký tham quan thực tế mô hình đã nghiệm thu tại BV Phổi / TTYT Liên Chiểu             │
+│                                                                                                 │
+│   Thời gian dự kiến: [ 22/10/2026 📅 ]   Khung giờ: [ 08:30 - 10:00 Sáng ▼ ]                     │
+├─────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ BƯỚC 4: BẢO CHỨNG CAM KẾT SLA DỊCH VỤ TỪ TEKNOVA (SERVICE LEVEL AGREEMENT)                      │
+│   ┌───────────────────────────────────────────────────────────────────────────────────────┐     │
+│   │ 🛡️ CAM KẾT TRÁCH NHIỆM PHỤC VỤ CHUẨN DOANH NGHIỆP CÔNG NGHỆ:                           │     │
+│   │ • Kỹ sư Trưởng Giải pháp sẽ liên hệ xác nhận lịch trong vòng 24 GIỜ LÀM VIỆC.         │     │
+│   │ • Gửi hồ sơ khảo sát tiền khả thi &amp; tài liệu kỹ thuật trong vòng 48 GIỜ.              │     │
+│   │ • Tuyệt đối không làm gián đoạn công tác khám chữa bệnh chuyên môn của y bác sĩ.      │     │
+│   └───────────────────────────────────────────────────────────────────────────────────────┘     │
+│                                                                                                 │
+│ [ XÁC NHẬN ĐẶT LỊCH KHẢO SÁT &amp; NHẬN MÃ THEO DÕI ]                                               │
+└─────────────────────────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+
+<h4 id="3-man-hinh-tiep-nhan-thanh-cong-voi-ma-ticket-id-ong-bo-lich">3. Màn Hình Tiếp Nhận Thành Công Với Mã Ticket ID &amp; Đồng Bộ Lịch</h4>
+<ul>
+<li>Khi gửi form thành công:</li>
+<li>Sinh mã tiếp nhận hồ sơ: <strong><code>TEK-B2G-2026-8842</code></strong>.</li>
+<li>Phân công chuyên gia đầu mối: <strong>KS. Nguyễn Hoài Nhân (Trưởng bộ phận Tích hợp Hệ thống, ĐT: 0935 722 579)</strong>.</li>
+<li>Tích hợp nút: <strong><code>[ + Thêm vào Google Calendar / Tải file .ICS ]</code></strong> để cán bộ tự động lưu lịch hẹn vào ứng dụng lịch cơ quan.</li>
+<li>Hotline tiếp nhận trực ban 24/7: <code>0935 722 579</code>.</li>
+</ul>
+<h4 id="4-ac-ta-thuat-toan-kiem-tra-so-ien-thoai-di-ong-viet-nam-chuan-hoa-vietnamese-mobile-regex-sanitization-engine">4. Đặc Tả Thuật Toán Kiểm Tra Số Điện Thoại Di Động Việt Nam Chuẩn Hóa (Vietnamese Mobile Regex &amp; Sanitization Engine)</h4>
+<ul>
+<li><strong>Quy trình xử lý 2 bước (Two-Phase Sanitization &amp; Validation Pipeline)</strong>:
+  Để ngăn ngừa lỗi form không hợp lệ đối với người dùng nhập có khoảng trắng (như mẫu <code>0935 722 579</code>) hoặc ký tự phân cách, mã nguồn TypeScript bắt buộc phải làm sạch ký tự trước khi kiểm tra qua chuỗi Regex chuẩn hóa:</li>
+</ul>
+<pre class="codehilite"><code class="language-typescript">// Bước 1: Làm sạch khoảng trắng và ký tự phân cách
+const cleanPhone = rawPhone.replace(/[\s.-]/g, '');
+
+// Bước 2: Regex chuẩn hóa 6 nhà mạng di động Việt Nam (Viettel, Vina, Mobi, Vietnamobile, Gmobile, Itelecom/Wintel)
+const VN_MOBILE_REGEX = /^(0|\+84)(3[2-9]|5[2689]|7[06-9]|8[1-9]|9[0-9])[0-9]{7}$/;
+
+// Hàm kiểm thử hợp lệ:
+export function validateVietnameseMobilePhone(rawPhone: string): boolean {
+  if (!rawPhone) return false;
+  const cleanPhone = rawPhone.replace(/[\s.-]/g, '');
+  return VN_MOBILE_REGEX.test(cleanPhone);
+}
+</code></pre>
+
+<ul>
+<li><strong>Kiểm định thực tế</strong>:</li>
+<li>Khi người dùng nhập <code>0935 722 579</code>, bước <code>cleanPhone</code> trả về <code>0935722579</code>, khớp hoàn toàn với <code>VN_MOBILE_REGEX</code> (nhà mạng MobiFone đầu số <code>093</code>).</li>
+<li>Hỗ trợ đầy đủ tiền tố quốc tế <code>+84</code> (ví dụ <code>+84935722579</code>).</li>
+<li>Loại bỏ hoàn toàn số điện thoại bàn (mã vùng Đà Nẵng <code>0236...</code>), các đầu số 11 số cũ đã ngưng hoạt động (<code>012...</code>), và các payload tấn công XSS/SQL Injection.</li>
+</ul>
+<hr />
+<h2 id="7-lo-trinh-trien-khai-phan-chia-sprint-sprint-roadmap">7. LỘ TRÌNH TRIỂN KHAI &amp; PHÂN CHIA SPRINT (SPRINT ROADMAP)</h2>
+<p>Kế hoạch hành động kỹ thuật được phân bổ thành 3 Sprint liên hoàn trong 10 ngày làm việc:</p>
+<pre class="codehilite"><code class="language-text">┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
+│                                LỘ TRÌNH 3 SPRINT TRIỂN KHAI DEV ACTION                          │
+├───────────────────────────────┬─────────────────────────────────┬───────────────────────────────┤
+│ SPRINT 1: NGÀY 1 - 3          │ SPRINT 2: NGÀY 4 - 7            │ SPRINT 3: NGÀY 8 - 10         │
+│ • Hotfix P0/P1 Chí Mạng       │ • 5 Tính Năng Showcase B2G      │ • E2E Testing &amp; Performance   │
+│ • Chuẩn hóa 100% Dữ Liệu Thật │ • Live Hospital Flow Mockup     │ • Cross-browser &amp; Mobile QA   │
+│ • Phục hồi Khối Lãnh Đạo      │ • In-browser Flipbook Reader    │ • Core Web Vitals &lt; 1.5s      │
+│ • Thay thế Ảnh Thumbnail Local│ • Case Study Slide-over Drawer  │ • Đóng Gói Production Release │
+│ • Sửa lỗi Counter 00+         │ • Team Tab &amp; Smart Booking SLA  │                               │
+└───────────────────────────────┴─────────────────────────────────┴───────────────────────────────┘
+</code></pre>
+
+<h3 id="sprint-1-ngay-1-3-xu-ly-hotfix-p0p1-chuan-hoa-du-lieu-goc">Sprint 1 (Ngày 1 - 3): Xử Lý Hotfix P0/P1 &amp; Chuẩn Hóa Dữ Liệu Gốc</h3>
+<ul>
+<li><strong>Mục tiêu</strong>: Xóa sổ hoàn toàn các lỗi chí mạng, đưa dữ liệu web về đúng Chân lý Đơn nhất (SSOT) từ HSNL 2026.</li>
+<li><strong>Các công việc cụ thể</strong>:</li>
+<li><em>Ngày 1</em>: <ul>
+<li>Sửa tệp <code>teknova-data.ts</code>: Đổi tên Chủ tịch HĐQT thành <strong>Trần Bình Sơn (MBA, Kỹ sư Điện tử)</strong>, cập nhật đầy đủ 12 nhân sự và 22 hợp đồng thực tế.</li>
+<li>Xóa sạch logo đối tác khống (Vinmec, Cisco, Microsoft, BIDV...), cập nhật 12 logo đơn vị thật.</li>
+</ul>
+</li>
+<li><em>Ngày 2</em>:<ul>
+<li>Tải và lưu trữ 6 ảnh thumbnail dự án vào thư mục cục bộ <code>public/assets/img/projects/</code>; sửa triệt để lỗi thẻ trắng toát tại Block 6 trên Netlify.</li>
+<li>Tái lập toàn diện khối Lãnh đạo tại Block 7 trên <code>HomeView.vue</code>, chèn ảnh cutout <code>/ceo-cutout.png</code> và 3 luận điểm cam kết hành động.</li>
+</ul>
+</li>
+<li><em>Ngày 3</em>:<ul>
+<li>Sửa lỗi hydration counter hiển thị <code>00+</code> trên dải số liệu Block 3.</li>
+<li>Tái cấu trúc Hero Section sang dạng Monumental Centered 1200px.</li>
+<li>Cập nhật địa chỉ trụ sở chính tại 456 Nguyễn Hữu Thọ và MST <code>0402300331</code> ở Footer.</li>
+</ul>
+</li>
+</ul>
+<h3 id="sprint-2-ngay-4-7-xay-dung-5-tinh-nang-nang-tam-trinh-dien-b2g">Sprint 2 (Ngày 4 - 7): Xây Dựng 5 Tính Năng Nâng Tầm Trình Diễn B2G</h3>
+<ul>
+<li><strong>Mục tiêu</strong>: Lắp ráp và hoàn thiện 5 cỗ máy tương tác phục vụ trình chiếu thầu.</li>
+<li><strong>Các công việc cụ thể</strong>:</li>
+<li><em>Ngày 4</em>: Xây dựng component <code>HospitalFlowSimulator</code> (Tính năng 1): 5 bước khám lâm sàng, thanh tiến trình, tab Inspector JSON Payload và nút mô phỏng rớt mạng tự phục hồi.</li>
+<li><em>Ngày 5</em>: Xây dựng component <code>CaseStudyDetailDrawer</code> (Tính năng 3): Slide-over 8 tầng thông tin, kết nối dữ liệu 22 hợp đồng thực tế và cơ chế deep-link URL <code>?project=...</code>.</li>
+<li><em>Ngày 6</em>: Xây dựng component <code>ProfileFlipbookReader</code> (Tính năng 2): Nạp trước 18 trang WebP, hiệu ứng lật trang 3D mượt mà, mục lục tương tác và form Lead Capture 3 trường khi tải bản PDF dấu đỏ.</li>
+<li><em>Ngày 7</em>: Hoàn thiện <code>TeamPersonnelRoster</code> (Tính năng 4) với 4 bộ lọc phòng ban kèm modal xem văn bằng; xây dựng <code>EnterpriseDemoBookingWidget</code> (Tính năng 5) với phân hạng cơ sở y tế, regex SĐT Việt Nam và cam kết SLA 24h.</li>
+</ul>
+<h3 id="sprint-3-ngay-8-10-kiem-thu-toan-dien-toi-uu-hoa-ong-goi-ban-giao">Sprint 3 (Ngày 8 - 10): Kiểm Thử Toàn Diện, Tối Ưu Hóa &amp; Đóng Gói Bàn Giao</h3>
+<ul>
+<li><strong>Mục tiêu</strong>: Bảo đảm tính tương thích hoàn hảo trên mọi thiết bị và đạt chuẩn hiệu năng cao nhất.</li>
+<li><strong>Các công việc cụ thể</strong>:</li>
+<li><em>Ngày 8</em>: Kiểm thử tương thích Responsive từ màn hình Mobile nhỏ (iPhone SE 375px) đến Desktop 4K (3840px); kiểm tra độ tương phản màu sắc đạt chuẩn WCAG AA/AAA.</li>
+<li><em>Ngày 9</em>: Kiểm thử E2E liên thông tất cả các luồng: Đặt lịch demo, tải file PDF, chuyển bước mô phỏng lâm sàng, sao chép JSON payload.</li>
+<li><em>Ngày 10</em>: Tối ưu hóa Core Web Vitals: LCP &lt; 1.2s, CLS = 0, FID &lt; 50ms, Speed Index &lt; 1.5s; xuất bản mã nguồn bản Production Release và bàn giao cho Ban Lãnh Đạo TEKNOVA.</li>
+</ul>
+<hr />
+<h2 id="8-tieu-chi-nghiem-thu-ky-thuat-ma-tran-kiem-thu-acceptance-criteria-qa-matrix">8. TIÊU CHÍ NGHIỆM THU KỸ THUẬT &amp; MA TRẬN KIỂM THỬ (ACCEPTANCE CRITERIA &amp; QA MATRIX)</h2>
+<h3 id="81-bo-checklist-25-tieu-chi-nghiem-thu-khat-khe-pass-fail-criteria">8.1 Bộ Checklist 25 Tiêu Chí Nghiệm Thu Khắt Khe (Pass / Fail Criteria)</h3>
+<p>Đợt bàn giao chỉ được coi là hoàn tất khi toàn bộ <strong>25 tiêu chí</strong> dưới đây đạt trạng thái <strong>PASS 100%</strong>:</p>
+<pre class="codehilite"><code class="language-text">┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
+│                                 CHECKLIST 25 TIÊU CHÍ NGHIỆM THU                                │
+├─────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ [1. ĐỐI SOÁT DỮ LIỆU &amp; PHÁP LÝ CHÍNH DANH]                                                      │
+│ [ ] AC-01: Tên Chủ tịch HĐQT kiêm TGĐ hiển thị chính xác 100% là Trần Bình Sơn (MBA, KS Điện tử)│
+│ [ ] AC-02: Hoàn toàn không còn bất kỳ chữ &quot;Nguyễn Hùng Sơn&quot; nào trong giao diện và mã nguồn.     │
+│ [ ] AC-03: Hiển thị đầy đủ 12 nhân sự nòng cốt theo đúng HSNL 2026 (có KS. Trai &amp; Bùi Thị Mai). │
+│ [ ] AC-04: Hiển thị đầy đủ 22 hợp đồng thực tế, phân chia chuẩn 3 nhóm khách hàng chiến lược.   │
+│ [ ] AC-05: Xóa bỏ 100% đối tác khống (Vinmec, Cisco, Microsoft, Fortinet, BIDV, Vietcombank...).│
+│ [ ] AC-06: Xóa bỏ case study giả định &quot;Dược Phẩm Miền Trung&quot; và quote bác sĩ ảo (BS. A, DS. B). │
+│ [ ] AC-07: Footer hiển thị đầy đủ Trụ sở chính: Tầng 3, 456 Nguyễn Hữu Thọ, Cẩm Lệ, Đà Nẵng.   │
+│ [ ] AC-08: Footer hiển thị đầy đủ Mã số doanh nghiệp: 0402300331 cấp ngày 23/09/2025.            │
+│                                                                                                 │
+│ [2. KHẮC PHỤC LỖI THỊ GIÁC &amp; LAYOUT]                                                            │
+│ [ ] AC-09: 100% ảnh thumbnail dự án tại Block 6 hiển thị sắc nét, zero lỗi ảnh vỡ/trắng toát.   │
+│ [ ] AC-10: Toàn bộ ảnh được lưu trữ cục bộ trong /public/assets/, không phụ thuộc URL CDN ngoài.│
+│ [ ] AC-11: Khối Lãnh đạo tại Block 7 hiện diện đầy đủ với chân dung cắt nền /ceo-cutout.png.    │
+│ [ ] AC-12: Khối số liệu thành tựu hiển thị số chuẩn (&gt;20 Năm, 22+ Dự án), zero lỗi counter 00+. │
+│ [ ] AC-13: Hero Section được bố trí theo Monumental Centered Layout với mockup EMR rộng 1200px. │
+│ [ ] AC-14: Block Lĩnh vực hoạt động là 1 Bento Grid 6 ô duy nhất, Card 4 phủ màu xanh Cobalt.   │
+│ [ ] AC-15: Banner CTA cuối trang sử dụng gradient xanh công nghệ, thay thế màu xanh đen cũ.     │
+│                                                                                                 │
+│ [3. NĂNG LỰC TƯƠNG TÁC &amp; 5 TÍNH NĂNG SHOWCASE]                                                  │
+│ [ ] AC-16: Hospital Flow Simulator chuyển đổi mượt mà qua cả 5 bước lâm sàng trong &lt; 50ms.      │
+│ [ ] AC-17: Nút thử nghiệm rớt mạng Cổng BYT kích hoạt đúng chế độ hàng đợi Async Queue Redis.   │
+│ [ ] AC-18: Nút &quot;Sao chép JSON&quot; tại Inspector Panel sao chép đúng định dạng JSON vào Clipboard.  │
+│ [ ] AC-19: Profile Flipbook mở trong &lt; 0.5s, lật trang 3D mượt mà, mục lục nhảy trang chính xác.│
+│ [ ] AC-20: Cổng Lead Capture 3 trường xuất hiện khi tải PDF có dấu đỏ và tải file thành công.   │
+│ [ ] AC-21: Case Study Detail Drawer trượt êm ái từ phải sang trái, hiển thị đủ 8 tầng thông tin.│
+│ [ ] AC-22: URL tự động cập nhật tham số ?project=... khi Drawer mở và hỗ trợ nút Back.         │
+│ [ ] AC-23: Team Tab cho phép lọc theo 4 phòng ban và mở xem modal bằng cấp chứng thực.         │
+│ [ ] AC-24: Form Demo Booking kiểm tra đúng Regex SĐT Việt Nam và phân hạng cơ sở y tế B2G.      │
+│ [ ] AC-25: Submit form demo thành công hiển thị mã ticket dạng TEK-B2G-2026-XXXX và cam kết SLA.│
+└─────────────────────────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+
+<hr />
+<h3 id="82-ma-tran-kiem-thu-chap-nhan-tieu-chuan-hieu-nang-qa-matrix-core-web-vitals">8.2 Ma Trận Kiểm Thử Chấp Nhận &amp; Tiêu Chuẩn Hiệu Năng (QA Matrix &amp; Core Web Vitals)</h3>
+<table>
+<thead>
+<tr>
+<th>Tiêu Chí Hiệu Năng / Trải Nghiệm</th>
+<th>Phương Pháp Đo Lường</th>
+<th style="text-align: center;">Ngưỡng Tiêu Chuẩn Cho Phép</th>
+<th style="text-align: center;">Kết Quả Mục Tiêu</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Largest Contentful Paint (LCP)</strong></td>
+<td>Google Lighthouse (Desktop)</td>
+<td style="text-align: center;"><code>&lt; 2.5 giây</code></td>
+<td style="text-align: center;"><strong><code>1.15 giây</code> (Xuất sắc)</strong></td>
+</tr>
+<tr>
+<td><strong>Cumulative Layout Shift (CLS)</strong></td>
+<td>Chrome DevTools Performance</td>
+<td style="text-align: center;"><code>&lt; 0.1</code></td>
+<td style="text-align: center;"><strong><code>0.002</code> (Không giật khung hình)</strong></td>
+</tr>
+<tr>
+<td><strong>First Input Delay (FID) / INP</strong></td>
+<td>Web Vitals Chrome Extension</td>
+<td style="text-align: center;"><code>&lt; 100 mili-giây</code></td>
+<td style="text-align: center;"><strong><code>18 mili-giây</code> (Phản hồi tức thì)</strong></td>
+</tr>
+<tr>
+<td><strong>Speed Index (Tốc độ hiển thị)</strong></td>
+<td>WebPageTest (Cable 4G Connection)</td>
+<td style="text-align: center;"><code>&lt; 2.0 giây</code></td>
+<td style="text-align: center;"><strong><code>1.35 giây</code></strong></td>
+</tr>
+<tr>
+<td><strong>Độ Tương Phản Màu Sắc (Contrast)</strong></td>
+<td>WCAG 2.1 Accessibility Audit</td>
+<td style="text-align: center;">Tối thiểu <code>AA (4.5:1)</code></td>
+<td style="text-align: center;"><strong>Đạt <code>AAA (7.2:1)</code> cho tiêu đề</strong></td>
+</tr>
+<tr>
+<td><strong>Tỷ Lệ Lỗi Console (Console Errors)</strong></td>
+<td>Trình thu thập log trình duyệt</td>
+<td style="text-align: center;"><code>0 Lỗi (Zero Errors)</code></td>
+<td style="text-align: center;"><strong>0 Warnings, 0 Errors</strong></td>
+</tr>
+<tr>
+<td><strong>Tính Toàn Vẹn Liên Kết (Broken Links)</strong></td>
+<td>Screaming Frog SEO Spider</td>
+<td style="text-align: center;"><code>0 Link 404</code></td>
+<td style="text-align: center;"><strong>100% Liên kết nội bộ 200 OK</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="9-ket-luan-thong-iep-ban-giao-cho-ban-lanh-ao-teknova">9. KẾT LUẬN &amp; THÔNG ĐIỆP BÀN GIAO CHO BAN LÃNH ĐẠO TEKNOVA</h2>
+<p>Tài liệu <strong>Báo Cáo Đối Soát Toàn Diện &amp; Kế Hoạch Hành Động Dev (PRD) — Nâng Cấp Portal TEKNOVA 2026</strong> này xác lập một bước chuyển mình mang tính bước ngoặt cho năng lực công nghệ và hình ảnh thương hiệu của Công ty Cổ phần Đổi mới Sáng tạo TEKNOVA.</p>
+<p>Bằng việc kiên quyết:
+1. <strong>Khôi phục Chân lý Dữ liệu</strong>: Khẳng định tư cách lãnh đạo tối cao của <strong>Ông TRẦN BÌNH SƠN (MBA, Kỹ sư Điện tử)</strong>, tôn vinh chất xám của <strong>12 nhân sự chuyên gia</strong> và minh chứng chiều sâu thực tiễn qua <strong>22 hợp đồng dự án thực tế</strong> đã nghiệm thu tại Đà Nẵng và cả nước;
+2. <strong>Triệt phá các sai phạm thị giác</strong>: Chấm dứt vĩnh viễn tình trạng ảnh thumbnail trắng toát, dẹp bỏ toàn bộ đối tác khống và xóa sạch các văn mẫu AI sáo rỗng;
+3. <strong>Trang bị 5 cỗ máy trình diễn B2G tương tác</strong>: Tái hiện sống động quy trình lâm sàng EMR, trao tận tay cuốn hồ sơ năng lực 2026 lật trang siêu tốc và xác lập cam kết SLA phục vụ 24 giờ chuyên nghiệp;</p>
+<p>Nền tảng <strong>TEKNOVA Portal 2026</strong> sẽ trở thành niềm tự hào công nghệ, một vũ khí bán hàng đắc lực và là bảo chứng niềm tin không thể lay chuyển giúp TEKNOVA tự tin khẳng định vị thế một trong những doanh nghiệp giải pháp Y tế số &amp; Chính quyền số hàng đầu Miền Trung trong năm 2026 và các năm tiếp theo.</p>
+  </div>
+
+</body>
+</html>
