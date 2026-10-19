@@ -403,7 +403,43 @@ code, pre {
 
       <!-- MAIN CONTENT AREA -->
       <main class="lg:col-span-3 space-y-10">
-    
+
+        <!-- BANNER CHỈ ĐẠO TRIỂN KHAI CỐT LÕI CHO DEV -->
+        <div class="rounded-2xl border-2 border-amber-400 bg-amber-50/90 p-5 shadow-xs transition hover:shadow-md">
+          <div class="flex items-start gap-3.5">
+            <span class="text-3xl shrink-0">⚠️</span>
+            <div class="space-y-2 w-full">
+              <div class="flex items-center gap-2 flex-wrap">
+                <h3 class="text-sm md:text-base font-extrabold uppercase tracking-wide text-amber-950">
+                  Lưu Ý Quan Trọng Dành Cho Dev Khi Triển Khai Website
+                </h3>
+                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-amber-200 text-amber-900 border border-amber-300">
+                  Chỉ Thị Thi Công
+                </span>
+              </div>
+              <p class="text-xs md:text-sm text-amber-950 font-medium leading-relaxed">
+                <strong>Định hướng thi công:</strong> Dev chỉ cần tập trung làm <strong>đúng 100% nội dung</strong> (text, số liệu, danh mục đối tác, hồ sơ, nhân sự) và <strong>chuẩn format</strong> (layout, lưới cột, khoảng cách, font chữ, responsive). <strong>Tuyệt đối KHÔNG cần copy các hiệu ứng rườm rà</strong> (không cần SplitText tách chữ từng ký tự, không cần hiệu ứng chuyển động phức tạp hay animation cuộn nặng nề).
+              </p>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-2.5 pt-1 text-xs">
+                <div class="flex items-start gap-2 bg-white/95 p-3 rounded-xl border border-emerald-200 shadow-2xs">
+                  <span class="text-emerald-600 font-bold text-sm shrink-0">✓</span>
+                  <div>
+                    <strong class="text-emerald-800">Yêu cầu cốt lõi (CẦN LÀM):</strong>
+                    <div class="text-[11px] text-slate-600 mt-0.5">Làm đúng nội dung HSNL 2026, chuẩn layout, hiển thị nội dung tĩnh ngay tức thì khi vào trang, tối ưu mượt mà và responsive trên mọi thiết bị.</div>
+                  </div>
+                </div>
+                <div class="flex items-start gap-2 bg-white/95 p-3 rounded-xl border border-rose-200 shadow-2xs">
+                  <span class="text-rose-600 font-bold text-sm shrink-0">✕</span>
+                  <div>
+                    <strong class="text-rose-800">Hiệu ứng rườm rà (BỎ QUA):</strong>
+                    <div class="text-[11px] text-slate-600 mt-0.5">Không cần sao chép animation tách chữ, parallax trễ cuộn, hoặc chuyển cảnh phức tạp gây nặng máy và dễ làm ẩn nội dung/mất chữ.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <!-- 1. DỮ LIỆU PHÁP LÝ CHUẨN TỪ HSNL 2026 -->
         <section id="thong-tin-phap-ly" class="filter-section bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm" data-scope="legal" data-priority="p0">
           <div class="flex items-center justify-between pb-3 mb-4 border-b border-slate-100">
@@ -4115,6 +4151,14 @@ code, pre {
             <span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">
               ✓ Hoàn Thành 14/14 Hạng Mục • Hệ Thống Live
             </span>
+          </div>
+
+          <!-- Ghi Chú Chỉ Đạo Dev -->
+          <div class="mb-4 p-3.5 rounded-xl bg-amber-50/90 border border-amber-300 text-xs text-amber-950 flex items-start gap-2.5">
+            <span class="text-base shrink-0 mt-0.5">💡</span>
+            <div>
+              <strong>Nguyên tắc triển khai cho dev:</strong> Làm đúng 100% nội dung và chuẩn cấu trúc format layout theo từng đầu việc. <strong>Tuyệt đối không cần mất thời gian copy các hiệu ứng rườm rà</strong> (như tách chữ, delay animation, hiệu ứng cuộn phức tạp) — ưu tiên giao diện sạch, tải tức thì, chuẩn responsive và dễ bảo trì.
+            </div>
           </div>
 
           <div class="overflow-x-auto rounded-xl border border-slate-200">
